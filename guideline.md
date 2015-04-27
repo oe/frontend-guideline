@@ -77,7 +77,7 @@ funtion submitOrder (data) {
 #### 语法
 * 在属性上，使用双引号，不要使用单引号.
 * 不要在自动闭合标签结尾处使用斜线
-* 不要忽略可选的关闭标签（例如，</li> 和 </body>）.
+* 不要忽略可选的关闭标签（例如，`</li>` 和 `</body>`）.
 
 #### 实用高于完美
 尽量遵循 HTML 标准和语义，但是不应该以浪费实用性作为代价.任何时候都要用尽量小的复杂度和尽量少的标签来解决问题
@@ -501,7 +501,7 @@ var zhangsan = "zhangsan";    // 双斜线距离分号一个缩进, 双斜线后
 * 业务逻辑强相关的代码
 
 #### 文档注释
-对于函数以及全局变量, 需要有详细的文档注释. 文档注释是使用`@param` `@return`等标签来注解, 请参考 [http://usejsdoc.org/]()
+对于函数以及全局变量, 需要有详细的文档注释. 文档注释是使用`@param` `@return`等标签来注解, 请参考 <http://usejsdoc.org/>
 
 函数注释格式如下
 ```js
@@ -547,52 +547,52 @@ var PAGE_SIZE = 10;
 ### Sublime Text (跨平台)
 Sublime Text 付费但是可以无限期免费试用的代码编辑器, 支持多种语言的语法高亮、代码自动提示及补全、代码折叠、代码地图, 它拥有漂亮的用户界面和丰富的快捷键, 有良好的扩展性并拥有数量众多的扩展, 借助扩展还可以实现校验代码语法、编译代码等功能.
 
-官方网站: [http://www.sublimetext.com/3]()
+官方网站: <http://www.sublimetext.com/3>
 
 ### notepad++ (windows平台)
 notepad++是一款开源免费的代码编辑器, 支持的语言也比较多, 及多种文件编码, 同样也有比较丰富的扩展.
 
-官方网站: [http://notepad-plus-plus.org/zh/]()
+官方网站: <http://notepad-plus-plus.org/zh/>
 
 ### Emmet
 Emmet是一款代码编辑器的插件, 支持多种流行的的编辑器. 通过它, 可以通过输入缩写来得到相应的HTML或者CSS代码, 大大提高输入效率.
 
-官方网站: [http://emmet.io/]()
+官方网站: <http://emmet.io/>
 
 ## 调试工具
 ### Chrome Dev Tools (跨平台)
 Chrome Dev Tools(Google开发者工具)已内置在Chrome浏览器中, 可以方便的审查HTML元素, 查看源码, 修改调试样式, 调试js代码(支持断点调试) , 记录网络请求, 监控页面执行性能等功能.
 
-官方网站: [http://www.google.com/chrome/]()
+官方网站: <http://www.google.com/chrome/>
 
 ### Firebug (跨平台)
 Firebug功能与Chrome Dev Tools相似, 不过它是Firefox第三方插件, 需要手动到Firefox扩展官网下载安装.
 
-官方网站: [http://getfirebug.com/]()
+官方网站: <http://getfirebug.com/>
 
 ## 辅助工具
 ### prepros (跨平台, 付费)
 prepro是一款前端工具,内置有web服务器,支持编译各种预编译语言代码(less, sass, coffee等), 自动补全css样式属性的浏览器私有属性, 浏览器实时刷新(编写代码时, 保存代码即刷新), 代码合并及压缩等.
 
-官方网站: [https://prepros.io/]()
+官方网站: <https://prepros.io/>
 
 
 
 ### codekit (Mac平台, 付费)
 codekit和prepos一样, 除了prepos的功能, 还支持管理维护第三方库.
 
-官方网站: [http://jsconsole.com/]()
+官方网站: <http://jsconsole.com/>
 
 ### Nodejs, NPM, Grunt
 Nodejs是基于Chrome v8的js运行引擎, 基于nodejs开发的功能模块就是一个个包, NPM就是nodejs附带的包管理器. Grunt是nodejs的两个流行的包, 可以用来对前端代码进行语法校验, 合并压缩, 打包发布.
 
-* Nodejs官网: [http://nodejs.org/]()
-* Grunt官网: [http://gruntjs.com/]()
+* Nodejs官网: <http://nodejs.org/>
+* Grunt官网: <http://gruntjs.com/>
 
 ### Koala (跨平台, 免费)
 koala是一个前端预处理器言图形编译工具，支持Less、Sass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。
 
-官方网站: [http://koala-app.com/index-zh.html]()
+官方网站: <http://koala-app.com/index-zh.html>
 
 ## 预处理语言
 预处理语言是一种新的编程语言, 它们一般并不会直接在项目中使用, 可以使用预处理器将它们编译为目标语言. 通常, 相对于目标语言, 它们会有些新的特性.
@@ -601,16 +601,16 @@ Less是一种CSS预处理语言, 也就是说它可以编译为css文件然后�
 
 Less上手相对比较容易, 书写起来简单, 可以编写简单的函数和混入, 编写复杂的函数和混入则无法胜任.
 
-官方网站: [http://lesscss.org/]()
+官方网站: <http://lesscss.org/>
 
 ### Sass
 Sass也是一种CSS预处理语言, 同样具有Less的特性, 上手也容易, 但是书写比起Less略显麻烦, 但是扩展性好, 可以编写复杂的函数和混入.
 
-官方网站: [http://sass-lang.com/]()
+官方网站: <http://sass-lang.com/>
 
 ### Coffeescript
 Coffeescript是一种javascript预处理语言, 它的语法和Ruby、Python比较相似, 使用缩进来控制代码块级结构, 可以省略许多不必要的括号和大括号, 并且支持它们的一些语法特性, 比如数组切片, 数组解包等. 代码比javascript简洁, 避免了javascript一些常见的书写错误, 并容易阅读和维护.
 
-官方网站: [http://coffeescript.org/]()
+官方网站: <http://coffeescript.org/>
 
 
