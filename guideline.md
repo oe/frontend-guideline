@@ -570,6 +570,12 @@ Firebug功能与Chrome Dev Tools相似, 不过它是Firefox第三方插件, 需�
 
 官方网站: <http://getfirebug.com/>
 
+### JSConsole(在线服务)
+通过在自己的web app中引入JSConsole的js, 即可在电脑浏览器中查看在手机上打印出的日志.
+
+官方网站: <http://jsconsole.com/>
+
+
 ## 辅助工具
 ### prepros (跨平台, 付费)
 prepro是一款前端工具,内置有web服务器,支持编译各种预编译语言代码(less, sass, coffee等), 自动补全css样式属性的浏览器私有属性, 浏览器实时刷新(编写代码时, 保存代码即刷新), 代码合并及压缩等.
@@ -581,7 +587,8 @@ prepro是一款前端工具,内置有web服务器,支持编译各种预编译语
 ### codekit (Mac平台, 付费)
 codekit和prepos一样, 除了prepos的功能, 还支持管理维护第三方库.
 
-官方网站: <http://jsconsole.com/>
+官方网站: <https://incident57.com/codekit/>
+
 
 ### Nodejs, NPM, Grunt
 Nodejs是基于Chrome v8的js运行引擎, 基于nodejs开发的功能模块就是一个个包, NPM就是nodejs附带的包管理器. Grunt是nodejs的两个流行的包, 可以用来对前端代码进行语法校验, 合并压缩, 打包发布.
