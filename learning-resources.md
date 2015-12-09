@@ -85,6 +85,7 @@ Chrome Dev Tools(Google开发者工具)已内置在Chrome浏览器中, 可以方
 * 官方文档：<https://developer.chrome.com/devtools>
 * 视频教程：<http://discover-devtools.codeschool.com/>
 * 中文翻译文档(部分可能已过时):<https://leeon.gitbooks.io/devtools/content/learn_basic/overview.html>
+* [Chrome Dev Tools使用技巧](http://gold.xitu.io/entry/5642a9ee60b27f7a01823288)
 
 ### Firebug (跨平台)
 Firebug功能与Chrome Dev Tools相似, 不过它是Firefox第三方插件, 需要手动到Firefox扩展官网下载安装.
