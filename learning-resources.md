@@ -6,6 +6,14 @@
 * [Atom](https://atom.io/) Github出品的跨平台编辑器, 仿Sublime Text, 扩展也很丰富
 * [notepad++](http://notepad-plus-plus.org/zh/) windows平台, 免费开源, 支持多种语言, 多种文件编码, 支持扩展
 
+### Sublime Text相关网站
+* [官网](https://www.sublimetext.com/3)
+* [Package Control](https://packagecontrol.io/) ST扩展管理器官网
+* [Gif Sublime Text常用快捷键](http://blog.jobbole.com/82527/)
+* [Sublime Text快捷键及插件推荐](http://www.daqianduan.com/4820.html)
+
+Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，从 菜单栏 ➡ Preferences ➡️ Key Bindings - Default 查看所有快捷键的默认配置文件。
+
 ### 编辑器扩展
 * [Emmet](http://emmet.io/) 通过易记的缩写形式(支持模糊匹配)来快速生成HTML和CSS, 并配有代码提示, 大大提供输入效率, 减少输错情况.
 
@@ -73,7 +81,10 @@ koala是一个前端预处理器言图形编译工具，支持Less、Sass、Coff
 ### Chrome Dev Tools (跨平台)
 Chrome Dev Tools(Google开发者工具)已内置在Chrome浏览器中, 可以方便的审查HTML元素, 查看源码, 修改调试样式, 调试js代码(支持断点调试) , 记录网络请求, 监控页面执行性能等功能.
 
-浏览器下载: <http://www.google.com/chrome/>， 官方文档：<https://developer.chrome.com/devtools>, 视频教程：<http://discover-devtools.codeschool.com/>，中文翻译文档(部分可能已过时):<https://leeon.gitbooks.io/devtools/content/learn_basic/overview.html>
+* 浏览器下载: <http://www.google.com/chrome/>
+* 官方文档：<https://developer.chrome.com/devtools>
+* 视频教程：<http://discover-devtools.codeschool.com/>
+* 中文翻译文档(部分可能已过时):<https://leeon.gitbooks.io/devtools/content/learn_basic/overview.html>
 
 ### Firebug (跨平台)
 Firebug功能与Chrome Dev Tools相似, 不过它是Firefox第三方插件, 需要手动到Firefox扩展官网下载安装.
