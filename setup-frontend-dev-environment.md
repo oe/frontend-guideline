@@ -11,7 +11,7 @@
 ### 基础配置
 由Sublime Text菜单项 Preferences -> Settings-User, 进入编辑器的自定义偏好设置, 在配置中插入以下配置项并保存:
 
-```json
+```
 {
     // 设置在80字符宽度处显示竖线，提示单行代码不要过长
     "rulers":
