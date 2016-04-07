@@ -423,20 +423,20 @@ console.log(typeof person);    // "undefined"
 // 对象的字面量
 // 不推荐
 var team = new Team();
-team.title = "AlloyTeam";
+team.title = 'AlloyTeam';
 team.count = 25;
 // 推荐
 var team = {
-    title: "AlloyTeam",
+    title: 'AlloyTeam',
     count: 25
 };
 
 // 数组的字面量
 // 不推荐
-var colors = new Array("red", "green", "blue");
+var colors = new Array('red', 'green', 'blue');
 var numbers = new Array(1, 2, 3, 4);
 // 推荐
-var colors = [ "red", "green", "blue" ];
+var colors = [ 'red', 'green', 'blue' ];
 var numbers = [ 1, 2, 3, 4 ];
 
 // 正则字面量
@@ -484,7 +484,7 @@ if (condition) {
     allowed();
 }
 
-var zhangsan = "zhangsan";    // 双斜线距离分号一个缩进, 双斜线后保留一个空格
+var zhangsan = 'zhangsan';    // 双斜线距离分号一个缩进, 双斜线后保留一个空格
 ```
 
 #### 多行注释
