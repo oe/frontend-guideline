@@ -29,7 +29,7 @@
 ```
 
 ### Package Control
-在Sublime Text中按 `ctrl+\``打开console，将以下代码粘贴进去并按回车执行. 也可以参考[官方详细说明](https://packagecontrol.io/installation)
+在Sublime Text中按 `ctrl+``打开console，将以下代码粘贴进去并按回车执行. 也可以参考[官方详细说明](https://packagecontrol.io/installation)
 
 ```
 import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
@@ -68,6 +68,38 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
         "URLEncode"
     ]
 }
+```
+
+#### 修正Emmet注释快捷键bug
+默认情况下安装Emmet后会导致css代码的注释方式变为`//`, 此为错误的注释方法, 会导致注释后部的样式无效。请采用下面的方法修正.
+
+由Sublime Text菜单项 Preferences -> Package-Settings -> Emmet -> Key Bindings-User, 将以下代码粘贴进去并保存
+
+```
+[
+  {
+        "keys": [
+            // osx 用户请改成 super+forward_slash
+            "ctrl+forward_slash"
+        ], 
+        "args": {
+            "action": "toggle_comment"
+        }, 
+        "command": "run_emmet_action", 
+        "context": [
+            {
+                "operand": "source.css, source.less, source.scss, source.postcss, text.xml, text.html - source", 
+                "operator": "equal", 
+                "match_all": true, 
+                "key": "selector"
+            }, 
+            {
+                "match_all": true, 
+                "key": "emmet_action_enabled.toggle_comment"
+            }
+        ]
+    }
+]
 ```
 
 ### 快捷键及插件使用
