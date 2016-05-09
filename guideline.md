@@ -33,11 +33,14 @@
 
 
 ## 编码规范
+
 ### 通用规范
+
 #### 缩进
 代 码文件统一使用2个空格来作为一次缩进, 不要使用tab或者tab与空格混用, 以保证代码在不同环境下显示一致.
 
 可在代码编辑器的配置中将一个tab的大小设置为2个空格.
+
 #### 注释
 根据需要，在可能的情况下给代码块(或者函数)做注释：这块实现了什么功能，它的目的是什么，为什么这种方案更好？（注释代码不是强制要求，视乎项目性质和复杂程度）
 #### 待办事项
@@ -122,7 +125,7 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 * CSS文件的引入一般放在head标签内, 以避免页面加载是出现页面闪烁的情况
 * 由团队自己开发的的CSS文件一般在第三方CSS文件之后引入, 以提升团队开发的样式的优先级, 方便修改第三方库的样式
 * 不要直接修改第三方CSS文件内的样式
-* 不要使用 `style` 标签去设置元素样式
+* 不要使用 `style` 属性去设置元素样式
 * 同时也应减少使用javascript 操作dom的style属性来修改样式, 推荐使用修改class的方式来修改样式
 * 尽量避免使用`style`标签来书写样式(404,500, 403等错误页面除外). 
 
@@ -252,7 +255,7 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 
 #### class 命名
 * 保持 class 命名为全小写，可以使用连字符（不要使用下划线和 camelCase 命名）。短划线应该作为相关类的自然间断。(例如，`.btn` 和 `.btn-danger`)。
-* 避免过度使用简写。`.btn` 可以很好地描述 *button*，但是 `.s` 不能代表任何元素。
+* 避免过度使用简写，不应少于三个字符。`.btn` 可以很好地描述 *button*，但是 `.s` 不能代表任何元素。
 * Class 的命名应该尽量短，也要尽量明确。
 * 使用有意义的名称；使用结构化或者作用目标相关，而不是抽象的名称。
 * 命名时使用最近的父节点或者父 class 作为前缀。
@@ -357,6 +360,7 @@ function foo(num) {
 * 逻辑块之间加空行增加可读性
 
 #### 变量命名
+* 变量名不应少于三个字符(循环中使用的迭代变量 i,j,k 等除外)，过短的名字不能体现其代表等意义，将使代码变得不可读
 * 标准变量采用驼峰标识
 * 使用的ID的地方一定全大写
 * 使用的URL的地方一定全大写
@@ -419,20 +423,20 @@ console.log(typeof person);    // "undefined"
 // 对象的字面量
 // 不推荐
 var team = new Team();
-team.title = "AlloyTeam";
+team.title = 'AlloyTeam';
 team.count = 25;
 // 推荐
 var team = {
-    title: "AlloyTeam",
+    title: 'AlloyTeam',
     count: 25
 };
 
 // 数组的字面量
 // 不推荐
-var colors = new Array("red", "green", "blue");
+var colors = new Array('red', 'green', 'blue');
 var numbers = new Array(1, 2, 3, 4);
 // 推荐
-var colors = [ "red", "green", "blue" ];
+var colors = [ 'red', 'green', 'blue' ];
 var numbers = [ 1, 2, 3, 4 ];
 
 // 正则字面量
@@ -480,7 +484,7 @@ if (condition) {
     allowed();
 }
 
-var zhangsan = "zhangsan";    // 双斜线距离分号一个缩进, 双斜线后保留一个空格
+var zhangsan = 'zhangsan';    // 双斜线距离分号一个缩进, 双斜线后保留一个空格
 ```
 
 #### 多行注释
@@ -542,11 +546,11 @@ var PAGE_SIZE = 10;
 * `eval` 非特殊业务， 禁止使用
 * `with` 非特殊业务， 禁止使用
 
-### Emmet
-Emmet是一款代码编辑器的插件, 支持多种流行的的编辑器. 通过它, 可以通过输入缩写来得到相应的HTML或者CSS代码, 大大提高输入效率.
 
-官方网站: <http://emmet.io/>
+## 学习资料
 
+[学习资料](./learning-resources.md)
 
-
+## 其他开发规范
+[code guide, bootcss](http://codeguide.bootcss.com/)
 
