@@ -3,7 +3,7 @@
 ## 软件安装
 1. [Download Sublime Text](https://www.sublimetext.com/3)
 2. [Download Nodejs](https://nodejs.org/en/download/) (windows 系统请下载msi版本)  
-    nodejs 安装完成之后，打开命令行，粘贴 `npm install less jade coffeelint csslint jshint grunt-cli gulp -g` 并回车执行
+	nodejs 安装完成之后，打开命令行，粘贴 `npm install less jade coffeelint csslint jshint grunt-cli gulp -g` 并回车执行
 3. [Download Prepros](https://prepros.io/downloads)
 
 ## Sublime Text
@@ -13,17 +13,17 @@
 
 ```
 {
-    // 设置在80字符宽度处显示竖线，提示单行代码不要过长
-    "rulers":
-    [
-        80
-    ],
-    // 单个tab大小为2个空格
-    "tab_size": 2,
-    // 自动将tab转换为空格
-    "translate_tabs_to_spaces": true,
-    // 自动换行
-    "word_wrap": true
+	// 设置在80字符宽度处显示竖线，提示单行代码不要过长
+	"rulers":
+	[
+		80
+	],
+	// 单个tab大小为2个空格
+	"tab_size": 2,
+	// 自动将tab转换为空格
+	"translate_tabs_to_spaces": true,
+	// 自动换行
+	"word_wrap": true
 }
 
 ```
@@ -40,67 +40,36 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 
 ```js
 {
-    "bootstrapped": true,
-    "in_process_packages":
-    [
-    ],
-    "installed_packages":
-    [
-        "AlignTab",
-        "AutoFileName",
-        "BracketHighlighter",
-        "ConvertToUTF8",
-        "DocBlockr",
-        "Emmet",
-        "HTML-CSS-JS Prettify",
-        "JS Snippets",
-        "LESS",
-        "MarkdownEditing",
-        "Nodejs",
-        "Package Control",
-        "SideBarEnhancements",
-        "SublimeCodeIntel",
-        "SublimeLinter",
-        "SublimeLinter-csslint",
-        "SublimeLinter-html-tidy",
-        "SublimeLinter-jshint",
-        "Trimmer",
-        "URLEncode"
-    ]
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AlignTab",
+		"AutoFileName",
+		"BracketHighlighter",
+		"ConvertToUTF8",
+		"DocBlockr",
+		"Emmet",
+		"HTML-CSS-JS Prettify",
+		"JS Snippets",
+		"LESS",
+		"MarkdownEditing",
+		"Nodejs",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"Trimmer",
+		"URLEncode"
+	]
 }
 ```
 
-#### 修正Emmet注释快捷键bug
-默认情况下安装Emmet后会导致css代码的注释方式变为`//`, 此为错误的注释方法, 会导致注释后部的样式无效。请采用下面的方法修正.
-
-由Sublime Text菜单项 Preferences -> Package-Settings -> Emmet -> Key Bindings-User, 将以下代码粘贴进去并保存
-
-```
-[
-  {
-        "keys": [
-            // osx 用户请改成 super+forward_slash
-            "ctrl+forward_slash"
-        ], 
-        "args": {
-            "action": "toggle_comment"
-        }, 
-        "command": "run_emmet_action", 
-        "context": [
-            {
-                "operand": "source.css, source.less, source.scss, source.postcss, text.xml, text.html - source", 
-                "operator": "equal", 
-                "match_all": true, 
-                "key": "selector"
-            }, 
-            {
-                "match_all": true, 
-                "key": "emmet_action_enabled.toggle_comment"
-            }
-        ]
-    }
-]
-```
 
 ### 快捷键及插件使用
 1. [常用快捷键](http://www.daqianduan.com/4820.html)
