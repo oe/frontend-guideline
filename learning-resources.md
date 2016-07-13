@@ -18,7 +18,7 @@ Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，�
 ### 编辑器扩展
 * [Emmet :thumbsup:](http://emmet.io/) 通过易记的缩写形式(支持模糊匹配)来快速生成HTML和CSS, 并配有代码提示, 大大提供输入效率, 减少输错情况.
 
-## 编程语言API参考文档大全
+## API文档查看器 Docset App
 集合各种流行编程语言的API文档，方便进行检索查询。下列软件，可根据自身需要，择一即可。
 
 * [Devdocs :thumbsup:](https://devdocs.io/) 在线的API文档合集，并且可将数据缓存至浏览器本地
