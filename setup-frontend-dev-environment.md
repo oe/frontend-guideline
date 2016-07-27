@@ -86,6 +86,8 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 		"SublimeLinter-jshint",
 		// js 编码风格校验
 		"SublimeLinter-jscs",
+		// 根据设定的代码风格，快速格式化代码
+		"JSCS-Formatter",
 		// 快速清除空白字符
 		"Trimmer",
 		// 字符串URL编码及解码工具
@@ -116,7 +118,8 @@ import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc5
 ```json
 {
     "preset": "airbnb",
-    "requireTrailingComma": false
+    "requireTrailingComma": false,
+    "safeContextKeyword": "me"
 }
 ```
 
