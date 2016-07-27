@@ -36,6 +36,7 @@ Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，�
 ## HTML
 * [Html 学习](http://zh.html.net/tutorials/html/)
 * [Html 参考手册](http://w3school.com.cn/html/index.asp)
+* [Marksheet :thumbsup:](http://marksheet.io/) html & css 学习教程，in English
 
 ## CSS
 * [CSS学习](http://www.w3school.com.cn/css/)
@@ -46,6 +47,8 @@ Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，�
 * [Can I Use :thumbsup:](http://caniuse.com/) 浏览器js/css特性兼容性查询
 * [Modernizr :thumbsup:](https://modernizr.com/) 检测浏览器特性的js库
 
+## Git 版本控制工具
+* [Try git](https://try.github.io/) github 提供的交互教程
 
 ## 前端开发规范
 [前端开发规范 :thumbsup:](./guideline.md)
