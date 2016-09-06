@@ -104,13 +104,16 @@ Chrome Dev Tools(Google开发者工具)已内置在Chrome浏览器中, 可以方
 在电脑上使用 Chrome (版本不小于32) 可调试 android (版本不小于4.0)上 打开的web页面，详细开参阅[官方文档](https://developers.google.com/web/tools/chrome-devtools/debug/remote-debugging/remote-debugging).
 
 使用步骤如下(先保证android和chrome版本满足要求):
+
 1. 开启 android 的开发者调试功能: 进入 设置 -> 开发者选项 -> 启用USB 调试。由于国产定制的android UI乱七八糟，设置各不一样，如若找不到相关设置项，请自行搜索解决
 2. 使用 USB 链接电脑和手机
 3. 在电脑 chrome 上打开地址 [chrome://inspect/](chrome://inspect/)(需手动拷贝然后复制到地址栏打开), 在该页面即可看到已连接的手机及手机上打开的网页，点击 **Inspect** 即可调试
-    如果你在大陆，电脑网络未进行特殊设置，那么毫无意外，点开 Inspect 后你会看到一个空白页面，这是因为调试用到的代理页面 [chrome-devtools-frontend.appspot.com](chrome-devtools-frontend.appspot.com) 被屏蔽所致，想办法解除屏蔽即可正常调试。
+
+    > 如果你在大陆，电脑网络未进行特殊设置，那么毫无意外，点开 Inspect 后你会看到一个空白页面，这是因为调试用到的代理页面 [chrome-devtools-frontend.appspot.com](chrome-devtools-frontend.appspot.com) 被屏蔽所致，想办法解除屏蔽即可正常调试。
 
 #### 使用Chrome Dev Tools 调试 iOS 上 Safari 打开的页面
 调试iOS上Safari打开的页面一般只能借助Mac电脑上的Safari，而Mac上的Safari调试功能薄弱，且需要有一台Mac电脑，这给调试带来诸多不便。 按以下步骤，即可在电脑chrome上调试iOS Safari打开的页面:
+
 1. 安装 ios webkit debug proxy by Google: Mac & linux 请 [安装官方版](https://github.com/google/ios-webkit-debug-proxy), window 用户请 [安装window 分支](https://github.com/artygus/ios-webkit-debug-proxy-win32)
 2. 开启iOS上Safari的调试：进入 设置 -> Safari -> 高级 -> Web 审查器，将其启用
 3. 使用 USB 链接电脑和手机
