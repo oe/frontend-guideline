@@ -106,7 +106,7 @@ Chrome Dev Tools(Google开发者工具)已内置在Chrome浏览器中, 可以方
 使用步骤如下(先保证android和chrome版本满足要求):
 
 1. 开启 android 的开发者调试功能: 进入 设置 -> 开发者选项 -> 启用USB 调试。由于国产定制的android UI乱七八糟，设置各不一样，如若找不到相关设置项，请自行搜索解决
-2. 使用 USB 链接电脑和手机
+2. 使用 USB 链接电脑和手机, 并在手机弹出的对话框上信任电脑，即允许电脑调试
 3. 在电脑 chrome 上打开地址 [chrome://inspect/](chrome://inspect/)(需手动拷贝然后复制到地址栏打开), 在该页面即可看到已连接的手机及手机上打开的网页，点击 **Inspect** 即可调试
 
     > 如果你在大陆，电脑网络未进行特殊设置，那么毫无意外，点开 Inspect 后你会看到一个空白页面，这是因为调试用到的代理页面 [chrome-devtools-frontend.appspot.com](chrome-devtools-frontend.appspot.com) 被屏蔽所致，想办法解除屏蔽即可正常调试。
