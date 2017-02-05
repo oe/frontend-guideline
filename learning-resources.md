@@ -8,6 +8,7 @@
 * [jQuery 手册 :thumbsup:](http://hemin.cn/jq/downloads.html) 可下载chm离线版
 * [Awesome Javascript](https://github.com/wwsun/awesome-javascript)
 * [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
+* [clean code javascript](https://github.com/ryanmcdermott/clean-code-javascript)
 
 ## HTML
 * [Html 学习](http://zh.html.net/tutorials/html/)
