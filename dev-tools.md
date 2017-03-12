@@ -54,3 +54,28 @@ codekit和prepos一样, 除了prepos的功能, 还支持管理维护第三方库
 koala是一个前端预处理器言图形编译工具，支持Less、Sass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。
 
 官方网站: <http://koala-app.com/index-zh.html>
+
+
+## 前端代码在线练习及代码片段分享网站
+你可以在下述网站在线编写前端代码、查看效果(仅需浏览器，电脑无须安装编辑器及服务器)，并分享给他人(一般均需在网站注册)，也可以在网站上搜索他人分享的有用的代码片段。
+
+支持写 html,css, js(包括引入第三方库):
+
+- <https://jsfiddle.net/>
+- <https://codepen.io/>
+- <https://jsbin.com/>
+- <http://liveweave.com/>
+- <https://plnkr.co/>
+
+仅支持 html, css:
+
+- <http://cssdeck.com/>
+- <http://dabblet.com/>
+
+## JS函数性能在线测试
+当达成一个目的有多种实现方法，你想选择性能最佳的一个时(比如将字符串转换为数字可以用 `+n`, `parseInt(n, 10)`, `Number(n)`), 可在下列网站编写性能测试用例，根据测试结果选择最佳。亦可在下列网站上搜索其他人的性能测试用例。
+
+- <https://jsperf.com/>
+
+
+

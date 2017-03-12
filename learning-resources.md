@@ -14,6 +14,7 @@
 * [Html 学习](http://zh.html.net/tutorials/html/)
 * [Html 参考手册](http://w3school.com.cn/html/index.asp)
 * [Marksheet :thumbsup:](http://marksheet.io/) html & css 学习教程，in English
+* [Html reference :thumbsup:](http://htmlreference.io/) html 手册，可以根据标签类型快速筛选，in English
 
 ## CSS
 * [CSS学习](http://www.w3school.com.cn/css/)
