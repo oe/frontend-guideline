@@ -9,6 +9,7 @@
 * [Awesome Javascript](https://github.com/wwsun/awesome-javascript)
 * [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
 * [clean code javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+* [如何使用原生JS实现jQuery的功能](https://github.com/oneuijs/You-Dont-Need-jQuery)
 
 ## HTML
 * [Html 学习](http://zh.html.net/tutorials/html/)
