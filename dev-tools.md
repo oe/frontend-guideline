@@ -77,5 +77,21 @@ koala是一个前端预处理器言图形编译工具，支持Less、Sass、Coff
 
 - <https://jsperf.com/>
 
+## localtunnel
+将本机web服务暴露到互联网，得到一个外网可以访问域名(支持https)，方便局域网外的用户访问你的web服务。
 
+官方Repo <https://github.com/localtunnel/localtunnel>
+
+### 安装
+```sh
+npm install -g localtunnel
+```
+### 使用
+
+```sh
+# 使用 --port 指定本机web服务使用的端口
+lt --port 8000
+```
+
+执行完命令即可得到一个外网可访问的地址，默认返回 `https` 地址，可手动改为 `http` 来访问。
 
