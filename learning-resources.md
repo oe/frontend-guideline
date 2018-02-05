@@ -36,6 +36,10 @@
 * [Github Flavoured Markdown 语法 :thumbsup:](https://help.github.com/articles/github-flavored-markdown/) Github扩展的markdown，支持语法高亮
 * [Haroopress :thumbsup:](http://pad.haroopress.com/user.html#download)(Markdown编辑器)
 
+## 其他
+* [devhints](https://devhints.io) (英文) 开发文档快捷查看表, 包含各种开发库(React, jQuery等)及 各种工具(vim, bash, vscode等) 的说明文档, 比原始文档更容易阅读使用.
+* [tldr](https://www.npmjs.com/package/tldr) 命令行帮助文档工具, 可用于替代 `man`, 使用 `npm install -g tldr` 即可安装, 帮助文档内容比 `man` 可读性更高, 也更简洁.
+
 
 
 ## 相关阅读
