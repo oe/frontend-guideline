@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css" />
+    <title>前端开发指引</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: '前端开发指引',
+        repo: 'evecalm/frontend-guideline',
+        loadSidebar: 'sidebar.md',
+        search: {
+          placeholder: '搜索'
+        },
+        homepage: 'home.md',
+        auto2top: true,
+        subMaxLevel: 2,
+        // pagination: {
+        //   previousText: 'Prev',
+        //   nextText: 'Next'
+        // },
+        markdown: {
+          renderer: {
+            image: function(url, title, alt) {
+              var href = url
+              if (!/^\//.test(url)) {
+                href =
+                  location.pathname +
+                  location.hash
+                    // 移除hash ? 末尾内容
+                    .replace(/\?.*$/, '')
+                    // 移除hash 首部的 #/
+                    .replace(/\#\/?/, '')
+                    // 移除hash 路径中最后一节
+                    .replace(/[^/]*$/, '') +
+                  url.replace(/^\.\//, '')
+              }
+              return '<img src="' + href + '" alt="' + alt + '">'
+            },
+            // 优化链接处理， ./ 路径美化
+            link: function(href, title, text) {
+              var target = ''
+              // 绝对路径使用 新窗口 打开
+              if (/^http/i.test(href)) {
+                target = ' target="_blank"'
+              } else {
+                // 相对路径
+                href =
+                  '#' +
+                  href
+                    // 去除起始的 .
+                    .replace(/^\./, '')
+                    // 若第一个字符不是 / 则使用 / 打头
+                    .replace(/^\b(?=[^/])/, '/')
+                    // 若路径末尾为 .md 结尾，则去除 .md
+                    .replace(/(\.md)(\?.*)?$/, '$2')
+              }
+              var link = '<a href=' + href + target
+              if (title) link += ' title="' + title + '"'
+              link += '>' + text + '</a>'
+              return link
+            }
+          }
+        }
+      }
+    </script>
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  </body>
+</html>
