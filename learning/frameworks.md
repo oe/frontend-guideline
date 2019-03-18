@@ -1,5 +1,12 @@
 # 常用的第三方库及框架
 
+## React
+
+- [Github 项目主页](https://github.com/facebook/react)
+- [英文官网](https://reactjs.org/docs/getting-started.html)
+- [中文网站](https://www.reactjscn.com/docs/getting-started.html) 相比英文官网, 文档会落后几个小版本
+- [React 常见技巧](https://hateonion.me/books/react-bits-cn/)
+
 ## 移动应用框架
 
 - [Framework 7](https://framework7.io/) 体验接近原生的移动应用框架 [source]()

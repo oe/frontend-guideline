@@ -9,3 +9,7 @@
 ### CSS
 
 - [CSS 灵感](https://chokcoco.github.io/CSS-Inspiration/#/)
+
+### JS
+
+- [13kb 的 JS 游戏](https://js13kgames.com/)
