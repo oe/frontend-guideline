@@ -1,5 +1,9 @@
 # 开发工具
 
+## SHELL
+
+- [打造高效工作环境 – SHELL 篇](https://coolshell.cn/articles/19219.html)
+
 ## 编辑器
 
 - [Sublime Text :thumbsup:](https://www.sublimetext.com/3) 跨平台开发神器, 有丰富的扩展支持。 付费，可免费无限期试用.
