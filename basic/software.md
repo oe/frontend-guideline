@@ -91,3 +91,11 @@ koala 是一个前端预处理器言图形编译工具，支持 Less、Sass、Co
 当达成一个目的有多种实现方法，你想选择性能最佳的一个时(比如将字符串转换为数字可以用 `+n`, `parseInt(n, 10)`, `Number(n)`), 可在下列网站编写性能测试用例，根据测试结果选择最佳。亦可在下列网站上搜索其他人的性能测试用例。
 
 - <https://jsperf.com/>
+
+## 工具
+
+- [DB 关系图制作工具](https://dbdiagram.io/home)
+
+## 其他参考
+
+- [Linux Desktop Setup](https://hookrace.net/blog/linux-desktop-setup/)

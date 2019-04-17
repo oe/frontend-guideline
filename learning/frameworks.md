@@ -31,6 +31,10 @@
 - [Spine](https://spine.github.io/) 使用 coffeescript 编写的 MVC 库 [source](https://github.com/spine/spine)
 - [Backbones](http://backbonejs.org/) 老牌的 MVC 库 [source](https://github.com/jashkenas/backbone/)
 
+### React
+
+- [30 天学习 react (英文)](https://github.com/fullstackreact/30-days-of-react)
+
 ### 模块化管理工具
 
 - [requirejs](http://requirejs.org/)国际流行的 AMD 风格的模块化管理工具 [source](https://github.com/requirejs/requirejs)

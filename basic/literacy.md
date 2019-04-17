@@ -6,6 +6,7 @@
 
 - [English-level-up-tips-for-Chinese](https://github.com/byoungd/English-level-up-tips-for-Chinese)
 - [专为程序员编写的英语学习指南](https://github.com/yujiangshui/An-English-Guide-for-Programmers)
+- [人人都能用英语](https://github.com/xiaolai/everyone-can-use-english)
 
 ## 主动思考的能力及好奇心
 
@@ -51,5 +52,7 @@ Google 的高级搜索指令:
 其他搜索引擎的高级搜索指令和 Google 大同小异，甚至连百度也有自己的[搜索指令](http://help.baidu.com/question?prod_en=news&class=509&id=3209)
 
 ## 如何提问
+
+- [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
 
 ## 良好的学习能力
