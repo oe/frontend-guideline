@@ -45,3 +45,7 @@
 - 安全及优化
 - SEO/统计/广告联盟
 - ❤️ 捐助
+
+## 类似手册
+- [Front-End Developer Handbook 2019(英文)](https://frontendmasters.com/books/front-end-handbook/2019/)
+- [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)

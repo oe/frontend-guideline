@@ -35,6 +35,9 @@
 
 - [30 天学习 react (英文)](https://github.com/fullstackreact/30-days-of-react)
 
+
+[React/JSX 编码规范 (英文)](https://github.com/airbnb/javascript/blob/master/react/README.md)
+
 ### 模块化管理工具
 
 - [requirejs](http://requirejs.org/)国际流行的 AMD 风格的模块化管理工具 [source](https://github.com/requirejs/requirejs)

@@ -8,6 +8,9 @@
 
 ## shell, terminal & ssh
 
+### linux/mac
+- [Linux Command](https://github.com/jaywcjlove/linux-command)
+
 ## 算法及数据结构
 
 - [数据结构和算法动态可视化](https://visualgo.net/zh)

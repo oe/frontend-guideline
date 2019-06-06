@@ -675,4 +675,5 @@ var PAGE_SIZE = 10
 
 ## 其他开发规范
 
-[code guide, bootcss](http://codeguide.bootcss.com/)
+[bootcss 编码规范](http://codeguide.bootcss.com/)
+[JavaScript Style Guide by AirBnb(英文)](https://github.com/airbnb/javascript)
