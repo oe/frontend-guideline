@@ -4,9 +4,10 @@
 
 相关学习资料:
 
-- [English-level-up-tips-for-Chinese](https://github.com/byoungd/English-level-up-tips-for-Chinese)
+- [英语进阶指南](https://github.com/byoungd/English-level-up-tips-for-Chinese)
 - [专为程序员编写的英语学习指南](https://github.com/yujiangshui/An-English-Guide-for-Programmers)
 - [人人都能用英语](https://github.com/xiaolai/everyone-can-use-english)
+- [Federal plain language guidelines(英语)](https://www.plainlanguage.gov/guidelines/)
 
 ## 主动思考的能力及好奇心
 

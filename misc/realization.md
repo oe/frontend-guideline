@@ -24,5 +24,6 @@
 
 - [远程工作相关的资料](https://github.com/greatghoul/remote-working)
 - [远程工作常用软件工具(英文)](https://www.remote.tools/)
+- [remote-friendly companies](https://remoteintech.company/) [source repo](https://github.com/remoteintech/remote-jobs)
 
 ## 个人项目

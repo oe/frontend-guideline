@@ -24,4 +24,11 @@
 
 ## 字符编码
 
+## 正则表达式
+[轻松学习正则表达式](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
+
 ## DRY, KISS, YAGNI & SOLID
+
+
+## 相关推荐链接
+[计算机专业的学生应该知道什么(英语)](http://matt.might.net/articles/what-cs-majors-should-know/)
