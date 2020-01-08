@@ -2,6 +2,9 @@
 
 本章教你如何将技术变现
 
+## 简历
+- [如何写一份有效的技术简历？](http://www.ruanyifeng.com/blog/2020/01/technical-resume.html)
+
 ## 公司信息
 
 ### 黑白名单
