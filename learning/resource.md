@@ -18,6 +18,10 @@
 
 - [13kb 的 JS 游戏](https://js13kgames.com/)
 
+
+### 综合
+- [简短代码片段分享(30 seconds of code)](https://www.30secondsofcode.org/)
+
 ## 源码分析系列
 
 ### Vue 源码解析
