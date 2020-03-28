@@ -4,6 +4,8 @@
 
 书的内容大多是引用外部学习资料，外加一些必要的说明。本书目录大体是按照从入门到精通的一个循序渐进的顺序编排, 但是由于知识的网状的, 顺序或有不足, 你也可以查看左侧目录, 根据你的实际需要查看相关章节. 如果你是一个前端新人,建议你从头至尾认真阅读。
 
+P.S. 如果你还不会使用电脑，可点击 [从"如何开关机"到"如何爬数据"](https://www.zhihu.com/question/352321370/answer/989335660) 查看学习电脑的基本使用知识。
+
 本书 Github 地址: <https://github.com/evecalm/frontend-guideline>
 
 前端知识图谱, 截取自[developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)(web 开发者学习路线图)中的 web 前端开发部分.
