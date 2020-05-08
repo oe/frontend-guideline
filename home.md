@@ -48,6 +48,7 @@ P.S. 如果你还不会使用电脑，可点击 [从"如何开关机"到"如何�
 - SEO/统计/广告联盟
 - ❤️ 捐助
 
-## 类似手册
+## 类似手册(网站)
 - [Front-End Developer Handbook 2019(英文)](https://frontendmasters.com/books/front-end-handbook/2019/)
 - [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
+- [深入浅出现代 Web 编程](https://fullstackopen.com/zh/)
