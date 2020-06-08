@@ -58,3 +58,8 @@ lt --port 8000
 ```
 
 执行完命令即可得到一个外网可访问的地址，默认返回 `https` 地址，可手动改为 `http` 来访问。
+
+## 代理
+
+### lightrpoxy
+[lightproxy](https://github.com/alibaba/lightproxy)

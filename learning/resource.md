@@ -5,6 +5,7 @@
 - [全栈前端工程师笔记(英文)](https://github.com/8483/notes)
 
 ## 资讯/博客
+- [奇趣网站收藏家](https://fuun.fun/)
 
 ## 资源站
 
