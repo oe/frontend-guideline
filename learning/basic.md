@@ -27,6 +27,7 @@
 - [CSS 参考手册 :thumbsup:](http://css.doyoe.com/) 可下载 chm 离线版
 - [A to Z css](http://www.atozcss.com/ 'CSS Screencasts for Designers & Developers')
 - [CSS Reference](http://cssreference.io/) 可视化的 CSS 使用指南
+- [CSS Pro Tips](https://github.com/AllThingsSmitty/css-protips)
 
 ## 前端开发规范
 

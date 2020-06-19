@@ -626,6 +626,8 @@ var zhangsan = 'zhangsan' // 双斜线距离分号一个缩进, 双斜线后保�
 - 浏览器特殊的 HACK 代码
 - 业务逻辑强相关的代码
 
+[要不要写注释(谷歌团队的建议, 英文)](https://testing.googleblog.com/2017/07/code-health-to-comment-or-not-to-comment.html)
+
 #### 文档注释
 
 对于函数以及全局变量, 需要有详细的文档注释. 文档注释是使用`@param` `@return`等标签来注解, 请参考 <http://usejsdoc.org/>
