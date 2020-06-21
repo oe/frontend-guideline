@@ -55,3 +55,4 @@
 - [Frontend Handbook](http://www.frontendhandbook.com/)
 - [Web Design Stack](http://webdesignstack.com/)
 - [Web Design Repo](http://www.webdesignrepo.com/)
+- [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
