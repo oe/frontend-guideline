@@ -13,6 +13,7 @@
 - [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
 - [clean code javascript](https://github.com/ryanmcdermott/clean-code-javascript)
 - [如何使用原生 JS 实现 jQuery 的功能](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
+- [深入Javascript(英文)](https://exploringjs.com/deep-js/toc.html)
 
 ## HTML
 
