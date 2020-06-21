@@ -57,3 +57,4 @@
 - [Web Design Stack](http://webdesignstack.com/)
 - [Web Design Repo](http://www.webdesignrepo.com/)
 - [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
+- [免费软件开发教程合集(英文, 视频托管在 YouTube)](https://www.tutorialist.io/)
