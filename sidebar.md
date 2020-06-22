@@ -1,7 +1,7 @@
 - [介绍](./home)
 - [准备工作](./basic/)
   - [开发人员基本素养](./basic/literacy)
-  - [通用知识](./basic/common-sense)
+  - [开发软件所需的通用知识](./basic/common-sense)
   - [工欲善其事必先利其器(硬件篇)](./basic/device)
   - [工欲善其事必先利其器(软件篇)](./basic/software)
 - [学习](./learning/)
