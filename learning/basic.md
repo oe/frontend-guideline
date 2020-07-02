@@ -3,17 +3,34 @@
 标记有 :thumbsup: 的均为推荐项
 
 ## Javascript
+学习Javascript时, 建议直接在浏览器中练习, 可按下述步骤操作:
+1. 推荐使用Chrome, [下载并安装Chrome](https://www.google.cn/chrome/), 建议将其设置为默认浏览器
+2. 打开Chrome的开发者工具, 在 Console 中敲代码, 按回车执行JS: 
+   1. 启动 Chrome
+   2. 打开任意网站
+   3. 右键点击网页并选择菜单 **Inspect** 以显示 开发者工具
+   4. 激活弹出面板(即 开发者工具)中的 **Console** 
+   5. 输入JS代码(若想换行可使用 shift + enter 快捷键), 按回车执行代码
 
-- [Javascript interactive courses](https://learnjavascript.online/)
+这样, 使用 Chrome 打开下述网站时, 可以边看教程边练习.
+
+### 必看
+- [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/), 请使用这作为学习Javascript的第一步, 里面包含了JS语言基础、浏览器API、DOM API的详细介绍
+- [JS交互课程 :thumbsup:](https://learnjavascript.online/), 英文, 如果你的英文不错, 推荐在这个网站再次学习, 强化对JS语言对使用. 该网站提供交互式课程, 一步一步引导你深入学习, 非常适合初学者
+
+### 进阶提升
 - [Javascript 秘密花园 :thumbsup:](http://bonsaiden.github.io/JavaScript-Garden/zh/) 介绍 javascript 常见问题
-- [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/)
-- [Javascript 参考手册 :thumbsup:](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript) 来自火狐开发者网络
-- [jQuery 手册 :thumbsup:](http://hemin.cn/jq/downloads.html) 可下载 chm 离线版
+- [整洁的Javascript代码](https://github.com/beginor/clean-code-javascript), 教你如何写出高质量的JS代码. (原始文档地址 [clean code javascript](https://github.com/ryanmcdermott/clean-code-javascript), 英文)
+- [如何使用原生 JS 实现 jQuery 的功能](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md) [jQuery](https://www.jquery123.com/)是一个简洁高效的JS工具库, 但是随着技术发展, 浏览器的更新换代, jQuery很多功能都可以使用原生JS轻松实现, 你不需要引入一个上百Kb的库来实现一个简单功能.
+- [王得发的JS](https://wtfjs.com/), 记录JS的诡异行为, 了解这些能避免JS的一些莫名奇妙的bug
+
+### 参考手册
+[Javascript 参考手册](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript) 来自w3c成员火狐编写的手册, 内容详尽且完善, 在使用JS语言及浏览器API时, 可在此网站查找详细的API或语言文档说明
+
+
 - [Awesome Javascript](https://github.com/wwsun/awesome-javascript)
-- [You Dont Know JS](https://github.com/getify/You-Dont-Know-JS)
-- [clean code javascript](https://github.com/ryanmcdermott/clean-code-javascript)
-- [如何使用原生 JS 实现 jQuery 的功能](https://github.com/nefe/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
 - [深入Javascript(英文)](https://exploringjs.com/deep-js/toc.html)
+
 
 ## HTML
 
