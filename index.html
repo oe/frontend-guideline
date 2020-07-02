@@ -43,7 +43,9 @@
                     .replace(/[^/]*$/, '') +
                   url.replace(/^\.\//, '')
               }
-              return '<img src="' + href + '" alt="' + alt + '">'
+              // 使用 title 来设置 img 属性, ![alt](url title), 如
+              // ![avatar](./avatar.jpg "width=200")
+              return '<img src="' + href + '" ' + (title || '') + ' alt="' + alt + '">'
             },
             // 优化链接处理， ./ 路径美化
             link: function(href, title, text) {
