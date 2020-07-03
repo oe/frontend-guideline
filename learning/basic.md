@@ -3,7 +3,7 @@
 标记有 :thumbsup: 的均为推荐项
 
 ## Javascript
-学习Javascript时, 建议直接在浏览器中练习, 可参考[本文档来操作](./learning/?id=%e5%ad%a6%e4%b9%a0-javascript)
+学习Javascript时, 建议直接在浏览器中练习, 可参考[本文档来操作](./learning/?id=使用-chrome-开发者工具学习)
 
 ### 必看
 - [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/), 请使用这作为学习Javascript的第一步, 里面包含了JS语言基础、浏览器API、DOM API的详细介绍
