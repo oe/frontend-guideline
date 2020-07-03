@@ -3,16 +3,7 @@
 标记有 :thumbsup: 的均为推荐项
 
 ## Javascript
-学习Javascript时, 建议直接在浏览器中练习, 可按下述步骤操作:
-1. 推荐使用Chrome, [下载并安装Chrome](https://www.google.cn/chrome/), 建议将其设置为默认浏览器
-2. 打开Chrome的开发者工具, 在 Console 中敲代码, 按回车执行JS: 
-   1. 启动 Chrome
-   2. 打开任意网站
-   3. 右键点击网页并选择菜单 **Inspect** 以显示 开发者工具
-   4. 激活弹出面板(即 开发者工具)中的 **Console** 
-   5. 输入JS代码(若想换行可使用 shift + enter 快捷键), 按回车执行代码
-
-这样, 使用 Chrome 打开下述网站时, 可以边看教程边练习.
+学习Javascript时, 建议直接在浏览器中练习, 可参考[本文档来操作](./learning/?id=%e5%ad%a6%e4%b9%a0-javascript)
 
 ### 必看
 - [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/), 请使用这作为学习Javascript的第一步, 里面包含了JS语言基础、浏览器API、DOM API的详细介绍
