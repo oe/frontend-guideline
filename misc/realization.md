@@ -22,8 +22,6 @@
 - [前端面试每日 3+1（每日三问）](https://github.com/haizlin/fe-interview)
 - [前端校招面试题](https://github.com/CavsZhouyou/Front-End-Interview-Notebook)
 
-## 外快
-
 ## 远程工作
 
 - [远程工作相关的资料](https://github.com/greatghoul/remote-working)
@@ -31,3 +29,10 @@
 - [remote-friendly companies](https://remoteintech.company/) [source repo](https://github.com/remoteintech/remote-jobs)
 
 ## 个人项目
+- [我如何通过 Github 的捐助每年获得10万美元](https://calebporzio.com/i-just-hit-dollar-100000yr-on-github-sponsors-heres-how-i-did-it), 英文文章, 介绍自己如何通过开发开源项目获得捐助
+
+## 外快
+
+## 其他
+
+- [如何不靠运气变得富有](https://github.com/taosue/how-to-get-rich-without-getting-lucky/), 这篇文章和技术无关了, 但也值得一读
