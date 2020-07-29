@@ -95,6 +95,7 @@ koala 是一个前端预处理器言图形编译工具，支持 Less、Sass、Co
 ## 工具
 
 - [DB 关系图制作工具](https://dbdiagram.io/home)
+- [mockups 给图加设备的壳](https://deviceshots.com/)
 
 ## 其他参考
 
