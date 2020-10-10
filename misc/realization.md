@@ -21,6 +21,7 @@
 - [react 面试常见问题(英文)](https://github.com/semlinker/reactjs-interview-questions)
 - [前端面试每日 3+1（每日三问）](https://github.com/haizlin/fe-interview)
 - [前端校招面试题](https://github.com/CavsZhouyou/Front-End-Interview-Notebook)
+- [JavaScript Interview Questions & Answers](https://github.com/sudheerj/javascript-interview-questions)
 
 ## 远程工作
 
