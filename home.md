@@ -6,7 +6,7 @@
 
 P.S. 如果你还不会使用电脑，可点击 [从"如何开关机"到"如何爬数据"](https://www.zhihu.com/question/352321370/answer/989335660) 查看学习电脑的基本使用知识。
 
-本书 Github 地址: <https://github.com/oe/frontend-guideline>
+本书 Github 仓库地址: <https://github.com/oe/frontend-guideline>, 还在持续完善中, 如有任何问题建议, 请提交[issue](https://github.com/oe/frontend-guideline/issues)反馈.
 
 <!-- 前端知识图谱, 截取自[developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)(web 开发者学习路线图)中的 web 前端开发部分.
 
