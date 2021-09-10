@@ -15,19 +15,20 @@
 
 ## 面试
 
-- [前端面试手册](https://github.com/yangshun/front-end-interview-handbook/blob/master/Translations/Chinese/README.md)
-- [前端面试常见问题](https://github.com/qiu-deqing/FE-interview), [Awesome-Interview](https://github.com/Awesome-Interview/Awesome-Interview)
-- [每周十道前端大厂面试题，并收集大家在大厂面试中遇到的难题](https://github.com/airuikun/Weekly-FE-Interview)
-- [react 面试常见问题(英文)](https://github.com/semlinker/reactjs-interview-questions)
-- [前端面试每日 3+1（每日三问）](https://github.com/haizlin/fe-interview)
-- [前端校招面试题](https://github.com/CavsZhouyou/Front-End-Interview-Notebook)
-- [JavaScript Interview Questions & Answers](https://github.com/sudheerj/javascript-interview-questions)
+- [前端面试手册](https://github.com/yangshun/front-end-interview-handbook/blob/master/Translations/Chinese/README.md) ![GitHub Repo stars](https://img.shields.io/github/stars/yangshun/front-end-interview-handbook?style=social)
+- [前端面试常见问题](https://github.com/qiu-deqing/FE-interview), [Awesome-Interview](https://github.com/Awesome-Interview/Awesome-Interview) ![GitHub Repo stars](https://img.shields.io/github/stars/Awesome-Interview/Awesome-Interview?style=social)
+- [每周十道前端大厂面试题，并收集大家在大厂面试中遇到的难题](https://github.com/airuikun/Weekly-FE-Interview) ![GitHub Repo stars](https://img.shields.io/github/stars/airuikun/Weekly-FE-Interview?style=social)
+- [react 面试常见问题(英文)](https://github.com/semlinker/reactjs-interview-questions) ![GitHub Repo stars](https://img.shields.io/github/stars/semlinker/reactjs-interview-questions?style=social)
+- [前端面试每日 3+1（每日三问）](https://github.com/haizlin/fe-interview) ![GitHub Repo stars](https://img.shields.io/github/stars/haizlin/fe-interview?style=social)
+- [前端校招面试题](https://github.com/CavsZhouyou/Front-End-Interview-Notebook) ![GitHub Repo stars](https://img.shields.io/github/stars/CavsZhouyou/Front-End-Interview-Notebook?style=social)
+- [JavaScript Interview Questions & Answers](https://github.com/sudheerj/javascript-interview-questions) ![GitHub Repo stars](https://img.shields.io/github/stars/sudheerj/javascript-interview-questions?style=social)
+- [Tech Interview Handbook](https://techinterviewhandbook.org/), [仓库](https://github.com/yangshun/tech-interview-handbook) ![GitHub Repo stars](https://img.shields.io/github/stars/yangshun/tech-interview-handbook?style=social)
 
 ## 远程工作
 
-- [远程工作相关的资料](https://github.com/greatghoul/remote-working)
+- [远程工作相关的资料](https://github.com/greatghoul/remote-working) ![GitHub Repo stars](https://img.shields.io/github/stars/greatghoul/remote-working?style=social)
 - [远程工作常用软件工具(英文)](https://www.remote.tools/)
-- [remote-friendly companies](https://remoteintech.company/) [source repo](https://github.com/remoteintech/remote-jobs)
+- [remote-friendly companies](https://remoteintech.company/) [source repo](https://github.com/remoteintech/remote-jobs) ![GitHub Repo stars](https://img.shields.io/github/stars/remoteintech/remote-jobs?style=social)
 
 ## 个人项目
 - [我如何通过 Github 的捐助每年获得10万美元](https://calebporzio.com/i-just-hit-dollar-100000yr-on-github-sponsors-heres-how-i-did-it), 英文文章, 介绍自己如何通过开发开源项目获得捐助
@@ -36,4 +37,4 @@
 
 ## 其他
 
-- [如何不靠运气变得富有](https://github.com/taosue/how-to-get-rich-without-getting-lucky/), 这篇文章和技术无关了, 但也值得一读
+- [如何不靠运气变得富有](https://github.com/taosue/how-to-get-rich-without-getting-lucky/), 这篇文章和技术无关, 但也值得一读
