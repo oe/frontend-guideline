@@ -33,11 +33,16 @@
 ## CSS
 
 - [CSS 学习](http://www.w3school.com.cn/css/)
+- [谷歌推出的CSS学习指南](https://web.dev/learn/css/) 点击网页右下角可切换为中文 (网站已被屏蔽, 你需要一点手段才能正常访问)
 - [CSS 参考手册 :thumbsup:](http://css.doyoe.com/) 可下载 chm 离线版
 - [A to Z css](http://www.atozcss.com/ 'CSS Screencasts for Designers & Developers')
 - [CSS Reference](http://cssreference.io/) 可视化的 CSS 使用指南
 - [CSS Pro Tips](https://github.com/AllThingsSmitty/css-protips)
 - [Flexbox defense](http://www.flexboxdefense.com/) 使用游戏方式学习 CSS 的 Flex 布局
+
+### 相关
+* [css选择器练习](https://css-speedrun.netlify.app/)
+* [loading 动画生成](https://whirl.netlify.app/)
 
 ## 前端开发规范
 
@@ -61,8 +66,8 @@
 - [tldr](https://www.npmjs.com/package/tldr) 命令行帮助文档工具, 可用于替代 `man`, 使用 `npm install -g tldr` 即可安装, 帮助文档内容比 `man` 可读性更高, 也更简洁.
 
 ## 相关阅读
-
 - [Frontend Handbook](http://www.frontendhandbook.com/)
+- [谷歌推出的web.dev](https://web.dev/learn/) 点击网页右下角可将语言切换为中文, 内容讲解的非常详细(不知为何会被屏蔽, 你需要一点手段才能正常访问)
 - [Web Design Stack](http://webdesignstack.com/)
 - [Web Design Repo](http://www.webdesignrepo.com/)
 - [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)

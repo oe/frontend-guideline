@@ -11,6 +11,8 @@
 - [Atom](https://atom.io/) Github 出品的跨平台编辑器, 仿 Sublime Text, 扩展也很丰富
 - [notepad++](http://notepad-plus-plus.org/zh/) windows 平台, 免费开源, 支持多种语言, 多种文件编码, 支持扩展
 
+[编程字体选择](https://coding-fonts.css-tricks.com/), 个人推荐[fira-code](https://coding-fonts.css-tricks.com/fonts/fira-code/?language=js) 和 [cascadia-code](https://coding-fonts.css-tricks.com/fonts/cascadia-code/?language=js), 这两款字体均支持[连字](https://blog.evecalm.com/2020/05/about-font-and-character.html), 更容易阅读.
+
 ### Sublime Text 相关网站 :thumbsup:
 
 - [官网](https://www.sublimetext.com/3)
@@ -86,6 +88,9 @@ koala 是一个前端预处理器言图形编译工具，支持 Less、Sass、Co
 - <http://cssdeck.com/>
 - <http://dabblet.com/>
 
+支持各种语言的playground:
+- <https://riju.codes/>
+
 ## JS 函数性能在线测试
 
 当达成一个目的有多种实现方法，你想选择性能最佳的一个时(比如将字符串转换为数字可以用 `+n`, `parseInt(n, 10)`, `Number(n)`), 可在下列网站编写性能测试用例，根据测试结果选择最佳。亦可在下列网站上搜索其他人的性能测试用例。
@@ -96,6 +101,7 @@ koala 是一个前端预处理器言图形编译工具，支持 Less、Sass、Co
 
 - [DB 关系图制作工具](https://dbdiagram.io/home)
 - [mockups 给图加设备的壳](https://deviceshots.com/)
+- [开发者工具箱](https://10015.io/) 包含了颜色转换、编码转换、css生成、图片裁剪、JSON格式化等几十个工具
 
 ## 其他参考
 
