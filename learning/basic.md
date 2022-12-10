@@ -39,6 +39,7 @@
 - [CSS Reference](http://cssreference.io/) 可视化的 CSS 使用指南
 - [CSS Pro Tips](https://github.com/AllThingsSmitty/css-protips)
 - [Flexbox defense](http://www.flexboxdefense.com/) 使用游戏方式学习 CSS 的 Flex 布局
+- [Defensive css](https://defensivecss.dev) 编写更健壮、适配性更好的 CSS 的技巧
 
 ### 相关
 * [css选择器练习](https://css-speedrun.netlify.app/)
