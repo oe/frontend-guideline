@@ -1,6 +1,8 @@
 ---
 title: "前端基础知识"
 description: "标记有 :thumbsup: 的均为推荐项"
+sidebar:
+  order: 2
 ---
 
 # 前端基础知识

@@ -1,6 +1,8 @@
 ---
 title: "部署"
 description: "## 免费服务器"
+sidebar:
+  order: 4
 ---
 
 # 部署

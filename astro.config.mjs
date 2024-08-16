@@ -8,11 +8,19 @@ export default defineConfig({
 			title: 'Frontend Guidelines',
 			social: {
 				github: 'https://github.com/oe/frontend-guideline',
+				twitter: 'https://twitter.com/forth_ink'
 			},
 			editLink: {
 				baseUrl: 'https://github.com/oe/frontend-guideline/edit/main/'
 			},
+			customCss: [
+				'./src/assets/style.scss'
+			],
 			sidebar: [
+				{
+					label: '首页',
+					link: '/'
+				},
 				{
 					label: '准备工作',
 					autogenerate: { directory: 'basic' },

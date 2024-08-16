@@ -1,6 +1,8 @@
 ---
 title: "GIT 的安装及使用"
 description: "GIT 是用于代码协作的工具, 与 SVN 类似, 但比 SVN 更优, 比如分布式存储, 可离线提交代码, 仓库大小会小很多."
+sidebar:
+  order: 6
 ---
 
 # GIT 的安装及使用

@@ -1,10 +1,13 @@
+/**
+ * This script reads all markdown files in the docs directory and adds frontmatter to them.
+ */
 import fs from 'fs';
 import path from 'path';
 
 // __dirname in es6 modules
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-// 指定要遍历的目录
+// specify the path to the docs directory
 const directoryPath = path.join(__dirname, '../src/content/docs');
 
 

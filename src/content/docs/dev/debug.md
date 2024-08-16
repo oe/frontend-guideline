@@ -1,6 +1,8 @@
 ---
 title: "调试工具及调试方法"
 description: "## Chrome Dev Tools (跨平台) :thumbsup:"
+sidebar:
+  order: 2
 ---
 
 # 调试工具及调试方法

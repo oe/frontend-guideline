@@ -1,6 +1,8 @@
 ---
 title: "面试,外快及个人项目"
 description: "本章教你如何将技术变现"
+sidebar:
+  order: 1
 ---
 
 # 面试,外快及个人项目

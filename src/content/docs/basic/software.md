@@ -1,6 +1,8 @@
 ---
 title: "开发工具"
 description: "## SHELL"
+sidebar:
+  order: 5
 ---
 
 # 开发工具

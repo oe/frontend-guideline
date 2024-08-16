@@ -1,6 +1,8 @@
 ---
 title: "有用的资讯、资源及学习网站"
 description: "## 综合资源列表"
+sidebar:
+  order: 6
 ---
 
 # 有用的资讯、资源及学习网站

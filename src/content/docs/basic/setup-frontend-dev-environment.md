@@ -1,6 +1,8 @@
 ---
 title: "前端开发环境的安装配置"
 description: "## 软件安装"
+sidebar:
+  order: 4
 ---
 
 # 前端开发环境的安装配置

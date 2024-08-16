@@ -1,6 +1,8 @@
 ---
 title: "前端编码规范"
 description: "不论是前端， 还是 C++，Java 等，都有各自的编码规范，良好的编码规范可以提升代码的可读性，可维护性，以及避免一些错误，采用统一的规范也有利于后期做一些代码层面等优化，在团队中尤其要注意应采用同一套规范。"
+sidebar:
+  order: 3
 ---
 
 # 前端编码规范
@@ -43,7 +45,7 @@ description: "不论是前端， 还是 C++，Java 等，都有各自的编码�
 
 ### 编码方式
 
-代码文件统一使用 **无 BOM 头的 utf-8**(utf-8 without BOM) 的编码方式.
+代码文件统一使用 **无 BOM 头的 utf-8**(utf-8 without BOM) 的编码方式. [什么是 BOM?](https://zh.wikipedia.org/zh-cn/%E7%AB%AF%E5%BA%8F%E8%A8%98%E8%99%9F)
 
 ### 文件命名
 

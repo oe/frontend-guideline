@@ -10,10 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.2",
     "@astrojs/starlight": "^0.25.5",
     "astro": "^4.10.2",
     "sharp": "^0.32.5",
-    "@astrojs/check": "^0.9.2",
     "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.77.8"
   }
 }

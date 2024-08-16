@@ -1,6 +1,8 @@
 ---
 title: "安全及优化"
 description: "## 性能优化"
+sidebar:
+  order: 2
 ---
 
 # 安全及优化

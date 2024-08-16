@@ -1,6 +1,8 @@
 ---
 title: "前端进阶知识 & 产品研发"
 description: "## 桌面网页"
+sidebar:
+  order: 4
 ---
 
 # 前端进阶知识 & 产品研发
