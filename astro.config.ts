@@ -43,6 +43,7 @@ export default defineConfig({
 				// Component that overrides a built-in component:
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
+			credits: true,
 			sidebar: [
 				{
 					label: '首页',
