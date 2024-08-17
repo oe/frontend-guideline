@@ -7,6 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://app.evecalm.com',
 	base: '/frontend-guideline/',
 	markdown: {
     rehypePlugins: [
