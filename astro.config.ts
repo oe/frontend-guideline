@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, squooshImageService } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 import rehypeSlug from 'rehype-slug';
@@ -18,6 +18,9 @@ export default defineConfig({
       }]
     ],
   },
+	image: {
+		service: squooshImageService(),
+	},
 	integrations: [
 		starlight({
 			title: '前端开发学习指引',

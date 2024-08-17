@@ -31,13 +31,13 @@ body {
   figure {
     // using box shadowing to make image more obvious
     img {
-      box-shadow: 0 0 1px 1px var(--sl-color-gray-7);
+      box-shadow: 0 0 1px 1px var(--sl-color-gray-6);
     }
     figcaption {
       margin-top: 0.5em;
       text-align: center;
       font-size: 0.9em;
-      color: var(--sl-color-gray-4);
+      color: var(--sl-color-gray-3);
     }
   }
 }
