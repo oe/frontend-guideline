@@ -1,3 +1,52 @@
 body {
   --sl-color-text-accent: #8957E5;
 }
+
+.sl-container {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+
+    .icon-link {
+      position: absolute;
+      left: -1em;
+      opacity: 0;
+      width: 1em;
+      text-align: center;
+      transition: all 0.2 linear;
+      &::after {
+        content: '#';
+      }
+    }
+
+    &:hover .icon-link {
+      opacity: 1;
+    }
+  }
+
+  figure {
+    // using box shadowing to make image more obvious
+    img {
+      box-shadow: 0 0 1px 1px var(--sl-color-gray-7);
+    }
+    figcaption {
+      margin-top: 0.5em;
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--sl-color-gray-4);
+    }
+  }
+}
+
+.fg-link {
+  text-decoration: none;
+  font-weight: thin;
+
+  &:visited {
+    color: var(--sl-color-text-accent);
+  }
+}

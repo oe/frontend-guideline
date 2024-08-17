@@ -5,8 +5,6 @@ sidebar:
   order: 5
 ---
 
-# 常用的第三方库及框架
-
 ## React
 
 - [Github 项目主页](https://github.com/facebook/react)

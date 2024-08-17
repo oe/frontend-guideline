@@ -5,8 +5,6 @@ sidebar:
   order: 4
 ---
 
-# 部署
-
 
 ## 免费服务器
 - [netlify](https://www.netlify.com/)

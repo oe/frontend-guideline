@@ -1,14 +1,28 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
+
 // https://astro.build/config
 export default defineConfig({
+	base: '/frontend-guideline/',
+	markdown: {
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: 'prepend' }],
+      [rehypeExternalLinks, {
+        target: '_blank', rel: ['noopener', 'nofollow'],
+      }]
+    ],
+  },
 	integrations: [
 		starlight({
-			title: 'Frontend Guidelines',
+			title: '前端开发学习指引',
 			social: {
 				github: 'https://github.com/oe/frontend-guideline',
-				twitter: 'https://twitter.com/forth_ink'
+				twitter: 'https://twitter.com/forth_ink',
 			},
 			editLink: {
 				baseUrl: 'https://github.com/oe/frontend-guideline/edit/main/'
@@ -16,6 +30,19 @@ export default defineConfig({
 			customCss: [
 				'./src/assets/style.scss'
 			],
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						src: '/frontend-guideline/post-a11y.js',
+						defer: true
+					}
+				}
+			],
+			components: {
+				// Component that overrides a built-in component:
+				SocialIcons: './src/components/SocialIcons.astro',
+			},
 			sidebar: [
 				{
 					label: '首页',

@@ -1,0 +1,27 @@
+---
+import OldSocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+const links = [
+  {
+    url: 'https://forth.ink',
+    label: 'Forthink',
+    title: 'Indie Works'
+  },
+  {
+    url: 'https://blog.evecalm.com/',
+    label: 'Blog'
+  },
+  {
+    url: 'https://app.evecalm.com/',
+    label: 'Works',
+    title: 'Opensource Works'
+  }
+]
+---
+<OldSocialIcons {...Astro.props} />
+{links.map(({ label, url, title }) => (
+  <a href={url} rel="me" class="sl-flex fg-link" title={title || ''} target="_blank">
+    {label}
+  </a>
+))}
