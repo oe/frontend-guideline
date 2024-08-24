@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-作为开发人员需要具备的通识, 即使你不从事前端开发, 你也应具备这些知识. 
+作为开发人员需要具备的通识, 即使你不从事前端开发, 做后台、客户端等开发, 你也应具备这些知识. 
 
 **下边这些知识你不一定会立即用上, 可在需要时再回顾查阅**
 
@@ -15,7 +15,7 @@ Git 是流行的源码版本管理工具, 绝大多数公司均用Git来管理�
 2. 代码存储分布式
 3. 分支及tag不会额外增加仓库大小, 分支及tag管理非常方便
 
-更详细说明请阅读 [GIT 的安装及使用](./basic/git)
+更详细说明请阅读 [GIT 的安装及使用](/frontend-guideline/basic/git)
 
 
 ## markdown
@@ -39,13 +39,14 @@ markdown还有不少扩展语法, 需在对应平台(软件), 或者相应插件
 * [Mermaid 图形库](https://mermaid-js.github.io/mermaid/#/flowchart), 支持在markdown中用文本绘制流程图、类图、时序图等, 可在[在线编辑器](https://mermaid-js.github.io/mermaid-live-editor/) 中在线体验题效果
 
 ### 支持 markdown 的软件及工具
-支持markdown的软件众多, 这里只列举一些优秀的:
+支持markdown的软件(包括笔记软件)众多, 这里只列举一些优秀的:
 * [Vscode](https://code.visualstudio.com/), 微软开发的代码编辑器, 免费开源跨平台, 原生支持markdown, 安装插件[markdown all in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 后可获得更好的编辑体验
 * [Typora](https://typora.io/) 免费跨平台的所见即所得的markdown编辑器
-* [Notion](https://www.notion.so/) 免费➕增值跨平台的笔记软件, 还有Web端: 交互友好, 操作简单, 页面精美, 不仅可以用于记笔记, 还可以用来记日程、待办事项、数据统计表, 其表格还支持强大的公式功能; 还有不同的模版可快速上手使用. 其免费功能即可满足个人使用, 普通用户无需付费, 但由于其为境外服务, 随时有被中断访问的风险
+* [Notion](https://www.notion.so/) 免费➕增值的web笔记软件, 交互友好, 操作简单, 页面精美, 不仅可以用于记笔记, 还可以用来记日程、待办事项、数据统计表, 其表格还支持强大的公式功能; 还有不同的模版可快速上手使用. 其免费功能即可满足个人使用, 普通用户无需付费, 但由于其为境外服务, 随时有被中断访问的风险
 * [Bear](https://bear.app/)免费➕增值的笔记软件, 支持Mac和iOS, 支持使用标签快速管理笔记. 付费后可获得笔记在 Mac 和 iOS间同步的功能
 * [Mweb](https://zh.mweb.im/) 付费笔记软件, 支持Mac和iOS, 由国人开发, 功能比 bear 更强大, 支持图片上传图床, 可将文字直接发布到服务器及其他第三方服务
 * [Ulysses](https://ulysses.app/) 订阅制软件, 支持Mac和iOS , 价格略贵, 被很多作者、新闻工作者使用
+* [Craft](https://craft.do/) 免费+增值的跨平台笔记软件, 默认支持markdown, 是一个类似于 Notion 的产品 block 笔记app, 但其界面更加简洁, 适合个人使用, 笔记可存储在本地, 也可存储在云端, 客户端使用原生的UI, 体验、性能更好
 * [Evernote(印象笔记)](https://evernote.com/) 免费+增值的跨平台笔记软件, 已经支持markdown、思维导图等功能了
 * [有道云笔记](https://note.youdao.com/) 免费+增值的跨平台笔记软件, 网易出品, 也已经支持markdown了
 
@@ -54,8 +55,6 @@ markdown 本质是基于纯文本扩展的语言, 下边还有其他的基于纯
 [在线文字绘图工具(英文)](https://smusamashah.github.io/text-to-diagram)
 
 ## shell, terminal & ssh
-
-
 - [Linux Command](https://github.com/jaywcjlove/linux-command)
 
 ## 算法及数据结构
@@ -82,7 +81,6 @@ markdown 本质是基于纯文本扩展的语言, 下边还有其他的基于纯
 详细可参考: 
 * [如何选择开源协议](https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
 * [开源协议对比](http://choosealicense.online/licenses/)
-
 
 
 ## http 协议及 API

@@ -62,7 +62,7 @@ GIT 的 GUI 软件众多, 如 [sourcetree](https://www.sourcetreeapp.com/), [For
 1. SourceTree 是免费软件， 但是需注册才能使用，注册时需要通过 Google 验证码验证， 即`需要翻墙才能注册`
 2. SourceTree 设置界面中 Git 页签里，进行优化设置：
    1. 勾选 `Do not fast-forward when merging, always create commit`
-   2. `Git Version` 中选择使用系统 Git `Use System Git`，windows 选择 `GIT SHELL 程序安装` 中安装的 git 路径， Mac 选择系统内置的 git 即可
+   2. `Git Version` 中选择使用系统 Git `Use System Git`，windows 选择 `GIT SHELL 程序安装` 中安装的 git 路径， Mac 选择系统内置的 git 即可. 此操作保证命令行中的 Git 配置与GUI 中的git 行为一致.(其他内置git的GUI工具也应当类似设置)
 
 ## GIT 的使用
 
