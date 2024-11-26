@@ -108,6 +108,7 @@ koala 是一个前端预处理器言图形编译工具，支持 Less、Sass、Co
 - [DB 关系图制作工具](https://dbdiagram.io/home)
 - [mockups 给图加设备的壳](https://deviceshots.com/)
 - [开发者工具箱](https://10015.io/) 包含了颜色转换、编码转换、css生成、图片裁剪、JSON格式化等几十个工具
+- [模拟 API 用于测试和原型设计](https://jsoning.com/api/)
 
 ## 其他参考
 
