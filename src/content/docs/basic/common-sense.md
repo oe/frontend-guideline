@@ -110,3 +110,4 @@ markdown 本质是基于纯文本扩展的语言, 下边还有其他的基于纯
 
 - [计算机专业的学生应该知道什么(英语)](http://matt.might.net/articles/what-cs-majors-should-know/)
 - [Hacker laws 对开发人员有用的定律、理论、原则和模式](https://github.com/nusr/hacker-laws-zh)
+- [Every Programmer Should Know](https://github.com/mtdvio/every-programmer-should-know)
