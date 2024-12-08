@@ -219,3 +219,9 @@ jobs:
 GitHub 提供了强大且方便的 CI/CD 功能，通过 GitHub Actions，前端开发者可以轻松地实现代码的自动化测试、构建和发布。而结合第三方平台，前端项目可以更加灵活地完成部署，从而提高开发效率并保证软件的质量。希望这篇文章能帮助你更好地掌握 GitHub 上的 CI/CD 实践。
 
 
+## 参考资料
+* [GitHub Actions 官方文档](https://docs.github.com/en/actions)
+* [introduction to github](https://github.com/skills/introduction-to-github)
+* [GitHub Pages 官方文档](https://docs.github.com/en/pages)
+* [Netlify](https://www.netlify.com/)
+* [Vercel](https://vercel.com/)
