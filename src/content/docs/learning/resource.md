@@ -1,6 +1,6 @@
 ---
 title: "有用的资讯、资源及学习网站"
-description: "## 综合资源列表"
+description: "汇集前端学习网站、实践练习与源码分析资料。"
 sidebar:
   order: 6
 ---
@@ -14,6 +14,9 @@ sidebar:
 - [奇趣网站收藏家](https://fuun.fun/)
 
 ## 资源站
+
+- [MDN Web Docs](https://developer.mozilla.org/zh-CN/)：Web 平台 API、兼容性数据与教程。
+- [web.dev Learn](https://web.dev/learn/)：HTML、CSS、性能和可访问性课程。
 
 ## 学习网站
 

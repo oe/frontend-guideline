@@ -1,6 +1,6 @@
 ---
 title: "安全及优化"
-description: "## 性能优化"
+description: "了解前端性能优化与 Web 安全的基础学习资源。"
 sidebar:
   order: 2
 ---

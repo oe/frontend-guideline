@@ -1,6 +1,6 @@
 ---
 title: "开发工具"
-description: "## SHELL"
+description: "选择终端、编辑器、浏览器与常用开发辅助工具。"
 sidebar:
   order: 4
 ---
@@ -12,16 +12,18 @@ sidebar:
 
 ## 编辑器
 
-- [Sublime Text :thumbsup:](https://www.sublimetext.com/3) 跨平台开发神器, 有丰富的扩展支持。 付费，可免费无限期试用.
-- [Brackets](http://brackets.io/) Adobe 出品的跨平台编辑器, 也有许多扩展
-- [Atom](https://atom.io/) Github 出品的跨平台编辑器, 仿 Sublime Text, 扩展也很丰富
+- [Visual Studio Code](https://code.visualstudio.com/)：内置 JavaScript、TypeScript 和 Git 支持，扩展丰富。
+
+- [Sublime Text :thumbsup:](https://www.sublimetext.com/) 跨平台开发神器, 有丰富的扩展支持。 付费，可免费无限期试用.
+- [Phoenix Code](https://phcode.io/)：源自 Brackets 的编辑器项目。
+- [Atom](https://github.com/atom/atom)：已停止维护并归档，仅供了解旧项目环境，新项目请选择持续维护的编辑器。
 - [notepad++](http://notepad-plus-plus.org/zh/) windows 平台, 免费开源, 支持多种语言, 多种文件编码, 支持扩展
 
 [编程字体选择](https://coding-fonts.css-tricks.com/), 个人推荐[fira-code](https://coding-fonts.css-tricks.com/fonts/fira-code/?language=js) 和 [cascadia-code](https://coding-fonts.css-tricks.com/fonts/cascadia-code/?language=js), 这两款字体均支持[连字](https://blog.evecalm.com/2020/05/about-font-and-character.html), 更容易阅读.
 
 ### Sublime Text 相关网站 :thumbsup:
 
-- [官网](https://www.sublimetext.com/3)
+- [官网](https://www.sublimetext.com/)
 - [Package Control](https://packagecontrol.io/) ST 扩展管理器官网
 - [Gif Sublime Text 常用快捷键](http://blog.jobbole.com/82527/)
 - [Sublime Text 快捷键及插件推荐](http://www.daqianduan.com/4820.html)

@@ -8,7 +8,7 @@ sidebar:
 标记有 :thumbsup: 的均为推荐项
 
 ## Javascript
-学习Javascript时, 建议直接在浏览器中练习, 可参考[本文档来操作](./learning/?id=使用-chrome-开发者工具学习)
+学习Javascript时, 建议直接在浏览器中练习, 可参考[本文档来操作](/frontend-guideline/learning/readme/#使用-chrome-开发者工具学习)
 
 ### 必看
 - [JavaScript 标准参考教程](http://javascript.ruanyifeng.com/), 请使用这作为学习Javascript的第一步, 里面包含了JS语言基础、浏览器API、DOM API的详细介绍
@@ -30,12 +30,16 @@ sidebar:
 
 ## HTML
 
+- [MDN Web 开发学习](https://developer.mozilla.org/zh-CN/docs/Learn_web_development)：从语义化 HTML、表单到浏览器基础。
+
 - [Html 学习](http://zh.html.net/tutorials/html/)
 - [Html 参考手册](http://w3school.com.cn/html/index.asp)
 - [Marksheet :thumbsup:](http://marksheet.io/) html & css 学习教程，in English
 - [Html reference :thumbsup:](http://htmlreference.io/) html 手册，可以根据标签类型快速筛选，in English
 
 ## CSS
+
+- [MDN CSS 学习](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Styling_basics)：基础样式与布局。先掌握 Flexbox、Grid、媒体查询和 CSS 自定义属性，再按需要学习预处理器。
 
 - [CSS 学习](http://www.w3school.com.cn/css/)
 - [谷歌推出的CSS学习指南](https://web.dev/learn/css/) 点击网页右下角可切换为中文 (网站已被屏蔽, 你需要一点手段才能正常访问)
@@ -52,7 +56,7 @@ sidebar:
 
 ## 前端开发规范
 
-[前端开发规范 :thumbsup:](./guideline.md)
+[前端开发规范 :thumbsup:](/frontend-guideline/learning/guideline/)
 
 ## 预处理语言(用其他语言来生成 js, css)
 
@@ -64,7 +68,7 @@ sidebar:
 
 - [Markdown 语法](http://wowubuntu.com/markdown/)
 - [Github Flavoured Markdown 语法 :thumbsup:](https://help.github.com/articles/github-flavored-markdown/) Github 扩展的 markdown，支持语法高亮
-- [Haroopress :thumbsup:](http://pad.haroopress.com/user.html#download)(Markdown 编辑器)
+- [CommonMark 交互式教程](https://commonmark.org/help/tutorial/)：在浏览器中练习 Markdown 语法。
 
 ## 其他
 
@@ -76,5 +80,5 @@ sidebar:
 - [谷歌推出的web.dev](https://web.dev/learn/) 点击网页右下角可将语言切换为中文, 内容讲解的非常详细(不知为何会被屏蔽, 你需要一点手段才能正常访问)
 - [Web Design Stack](http://webdesignstack.com/)
 - [Web Design Repo](http://www.webdesignrepo.com/)
-- [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md)
+- [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md)
 - [免费软件开发教程合集(英文, 视频托管在 YouTube)](https://www.tutorialist.io/)

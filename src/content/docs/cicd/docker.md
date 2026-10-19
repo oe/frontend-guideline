@@ -71,20 +71,22 @@ Docker 在前端开发中可以扮演多个重要角色，以下是 Docker 在�
 **示例**：
 
 ```yaml
-version: '3'
 services:
   frontend:
-    image: node:14
+    image: node:24
     volumes:
       - .:/app
+      - /app/node_modules
     working_dir: /app
-    command: npm start
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "5173:5173"
   backend:
     image: my-backend:latest
     ports:
       - "3000:3000"
   db:
-    image: postgres:13
+    image: postgres:17
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
@@ -93,7 +95,7 @@ services:
       - "5432:5432"
 ```
 
-通过 Docker Compose，你可以同时启动前端、后端和数据库服务，模拟完整的开发环境，极大地提高开发效率。
+本例前端采用 Vite 默认端口与 npm 锁文件，`my-backend:latest` 需要替换为实际的后端镜像。通过 Docker Compose，你可以同时启动前端、后端和数据库服务，模拟完整的开发环境，极大地提高开发效率。
 
 ### 前端构建与测试
 
@@ -102,10 +104,10 @@ Docker 也可以用来运行前端项目的构建和测试任务。通过在 Doc
 **示例**：
 
 ```sh
-docker run -v $(pwd):/app -w /app node:14 npm run build
+docker run --rm -v "$PWD":/app -v /app/node_modules -w /app node:24 sh -c "npm ci && npm run build"
 ```
 
-这条命令将使用 Node.js 14 的镜像来构建前端项目，从而确保构建过程不受本地环境的影响。
+这条命令将使用 Node.js 24 的镜像，根据已提交的 `package-lock.json` 安装依赖后构建。匿名卷隔离容器与宿主机的 `node_modules`，避免复用不同平台的原生依赖。pnpm 项目应使用项目指定的 pnpm 版本与 `--frozen-lockfile`。
 
 ### 前端部署
 
@@ -115,12 +117,19 @@ Docker 可以用于前端应用的部署，通过将前端应用打包为 Docker
 
    **示例 Dockerfile**：
 
-   ```Dockerfile
-   FROM nginx:alpine
-   COPY build/ /usr/share/nginx/html
+   ```dockerfile
+   FROM node:24 AS build
+   WORKDIR /app
+   COPY package*.json ./
+   RUN npm ci
+   COPY . .
+   RUN npm run build
+
+   FROM nginx:stable-alpine
+   COPY --from=build /app/dist/ /usr/share/nginx/html/
    ```
 
-   这里我们使用 `nginx` 作为基础镜像，将前端项目的构建文件复制到 Nginx 的默认服务目录中，以便通过 Nginx 提供静态资源服务。
+   本例先在 Node.js 镜像中安装与构建，再将 `dist/` 复制到 Nginx 镜像。项目应已有 `package-lock.json`，并用 `.dockerignore` 排除 `node_modules`、`dist`、`.git` 和本地环境文件，避免覆盖容器内依赖或带入无关文件。单页应用的路由回退需要另行配置 Nginx。
 
 2. **构建 Docker 镜像**：
 
@@ -177,35 +186,30 @@ CI/CD 是现代软件开发流程的重要组成部分，Docker 与 CI/CD 的结
 
 GitLab CI/CD 配置（.gitlab-ci.yml）
 ```yaml
+image: docker:cli
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: tcp://docker:2376
+  DOCKER_TLS_CERTDIR: /certs
+  DOCKER_TLS_VERIFY: "1"
+  DOCKER_CERT_PATH: "$DOCKER_TLS_CERTDIR/client"
+
 stages:
-  - build
-  - test
   - deploy
 
-build:
-  stage: build
-  image: docker:latest
-  services:
-    - docker:dind
-  script:
-    - docker build -t myapp:latest .
-
-test:
-  stage: test
-  image: docker:latest
-  services:
-    - docker:dind
-  script:
-    - docker run myapp:latest npm test
-
-deploy:
+build-and-push:
   stage: deploy
-  image: docker:latest
-  services:
-    - docker:dind
   script:
-    - docker push myapp:latest
+    - echo "$CI_REGISTRY_PASSWORD" | docker login "$CI_REGISTRY" -u "$CI_REGISTRY_USER" --password-stdin
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
 ```
+
+此示例在同一个 job 中构建并推送镜像，使用上面的多阶段 Dockerfile 完成前端构建。不同 job 的 Docker daemon 通常互相隔离，镜像不会自动共享。Docker-in-Docker 需要 Runner 管理员配置相应权限和 TLS 证书共享卷，具体要求见 [GitLab Docker-in-Docker 文档](https://docs.gitlab.com/ci/docker/using_docker_build/#use-docker-in-docker)。推送镜像后，实际服务器的拉取和发布仍需单独配置。
 
 ## 帮助链接
 

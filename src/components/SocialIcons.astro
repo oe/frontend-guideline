@@ -1,6 +1,5 @@
 ---
 import OldSocialIcons from '@astrojs/starlight/components/SocialIcons.astro';
-import type { Props } from '@astrojs/starlight/props';
 
 const links = [
   {
@@ -19,9 +18,9 @@ const links = [
   }
 ]
 ---
-<OldSocialIcons {...Astro.props} />
+<OldSocialIcons />
 {links.map(({ label, url, title }) => (
-  <a href={url} rel="me" class="sl-flex fg-link" title={title || ''} target="_blank">
+  <a href={url} rel="me noopener noreferrer" class="sl-flex fg-link" title={title || ''} target="_blank">
     {label}
   </a>
 ))}

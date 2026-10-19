@@ -7,17 +7,17 @@ sidebar:
 
 在这里, 开启学习的大门, 你可以按以下目录, 循序渐进学习, 一步步提高.
 
-- [前端基础知识](./learning/basic)
-- [编码规范](./learning/guideline)
-- [前端进阶知识](./learning/pro)
-- [常用框架/常用库](./learning/frameworks)
-- [有用的资讯、资源及学习网站](./learning/resource)
+- [前端基础知识](/frontend-guideline/learning/basic/)
+- [编码规范](/frontend-guideline/learning/guideline/)
+- [前端进阶知识](/frontend-guideline/learning/pro/)
+- [常用框架/常用库](/frontend-guideline/learning/frameworks/)
+- [有用的资讯、资源及学习网站](/frontend-guideline/learning/resource/)
 
 ## 学习方法
 你可以直接使用代码编辑器+在本地开启服务器方式来学习前端知识, 但这对于前端初学者来说, 略显麻烦. 推荐使用下述方式来学习:
 
 ### 使用 Chrome 开发者工具学习
-直接在浏览器中学习, 可以边看教程变学习. 请先确保你已经[下载并并安装了Chrome](https://www.google.cn/chrome/), 建议将其设置为默认浏览器.   
+直接在浏览器中学习, 可以边看教程边学习. 请先确保你已经[下载并安装了 Chrome](https://www.google.cn/chrome/), 建议将其设置为默认浏览器.
 下载地址: <https://www.google.cn/chrome/>
 
 #### 如何打开 Chrome开发者工具
@@ -54,7 +54,7 @@ sidebar:
 ### 使用在线练习(playground)网站学习
 网上有很多在线网站, 可以在线编写 html、css(甚至css的预编译语言 less、scss等)、JavaScript(甚至包括预编译语言 Typescript、Coffeescript等), 并可以实时看到效果. 在浏览器中即可演练, 无需在电脑上安装其他软件, 还可以可以保存演练的代码并生成唯一的访问地址分享给其他人, 非常方便.
 
-以下是一些流行对在线练习网站:
+以下是一些流行的在线练习网站:
 1. [JSbin](http://jsbin.com/?html,css,js,output), 很轻量的练习网站, 访问很快, 但无法通过该网站练习代码分享给他人. 建议使用该网站来练习前端开发
 2. [Codepen](https://codepen.io/pen/), 一个很流行的代码练习网站, 注册登录后可将你的代码片段分享给其他人. 也可以在上面查看别人分享的[有趣的代码](https://codepen.io/popular/pens/)
 3. [CodeSandbox](https://codesandbox.io/s/vanilla), 一个功能更为强大的练习网站, 可以用于练习[React开发](https://codesandbox.io/s/new)、[Vue的开发](https://codesandbox.io/s/vue)、[Angular的开发](https://codesandbox.io/s/angular), 还可以在其内在线安装第三方库并直接使用

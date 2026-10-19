@@ -52,7 +52,7 @@ GitLab 提供两个主要版本：社区版（CE）和企业版（EE）。社区
 - **CPU**：至少 4 核，建议 8 核或更多。
 - **内存**：最低 4GB，建议 8GB 以上，尤其是在团队规模较大或频繁使用 CI/CD 的情况下。
 - **存储**：建议使用 SSD 以提升性能，最低 100GB 硬盘空间，视项目规模可适当增加。
-- **操作系统**：Ubuntu 20.04 LTS 或其他受支持的 Linux 发行版。
+- **操作系统**：Ubuntu 24.04 LTS 或其他受支持的 Linux 发行版。
 
 确保服务器的网络带宽充足，以支持团队成员的代码拉取和推送需求。
 
@@ -89,29 +89,23 @@ GitLab CI/CD 是 GitLab 的一项强大功能，允许你定义一套自动化�
 GitLab CI/CD 的配置是通过项目根目录中的 `.gitlab-ci.yml` 文件完成的。以下是一个简单的前端项目 CI 配置示例：
 
 ```yaml
+image: node:24
+
 stages:
-  - install
-  - test
   - build
-
-install_dependencies:
-  stage: install
-  script:
-    - npm install
-
-test:
-  stage: test
-  script:
-    - npm run test
 
 build:
   stage: build
   script:
+    - npm ci
+    - npm test --if-present
     - npm run build
   artifacts:
     paths:
       - dist/
 ```
+
+本例假设 npm 项目已提交 `package-lock.json`，产物输出到 `dist/`。GitLab 的不同 job 通常使用独立环境，不能假定前一个 job 的 `node_modules` 会自动保留；拆分任务时应在每个任务安装依赖，或显式传递所需产物。
 
 ### 配置 Runner
 
@@ -142,18 +136,20 @@ GitLab Pages 可以用来发布静态网站，类似于 GitHub Pages。
 
 1. **添加 `.gitlab-ci.yml` 配置**：以下是一个用于部署静态网站的示例：
    ```yaml
-   image: node:14
+   image: node:24
 
-   pages:
+   deploy-pages:
      stage: deploy
      script:
-       - npm install
+       - npm ci
        - npm run build
-       - mv build/ public/
-     artifacts:
-       paths:
-         - public
+     pages:
+       publish: dist
+     rules:
+       - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
    ```
+
+   本例使用当前 GitLab Pages 的 `pages.publish` 配置，默认阶段包含 `deploy`；如果合并到自定义流水线，需要在 `stages` 中声明该阶段。旧版自托管 GitLab 请按对应版本文档调整。
 
 2. **查看部署结果**：在项目的 "Settings" -> "Pages" 页面中可以查看到部署后的地址。
 
@@ -161,7 +157,7 @@ GitLab Pages 可以用来发布静态网站，类似于 GitHub Pages。
 
 如果你需要部署带有后台服务的应用，可以使用以下第三方平台：
 
-- **Heroku**：[Heroku](https://www.heroku.com/) 提供简单的 Git 集成，适合小规模项目的托管。Heroku 有免费计划，每月提供 550 小时的运行时间，但有休眠机制。
+- **Heroku**：[Heroku](https://www.heroku.com/) 提供简单的 Git 集成，适合小规模项目的托管。Heroku 已取消旧版免费 dyno 方案，使用前请查看当前价格。
 - **DigitalOcean**：[DigitalOcean](https://www.digitalocean.com/) 提供易用的 Droplet 服务，可以用来部署完整的后端服务。收费按使用量计算，新用户有免费的初始额度。
 - **Kubernetes 集群部署**：对于有经验的团队，可以使用 GitLab 自带的 Kubernetes 集成，将应用部署到 Kubernetes 集群中，获得更高的可扩展性。
 
@@ -175,13 +171,15 @@ GitLab 还可以集成发布 NPM 包的流程：
    publish:
      stage: deploy
      script:
-       - npm install
+       - npm ci
+       - npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
        - npm publish
      only:
        - tags
-     environment:
-       NODE_AUTH_TOKEN: $NPM_TOKEN
+     # NPM_TOKEN 在受保护的 CI/CD Variables 中设置，并限制发布权限。
    ```
+
+应根据 npm 当前策略配置 Token 的有效期与发布权限，也可评估 [trusted publishing](https://docs.npmjs.com/trusted-publishers/)。标签和变量均应受保护。
 
 ### 发布客户端应用
 

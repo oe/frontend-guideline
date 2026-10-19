@@ -2,22 +2,33 @@
   "name": "astro-doc",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@10.34.7",
+  "engines": {
+    "node": ">=22.22.0",
+    "pnpm": ">=10 <11"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "check": "astro check",
+    "test": "node --test script/*.test.mjs",
+    "build": "pnpm check && astro build && pnpm check:links",
+    "check:links": "node script/check-links.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.2",
-    "@astrojs/starlight": "^0.25.5",
-    "astro": "^4.10.2",
-    "rehype-autolink-headings": "^7.1.0",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/markdown-remark": "^7.3.3",
+    "@astrojs/starlight": "^0.42.6",
+    "astro": "^7.4.0",
+    "parse5": "^8.0.1",
     "rehype-external-links": "^3.0.0",
-    "rehype-slug": "^6.0.0",
-    "sass-embedded": "^1.77.8",
-    "sharp": "^0.32.5",
-    "typescript": "^5.5.4"
+    "sass-embedded": "^1.105.2",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild", "sharp"]
   }
 }
