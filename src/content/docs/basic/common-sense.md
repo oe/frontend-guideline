@@ -17,6 +17,8 @@ sidebar:
 
 README、项目笔记和排错记录默认用 Markdown。先学标题、列表、链接、图片、代码块，足够写大部分文档。语法入口：[CommonMark](https://commonmark.org/help/)与 [GitHub Markdown](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)。
 
+开发文档不推荐优先写成 Word 再到处传附件。Markdown 是纯文本，和代码一起放 Git，改了哪几行能直接评审；用普通编辑器就能打开，也容易迁移到别的工具和站点。少一点排版负担，多写清楚安装步骤、接口约定和排错过程，才是文档真正的价值。
+
 好的 README 先回答：项目做什么、需要什么环境、怎么安装、怎么启动、怎么构建。把代码放进注明语言的代码块，不要拿截图当可复制的命令。
 
 ### 支持 markdown 的软件及工具

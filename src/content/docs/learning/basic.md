@@ -7,6 +7,8 @@ sidebar:
 
 **主线用 MDN，遇到具体 API 再查参考手册。** 先完成下列练习，不用先把收藏夹里所有教程读完。建议的学习顺序是 HTML → CSS → JavaScript → HTTP/异步 → TypeScript，实作路线见[学习方法](/frontend-guideline/learning/readme/)。
 
+下面保留中文官方文档作为入门入口，但请从第一天就练习切换到英文原文：先读一个 API、一条报错，再读一段 issue 讨论。查不到、版本对不上就直接读英文，不要退回中文转载里碰运气；[英语与 Google 检索](/frontend-guideline/basic/literacy/)是这条学习路线的一部分。
+
 ## HTML
 
 先写一个包含导航、文章、图片、联系表单的页面，重点掌握：
