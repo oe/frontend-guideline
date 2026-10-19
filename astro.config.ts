@@ -1,33 +1,35 @@
-import { defineConfig, squooshImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import starlight from '@astrojs/starlight';
 
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://app.evecalm.com',
 	base: '/frontend-guideline/',
+	trailingSlash: 'always',
 	markdown: {
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: 'prepend' }],
-      [rehypeExternalLinks, {
-        target: '_blank', rel: ['noopener', 'nofollow'],
-      }]
-    ],
+    processor: unified({
+      rehypePlugins: [
+        [rehypeExternalLinks, {
+          target: '_blank', rel: ['noopener', 'noreferrer'],
+        }],
+      ],
+    }),
   },
-	image: {
-		service: squooshImageService(),
-	},
 	integrations: [
 		starlight({
 			title: '前端开发学习指引',
-			social: {
-				github: 'https://github.com/oe/frontend-guideline',
-				twitter: 'https://twitter.com/forth_ink',
-			},
+			description: '面向前端初学者的中文学习指引，涵盖 HTML、CSS、JavaScript、开发工具、工程化、部署与 Web 安全。',
+			routeMiddleware: './src/route-data.ts',
+			disable404Route: true,
+			defaultLocale: 'root',
+			locales: { root: { lang: 'zh-CN', label: '简体中文' } },
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/oe/frontend-guideline' },
+				{ icon: 'twitter', label: 'Twitter', href: 'https://twitter.com/forth_ink' },
+			],
 			editLink: {
 				baseUrl: 'https://github.com/oe/frontend-guideline/edit/main/'
 			},
@@ -55,23 +57,23 @@ export default defineConfig({
 				},
 				{
 					label: '准备工作',
-					autogenerate: { directory: 'basic' },
+					items: [{ autogenerate: { directory: 'basic' } }],
 				},
 				{
 					label: '学习',
-					autogenerate: { directory: 'learning' },
+					items: [{ autogenerate: { directory: 'learning' } }],
 				},
 				{
 					label: '开发',
-					autogenerate: { directory: 'dev' },
+					items: [{ autogenerate: { directory: 'dev' } }],
 				},
 				{
 					label: '自动化相关',
-					autogenerate: { directory: 'cicd' },
+					items: [{ autogenerate: { directory: 'cicd' } }],
 				},
 				{
 					label: '其他',
-					autogenerate: { directory: 'misc' },
+					items: [{ autogenerate: { directory: 'misc' } }],
 				},
 			],
 		}),

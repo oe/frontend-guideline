@@ -11,13 +11,13 @@ sidebar:
 
 - [编码规范 by @mdo](https://codeguide.bootcss.com/)
 
-以下是我在工作中总结的一套编码规范。
+以下是我在工作中总结的一套编码规范。缩进、引号、分号、命名和属性顺序主要是团队约定，不是语言强制要求；接手已有项目时，优先遵循它的 ESLint、格式化工具和框架规则。下文会单独说明影响正确性的语言规则。
 
 ---
 
 ## 代码的目录结构
 
-项目目录结构根据项目大小，使用的框架技术不同， 目录结构会有所不同。下面列出的是一个最简单的前端的目录结构如下。
+项目目录结构根据项目大小和框架不同而变化。下面是直接使用静态文件的示例；模块化项目通常使用 `src/`、包管理器和构建配置，不需要手动把第三方包复制到 `lib/`。
 
 不论项目的目录结构如何千变万化，有一点是不变的，良好的目录结构能大大提升代码的可读性和可维护性，相关的文件/文件夹应放在一起。
 
@@ -49,12 +49,12 @@ sidebar:
 
 文件名称以及文件后缀中的 **英文字母统一使用小写** , 如 `bg.png`, `index.html`, `app.js`等. 详细请参阅 [为什么文件名要小写？](http://www.ruanyifeng.com/blog/2017/02/filename-should-be-lowercase.html)
 
-文件名命名只能使用 **英文字母** 、**数字** 以及 **-** (连字符), 不要使用中文字符. 一般使用多个单词组合使用连字符连接, 单词可使用常见缩写, 不可过度缩写. 如 `user-module.js`, `sidebar.css`, `i18n-tpl.html`等.
+普通静态文件建议采用小写英文、数字与连字符，例如 `user-module.js`、`sidebar.css`，以减少跨系统的大小写问题。这是命名建议，不是操作系统或语言的统一限制；`README.md`、`.gitignore`、`App.vue`、`[id].tsx` 等工具和框架约定应按项目规则保留。
 
 ### 文件后缀
 
 - HTML 文件要以 `.html` 结尾.
-- Javascript 文件以 `.js` 结尾
+- JavaScript 普通脚本常用 `.js`；模块、JSX 与 TypeScript 项目还可能使用 `.mjs`、`.cjs`、`.jsx`、`.ts` 和 `.tsx`，以项目配置为准。
 - CSS 文件以 `.css` 结尾
 
 ## 编码规范
@@ -63,7 +63,7 @@ sidebar:
 
 #### 缩进
 
-代 码文件统一使用 2 个空格来作为一次缩进, 不要使用 tab 或者 tab 与空格混用, 以保证代码在不同环境下显示一致.
+代码文件统一使用 2 个空格来作为一次缩进, 不要使用 tab 或者 tab 与空格混用, 以保证代码在不同环境下显示一致.
 
 可在代码编辑器的配置中将一个 tab 的大小设置为 2 个空格.
 
@@ -73,12 +73,15 @@ sidebar:
 
 #### 待办事项
 
-在代码的注释中使用 `TODO` (全大写)关键字来标识待办事项, 使用`TODO(联系人)` 的形式附上联系信息(姓名, 邮箱等)方便联系; 在冒号后加上待办事项内容. 在代码发布时要确认代码中无任何`TODO`标识.
+可使用 `TODO(负责人或 issue 编号)` 标记待办事项，并说明背景。发布前应确认关键功能和安全问题已解决，非阻塞的后续工作可以保留可追踪的 TODO；不能仅用“没有 TODO”判断是否可发布。
 
 ```js
-// TODO(张工): 参数暂未校验
-funtion submitOrder (data) {
-    ....
+// TODO(issue-123): 支持服务端返回的业务错误码。
+function submitOrder(data) {
+  if (!data || typeof data !== 'object') {
+    throw new TypeError('订单数据必须是对象');
+  }
+  // 在这里接入项目的提交逻辑。
 }
 ```
 
@@ -97,12 +100,12 @@ funtion submitOrder (data) {
 编码方式除统一使用`utf-8 without BOM`之外, 在 HTML 的 head 还需要指定编码方式:
 
 ```html
-<meta charset="utf-8" />
+<meta charset="utf-8">
 ```
 
 #### 缩进
 
-除了一个使用 2 个空格作为一次缩进, 在嵌套节点上也应当有缩进.
+除了统一使用 2 个空格作为一次缩进, 在嵌套节点上也应当有缩进.
 
 ```html
 <ul>
@@ -112,16 +115,16 @@ funtion submitOrder (data) {
 
 #### 大小写
 
-所有代码只使用小写：包括标签、选择器、属性及属性值（文本节点例外，作为内容时例外）.
+HTML 标签名和普通属性名通常统一使用小写。属性值中的 URL 路径、class、id 与数据可能区分大小写，不能随意转换；SVG 的 `viewBox` 等属性及 JSX 组件命名也需要遵循各自规则。
 
 ```html
-<img class="avatar" src="face.png" alt="User Avatar" />
+<img class="avatar" src="face.png" alt="User Avatar">
 ```
 
 #### 语法
 
-- 在属性上，使用双引号，不要使用单引号.
-- 不要在自动闭合标签结尾处使用斜线
+- 本文 HTML 示例使用双引号；单引号也是合法 HTML 语法，团队保持一致即可。
+- 普通 HTML 的空元素（如 `img`、`input`）无需结尾斜线，斜线不会使普通 HTML 元素自动闭合；JSX/XML 的自闭合语法应按对应规则书写。
 - 不要忽略可选的关闭标签（例如，`</li>` 和 `</body>`）.
 
 #### 实用高于完美
@@ -134,10 +137,10 @@ funtion submitOrder (data) {
 
 ```html
 <!-- 不推荐 -->
-<span class="avatar"> <img src="..." /> </span>
+<span class="avatar"> <img src="..." alt="头像"> </span>
 
 <!-- 推荐 -->
-<img class="avatar" src="..." />
+<img class="avatar" src="..." alt="头像">
 ```
 
 #### 属性顺序
@@ -151,14 +154,14 @@ HTML 属性应该按照特定的顺序出现以保证易读性.
 - src, for, type, href
 - title, alt
 
-Classes 是为高可复用组件设计的，理论上他们应处在第一位.Ids 更加具体而且应该尽量少使用（例如, 页内书签），所以他们处在第二位.但为了突出 id 的重要性， 把 id 放到了第一位.
+属性顺序不会改变页面语义，选择一致的团队规则即可。`id` 在文档内应唯一，常用于锚点、标签关联和可访问性引用；class 可用于复用样式。
 
 #### Boolean 属性
 
-不要为 Boolean 属性添加取值.
+HTML 布尔属性可只写属性名；属性存在就表示真，因此 `disabled="false"` 仍会禁用控件，要表示假应移除属性。`aria-*`、`data-*` 和 `contenteditable` 等不属于同一种布尔属性规则。参见 [MDN 布尔属性](https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML)。
 
 ```html
-<input type="text" disabled /> <input type="checkbox" value="1" checked />
+<input type="text" disabled> <input type="checkbox" value="1" checked>
 <select>
   <option value="1" selected>1</option>
 </select>
@@ -168,27 +171,27 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 
 在引入外部 CSS 和 JavaScript 文件时不需要指明 type，因为 text/css 和 text/javascript 分别是他们的默认值.
 
-对于比较流行的第三方库, 可以考虑使用第三方 CDN(如微软,新浪等)托管的库, 以提升文件的加载速度.
+是否使用 CDN 需根据访问条件、缓存、依赖稳定性和安全策略评估，不能保证一定比自托管更快。直接引用第三方脚本时应固定版本，并按需要配置完整性校验（SRI）与内容安全策略（CSP）。
 
 ##### CSS
 
 - CSS 文件的引入一般放在 head 标签内, 以避免页面加载是出现页面闪烁的情况
-- 由团队自己开发的的 CSS 文件一般在第三方 CSS 文件之后引入, 以提升团队开发的样式的优先级, 方便修改第三方库的样式
+- 覆盖第三方 CSS 时要理解层叠、层、选择器优先级等规则。只有其他比较条件相同时，后出现的声明才优先；仅调整引入顺序不一定生效。
 - 不要直接修改第三方 CSS 文件内的样式
-- 不要使用 `style` 属性去设置元素样式
+- 可复用样式优先使用 class；动态计算的尺寸、CSS 自定义属性等也可合理使用 `style`，它不是无条件禁止的语法。
 - 同时也应减少使用 javascript 操作 dom 的 style 属性来修改样式, 推荐使用修改 class 的方式来修改样式
-- 尽量避免使用`style`标签来书写样式(404,500, 403 等错误页面除外).
+- 样式可放在外部文件、组件样式或工具生成的 `style` 标签中，应结合复用范围、缓存和构建方式管理。
 
-所有的样式应集中在外部的 css 文件中, 方便维护和管理.
+样式应有明确归属，避免全局污染；组件化项目可以将相关样式与组件放在一起。
 
 ##### Javascript
 
-- javascript 文件的引入一般放在 body 结束标签之前, 避免由于 javascript 加载及执行时间太长导致整个页面长时间无法完成加载
-- 由团队自己开发的 javascript 文件一般应在第三方库之后引入, 避免团队开发 的 javascript 文件引入第三方库时报错
+- 普通外部脚本可在 head 中使用 `defer`，在文档解析后按顺序执行；`type="module"` 的模块脚本默认延后执行。`async` 脚本不保证执行顺序，不能直接用于有顺序依赖的脚本。
+- 使用模块的 `import` 显式表达依赖；传统全局脚本则需要安排依赖的加载和执行顺序。
 - 不要直接修改第三方库的 javascript 文件.
-- 不要使用`onclick`, `onload`等以`on`开头的属性来给 HTML 元素绑定事件; 同时也应减少使用无 `src`属性的`script`标签.
+- 原生 DOM 编程优先用 `addEventListener` 组织事件。React 等框架的 `onClick` 属性属于其事件绑定机制，不能与原生 HTML 内联脚本混为一谈。
 
-所有的 javascript 代码应集中在 js 文件中, 方便维护和管理.
+将 JavaScript 按模块和职责组织；组件文件中的逻辑应遵循框架规则。
 
 ### CSS 部分
 
@@ -201,11 +204,11 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 - 每条声明应该只占用一行来保证错误报告更加准确.
 - 所有声明应该以分号结尾.虽然最后一条声明后的分号是可选的，但是如果没有他，你的代码会更容易出错.
 - 逗号分隔的取值，都应该在逗号之后增加一个空格.比如说 box-shadow
-- 不要在颜色值 `rgb()` `rgba()` `hsl()` `hsla()`和 `rect()` 中增加空格，并且不要带有取值前面不必要的 `0` (比如，使用 `.5` 替代 `0.5`).
+- 颜色函数可使用逗号分隔或现代空格分隔语法，遵循目标浏览器与格式化配置；`0.5` 与 `.5` 都是合法数字写法。
 - 所有的十六进制值都应该使用小写字母，例如 `#fefefe`.
   尽可能使用短的十六进制数值，例如使用 `#fff` 替代 `#ffffff`.
 - 为选择器中的属性取值添加引号，例如 `input[type="text"]`. 他们只在某些情况下可有可无，所以都使用引号可以增加一致性.
-- 不要为 0 指明单位，比如使用 `margin: 0;` 而不是 `margin: 0px;`.
+- 表示零长度时通常可省略单位，例如 `margin: 0`。这个规则不适用于所有值类型：时间值应写成 `0s`，`calc()` 和自定义属性中的值也要遵循上下文的类型要求。
 
 ```css
 /* 不推荐 */
@@ -233,10 +236,9 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 
 #### 不要使用 @import
 
-与 <link>标签相比, @import 更慢, 增加了额外的页面请求，可能还会导致不可预见的问题.避免使用它们, 改用以下的方法:
+这是针对未经构建的浏览器运行时串行加载的建议：导入链可能延迟发现后续样式。直接使用 `<link rel="stylesheet">` 通常更便于尽早发现资源。
 
-- 多用几个 <link> 标签
-- 将你的 css 编译到一个文件里
+构建工具可在构建期处理 `@import`，CSS 还支持结合 `@layer` 管理导入规则；因此不应把所有 `@import` 一概禁止。参见 [MDN @import](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/At-rules/@import)。
 
 #### 媒体查询位置
 
@@ -244,44 +246,43 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 
 ```css
 .element {
-  ...;
+  /* 示例规则。 */
 }
 .element-avatar {
-  ...;
+  /* 示例规则。 */
 }
 .element-selected {
-  ...;
+  /* 示例规则。 */
 }
 
 @media (min-width: 480px) {
   .element {
-    ...;
+    /* 示例规则。 */
   }
   .element-avatar {
-    ...;
+    /* 示例规则。 */
   }
   .element-selected {
-    ...;
+    /* 示例规则。 */
   }
 }
 ```
 
 #### 前缀属性
 
-当使用浏览器私有前缀属性时，通过缩进使取值垂直对齐以便多行编辑, 并将标准属性放置在最后.
+按目标浏览器决定是否需要私有前缀，通常交给构建工具处理，不要无条件添加已无必要的旧前缀。确实需要兼容写法时，标准声明一般放在后面。
 
 ```css
 .selector {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 ```
 
 #### 单条声明的声明块
 
-在一个声明块中只包含一条声明的情况下，为了易读性和快速编辑可以考虑移除其中的换行. 所有包含多条声明的声明块应该分为多行。
+无论声明数量多少，都可由格式化工具统一布局。以下示例采用每条声明单独一行；单行声明块也是合法语法。
 
-这样做的关键因素是错误检测. 例如, 一个 CSS 验证程序显示你在 183 行有一个语法错误,如果是一个单条声明的行，那就是他了。在多个声明的情况下，你必须为哪里出错了费下脑子。
+一致的格式有助于阅读差异和定位问题，但格式本身不保证语法正确。
 
 ```css
 /* 单条声明 */
@@ -306,7 +307,7 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 
 #### 属性简写
 
-坚持限制属性取值简写的使用，属性简写需要你必须显式设置所有取值。常见的属性简写滥用包括:
+简写可以同时设置多个相关属性，也可能把未写明的成员重置为初始值。按实际意图选择简写或展开写法，不能认为简写要求显式写出每一个成员。常见的简写属性包括：
 
 - padding
 - margin
@@ -348,54 +349,54 @@ Classes 是为高可复用组件设计的，理论上他们应处在第一位.Id
 ```css
 /* 不推荐 */
 .t {
-  ...;
+  /* 示例规则。 */
 }
 .red {
-  ...;
+  /* 示例规则。 */
 }
 .header {
-  ...;
+  /* 示例规则。 */
 }
 
 /* 推荐 */
 .tweet {
-  ...;
+  /* 示例规则。 */
 }
 .important {
-  ...;
+  /* 示例规则。 */
 }
 .tweet-header {
-  ...;
+  /* 示例规则。 */
 }
 ```
 
 #### 选择器
 
-- 使用 classes 而不是通用元素标签来优化渲染性能。
-- 避免在经常出现的组件中使用一些属性选择器 (例如，`[class^="..."]`)。浏览器性能会受到这些情况的影响。
+- class 有助于明确样式归属、控制选择器优先级，不能仅凭 class 与标签选择器的区别断定页面性能。
+- 属性选择器是正常的 CSS 能力。优先避免不必要的广泛匹配与复杂依赖，发现性能问题时通过实际测量定位，不做没有依据的微优化。
 - 减少选择器的长度，每个组合选择器选择器的条目应该尽量控制在 3 个以内。
 
 ```css
 /* 不推荐 */
 span {
-  ...;
+  /* 示例规则。 */
 }
 .page-container #stream .stream-item .tweet .tweet-header .username {
-  ...;
+  /* 示例规则。 */
 }
 .avatar {
-  ...;
+  /* 示例规则。 */
 }
 
 /* 推荐 */
 .avatar {
-  ...;
+  /* 示例规则。 */
 }
 .tweet-header .username {
-  ...;
+  /* 示例规则。 */
 }
 .tweet .avatar {
-  ...;
+  /* 示例规则。 */
 }
 ```
 
@@ -403,19 +404,18 @@ span {
 
 #### 缩进,分号,单行长度
 
-- 每条语句之后一律以分号结束，不可以省略
+- 分号可由格式化配置统一；JavaScript 也有自动分号插入规则，不能只按换行判断语句边界。
 - 单行长度，理论上不要超过 80 列, 方便阅读
 - 接上一条，如果需要换行，存在操作符的情况，一定在操作符后换行，然后换的行缩进 2 个空格
 
 ```js
-if (
-  typeof user === 'undefined' ||
-  typeof user.readed === 'undefined' ||
-  user.readed !== true
-) {
-  url = 'http://demo.example.com/location2.js'
+const user = { hasRead: true };
+let url;
+
+if (!user || user.hasRead !== true) {
+  url = 'https://demo.example.com/location2.js';
 } else {
-  url = 'http://demo.example.com/location4.js'
+  url = 'https://demo.example.com/location4.js';
 }
 ```
 
@@ -427,21 +427,21 @@ if (
 // 不推荐
 if (condition)
 {
-    ...
+    // 示例逻辑。
 }
 
 function foo()
 {
-    ...
+    // 示例逻辑。
 }
 
 // 推荐
 if (condition) {
-    ...
+    // 示例逻辑。
 }
 
 function foo() {
-    ...
+    // 示例逻辑。
 }
 
 ```
@@ -464,39 +464,36 @@ function foo() {
 ```js
 function foo(num) {
   if (num < 2) {
-    num *= 2
+    num *= 2;
   }
-  return num
+  return num;
 }
 ```
 
 #### 空行
 
-- 方法之间加
-- 单行或多行注释前加
+- 不同函数或逻辑段之间可留空行
+- 注释前是否留空行取决于上下文，避免将紧贴下一行的说明割裂
 - 逻辑块之间加空行增加可读性
 
 #### 变量命名
 
-- 变量名不应少于三个字符(循环中使用的迭代变量 i,j,k 等除外)，过短的名字不能体现其代表等意义，将使代码变得不可读
+- 用能表达职责的名称，不设置通用的最小字符数；`id`、`x` 等在明确上下文中也可以使用。
 - 标准变量采用驼峰标识
-- 使用的 ID 的地方一定全大写
-- 使用的 URL 的地方一定全大写
-- 涉及 Android 的，一律大写第一个字母
-- 涉及 iOS 的，一律小写第一个，大写后两个字母
-- 常量采用大写字母，下划线连接的方式
+- 缩写和品牌词的大小写按团队规则统一，例如 `userId`、`requestUrl`、`androidVersion` 和 `iosVersion`。
+- 模块级固定配置可采用大写加下划线；`const` 只限制绑定重新赋值，不会自动冻结对象内容，也不要求所有 `const` 变量都大写。
 - 构造函数，大写第一个字母
 
 ```js
 var thisIsMyName
 
-var goodID
+var userId
 
-var reportURL
+var requestUrl
 
-var AndroidVersion
+var androidVersion
 
-var iOSVersion
+var iosVersion
 
 var MAX_COUNT = 10
 
@@ -515,39 +512,33 @@ var name = 'Judy'
 
 #### null 的使用场景
 
-- 初始化一个将来可能被声明为一个对象的变量
-- 与一个可能是对象或者非对象的初始化变量相比
-- 传入一个对象待定的函数
-- 作为一个对象待定的函数的返回值
+`null` 常用于明确表示“没有对象”或业务上有意留空，是否接受应由接口契约决定。`typeof null` 的结果是 `"object"`，因此仅用 `typeof value === "object"` 不能排除 null。
 
 #### 不适合 null 的使用场景
 
-- 不要使用 null 来测试一个一个变量是否存在
-- 不要用 null 来测试一个没声明的变量
+`value === null` 只判断值是否为 null，不能判断标识符是否声明，也不能同时覆盖 undefined。区分“字段缺失”“字段为 undefined”和“字段明确为 null”时应按业务含义分别处理。
 
 #### undefined 使用场景
 
 一个只声明未定义的变量其值即为`undefined`, 不要给一个刚声明的变量赋值为`undefined`.
 
-永远不要直接使用 undefined 进行变量判断, 使用字符串 "undefined" 对变量进行判断.
+已声明的变量可以用 `value === undefined` 判断。`typeof missingName === "undefined"` 还能检查未声明的标识符，但在 `let` / `const` 的暂时性死区中仍可能抛出异常。不要在局部作用域重新定义 `undefined`。参见 [MDN undefined](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined)。
 
 ```js
-// 不推荐
-var person
-console.log(person === undefined) //true
-
-// 推荐
-console.log(typeof person) // "undefined"
+let person;
+console.log(person === undefined); // true
+console.log(typeof person); // "undefined"
+console.log(typeof missingName); // "undefined"（假设没有同名声明）
 ```
 
 #### 字面量
 
-使用字面量的方式来定义 javascript 内置类型的变量, 不要使用 new 操作符. 使用字面量更容易阅读, 而且不会出现潜在错误.
+普通对象、数组和字符串等通常优先使用字面量。`new String`、`new Number`、`new Boolean` 会创建包装对象，行为与原始值不同；自定义类、`Map`、`Set`、`Date` 等仍有合理的构造用法。
 
 ```js
 // 对象的字面量
 // 不推荐
-var team = new Team()
+var team = new Object()
 team.title = 'AlloyTeam'
 team.count = 25
 // 推荐
@@ -566,7 +557,7 @@ var numbers = [1, 2, 3, 4]
 
 // 正则字面量
 // 不推荐
-var reg = new RegExp('s+', g)
+var reg = new RegExp('\\s+', 'g')
 // 推荐
 var reg = /\s+/g
 
@@ -600,7 +591,7 @@ if (isLoaded) {
 #### 单行注释
 
 - 双斜线后，必须跟注释内容保留一个空格
-- 可独占一行, 前边不许有空行, 缩进与下一行代码保持一致
+- 独占一行时与所说明的代码保持相同缩进，需要分隔逻辑段时可在注释前留空行。
 - 可位于一个代码行的末尾，注意这里的格式
 
 ```js
@@ -610,7 +601,7 @@ if (condition) {
   allowed()
 }
 
-var zhangsan = 'zhangsan' // 双斜线距离分号一个缩进, 双斜线后保留一个空格
+var zhangsan = 'zhangsan' // 行尾注释与前面的代码之间留空格，双斜线后保留一个空格
 ```
 
 #### 多行注释
@@ -635,7 +626,7 @@ var zhangsan = 'zhangsan' // 双斜线距离分号一个缩进, 双斜线后保�
 
 #### 文档注释
 
-对于函数以及全局变量, 需要有详细的文档注释. 文档注释是使用`@param` `@return`等标签来注解, 请参考 <http://usejsdoc.org/>
+对于函数以及全局变量, 需要有详细的文档注释. 文档注释是使用`@param` `@return`等标签来注解, 请参考 <https://jsdoc.app/>
 
 函数注释格式如下
 
@@ -648,16 +639,21 @@ var zhangsan = 'zhangsan' // 双斜线距离分号一个缩进, 双斜线后保�
 
 // 例如
 /**
- * 判断参数是否为数字
- * @param  {Number}   num   待判断的参数, 可以是任意类型
- * @return {Boolean}        若参数为数字则返回true, 否则false
+ * 判断参数是否为有限的 number 原始值，不接受数字字符串。
+ * @param {unknown} value 待判断的参数。
+ * @returns {boolean} 有限数字返回 true；NaN、Infinity 和非数字返回 false。
  */
-function isNum(num) {
-  return !isNaN(num)
+function isNum(value) {
+  return Number.isFinite(value);
 }
+
+isNum(1.5); // true
+isNum("1.5"); // false
+isNum(null); // false
+isNum(NaN); // false
 ```
 
-全局变量注释格式如下
+全局变量注释格式如下。新代码通常优先使用 `const`，需要重新赋值时用 `let`；本节部分 `var` 示例保留用于说明旧代码写法，不要求在新项目中沿用。
 
 ```js
 /**
@@ -670,7 +666,7 @@ function isNum(num) {
  * 每页请求的数据条数
  * @type {Number}
  */
-var PAGE_SIZE = 10
+const PAGE_SIZE = 10;
 ```
 
 #### 其他

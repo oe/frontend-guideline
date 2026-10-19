@@ -1,85 +1,62 @@
 ---
 title: "常用的第三方库及框架"
-description: "## React"
+description: "了解当前常用框架、工具库和测试工具，并区分新项目选择与旧项目维护。"
 sidebar:
   order: 5
 ---
 
-## React
+先学习 HTML、CSS、JavaScript，再根据项目需要选择框架。优先阅读官方文档，确认版本、维护状态和浏览器支持范围。
 
-- [Github 项目主页](https://github.com/facebook/react)
-- [英文官网](https://reactjs.org/docs/getting-started.html)
-- [中文网站](https://www.reactjscn.com/docs/getting-started.html) 相比英文官网, 文档会落后几个小版本
-- [React 常见技巧](https://hateonion.me/books/react-bits-cn/)
-- [React Index](https://react-index.com/)
+## UI 框架与库
 
-## 移动应用框架
+- [React](https://react.dev/learn) / [中文文档](https://zh-hans.react.dev/learn)：通过组件和状态构建界面。[源码](https://github.com/facebook/react)
+- [Vue 3](https://cn.vuejs.org/guide/introduction.html)：提供渐进式的组件开发方式。[源码](https://github.com/vuejs/core)
+- [Angular](https://angular.dev/tutorials)：提供路由、表单、依赖注入等完整应用能力。[源码](https://github.com/angular/angular)
+- [Svelte](https://svelte.dev/docs)：通过编译组件构建界面。[源码](https://github.com/sveltejs/svelte)
 
-- [Framework 7](https://framework7.io/) 体验接近原生的移动应用框架 [source]()
+不需要同时学习所有框架。完成一个包含数据请求、状态管理、表单和路由的小项目，比只比较框架名词更有帮助。
 
-## JS 库
+## 应用与内容框架
 
-### 工具库
+- [Next.js](https://nextjs.org/docs)：基于 React 的应用框架。
+- [Nuxt](https://nuxt.com/docs)：基于 Vue 的应用框架。
+- [Astro](https://docs.astro.build/zh-cn/getting-started/)：适合文档、博客等以内容为主的网站；本书使用 Astro 与 [Starlight](https://starlight.astro.build/zh-cn/) 构建。
 
-- [jQuery](https://jquery.com/) 流行的 JS 工具库，提供了 DOM 元素查找，事件绑定，Ajax 等 [source](https://github.com/jquery/jquery)
-- [Zepto](http://zeptojs.com/) 类 jQuery，使用方法基本一致，针对移动端优化，库体积很小 [source](https://github.com/madrobby/zepto/)
-- [Underscore](http://underscorejs.org/) 流行的函数库，提供了集合，数组，对象，字符串，函数等的常用函数 [source](https://github.com/jashkenas/underscore)
-- [Lodash](https://lodash.com/) 类 Underscore 的函数库，修正了 underscore 的一些问题，亦有一些优化 [source](https://github.com/lodash/lodash/)
-- [Momentjs](https://momentjs.com/) 专注于时间／日期操作的库，如格式转换，值校验，日期计算，全球时间格式支持等 [source](https://github.com/moment/moment/)
-- [iScroll](http://iscrolljs.com/) 专注于元素滚动的库，可使元素平滑滚动。使用该库在移动设备上可实现下拉刷新效果[source](https://github.com/cubiq/iscroll)
+根据是否需要服务端渲染、静态生成、接口服务与部署适配器选择方案，避免为简单页面引入过多运行时依赖。
 
-### MVC，MVVM，etc..
+## 常用工具库
 
-- [Vue](https://cn.vuejs.org/) 国人开发的 MVVM 库，轻量易学最近愈加流行 [source](https://github.com/vuejs/vue)
-- [React](https://facebook.github.io/react/) Facebook 开发的 MVVM 库，相比 Vue 上手难度略高[source](https://github.com/facebook/react)
-- [Angularjs](https://angularjs.org/) Google 开发的 MVVM 库 [source](https://github.com/angular/angular.js)
-- [Spine](https://spine.github.io/) 使用 coffeescript 编写的 MVC 库 [source](https://github.com/spine/spine)
-- [Backbones](http://backbonejs.org/) 老牌的 MVC 库 [source](https://github.com/jashkenas/backbone/)
+- [Lodash](https://lodash.com/)：集合、对象和函数等工具。使用前可以先确认 JavaScript 原生 API 是否已经满足需求。
+- [date-fns](https://date-fns.org/) / [Day.js](https://day.js.org/)：日期处理工具，涉及跨时区业务时需额外确认时区支持。
+- [jQuery](https://jquery.com/)：仍会在旧项目中出现；新项目的许多 DOM、事件和网络请求需求可以直接使用浏览器 API。
 
-### React
+[Moment.js](https://momentjs.com/docs/#/-project-status/) 已进入维护模式，维护既有项目时可以继续了解，新项目优先评估更适合的替代方案。
 
-- [30 天学习 react (英文)](https://github.com/fullstackreact/30-days-of-react)
+## CSS 与组件
 
+- [Bootstrap](https://getbootstrap.com/)：包含布局与常用 UI 组件的 CSS 框架。
+- [Tailwind CSS](https://tailwindcss.com/docs)：按工具类组合样式的方案。
+- [Primer](https://primer.style/)：GitHub 的设计系统与组件资源。
+- [WeUI](https://github.com/Tencent/weui)：面向微信场景的界面样式库。
+- [Framework7](https://framework7.io/)：面向移动端 Web 应用的框架。[源码](https://github.com/framework7io/framework7)
 
-[React/JSX 编码规范 (英文)](https://github.com/airbnb/javascript/blob/master/react/README.md)
+组件库并不代替可访问性、响应式布局和交互设计。选择前先确认与项目框架版本的兼容性。
 
-### 模块化管理工具
+## 模块化与构建
 
-- [requirejs](http://requirejs.org/)国际流行的 AMD 风格的模块化管理工具 [source](https://github.com/requirejs/requirejs)
-- [seajs](http://seajs.org/docs/) 中国人编写的 CMD 风格的模块化管理工具 [source](https://github.com/seajs/seajs)
-- [browserify](http://browserify.org/) 新晋的 CMD 风格的模块化管理器，支持将使用的模块打包成单个 JS 文件 [source](https://github.com/substack/node-browserify)
-
-## CSS 框架
-
-- [Bootstrap](http://getbootstrap.com/) Twitter 出品，组件丰富而复杂，使用广泛。[source](https://github.com/twbs/bootstrap/)
-- [weui](https://weui.io/) 微信官方提供的 UI 库 [source](https://github.com/weui/weui)
-- [purecss](http://purecss.io/) 雅虎出品的 css 库，简约，包含常用组件，响应式设计，易于集成到现有项目。[source](https://github.com/yahoo/pure/)
-- [Primer](http://primercss.io/) Github 出品，从 github 官网提取出的 css 库。 [source](https://github.com/primer/primer)
-- [Semantic UI](http://semantic-ui.com/) 自带 UI 组件比 twitter 丰富，但其 css 系统略复杂。[source](https://github.com/semantic-org/semantic-ui/)
-- [Kube](https://imperavi.com/kube/css/)
-
-## 组件库
-
-- [artdialog](https://aui.github.io/artDialog/) 国人开发的对话框组件[source](https://github.com/aui/artDialog)
-- [datetimepicker](https://eonasdan.github.io/bootstrap-datetimepicker/) 日期时间选择插件，依赖 bootstrap [source](https://github.com/Eonasdan/bootstrap-datetimepicker)
-
-## 其他资源素材
-
-### 图标
-
-- [fontello](http://fontello.com/) 字体图标生成工具。第三方图标提供了很丰富的字体，但是往往几百个图标中只用到了其中少部分图标，使用该工具可自定义生成只包含自己使用图标的字体文件，大大减少字体图标体积。该工具支持从众多免费开源的字体图标中选择，包括 Font awesome，Entypo, Typicons, Iconic 等等
-- [Font awesome](http://fontawesome.io/) 拥有超过 600 个免费开源的字体图标，囊括了绝大部分常用图标
-- [Line awesome](https://icons8.com/line-awesome) 和 Font awesome 类似的字体图标库，图标风格略有差异。由 icons 8 提供
-- [icons 8](https://icons8.com/) 包含四万多多免费图标。免费使用的图标有尺寸限制，且需要在网站添加其链接。
+新项目通常使用 [JavaScript 模块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules) 的 `import` / `export`，并通过 [Vite](https://cn.vite.dev/) 等工具构建。RequireJS（AMD）、SeaJS（CMD）、Browserify（CommonJS 打包）主要用于理解和维护旧项目。
 
 ## 自动化测试
 
-- [mocha](https://mochajs.org/) 流行的自动化测试框架 [source](https://github.com/mochajs/mocha)
-- [chai](http://chaijs.com/) 流行的断言库, 可供测试框架调用 [source](https://github.com/chaijs/chai)
-- [phantomjs](http://phantomjs.org/) 在 nodejs 中模拟浏览器环境, 可用于做浏览器端端自动化测试 [source](https://github.com/ariya/phantomjs/)
+- [Vitest](https://vitest.dev/guide/)：单元测试与集成测试，适合 Vite 项目。
+- [Testing Library](https://testing-library.com/docs/)：从用户可观察的行为测试界面。
+- [Playwright](https://playwright.dev/docs/intro)：在真实浏览器引擎中执行端到端测试。
+- [Mocha](https://mochajs.org/) / [Chai](https://www.chaijs.com/)：测试框架与断言库，也常见于已有项目。
 
-## 延伸阅读
+PhantomJS 已停止维护，新项目应使用持续维护的浏览器测试工具。测试应覆盖关键行为与故障场景，避免只检查实现细节。
 
-- [Front-end Frameworks](http://usablica.github.io/front-end-frameworks/compare.html) 前端 css 框架对比
-- [MV\* Frameworks](http://todomvc.com/) MV\* 框架
-- [awesome](https://github.com/sindresorhus/awesome) 各种 awesome 列表， 收集各种开发有关的资源素材
+## 图标与更多资源
+
+- [Font Awesome](https://fontawesome.com/) / [Lucide](https://lucide.dev/)：图标资源，使用前确认许可、署名要求与实际打包体积。
+- [TodoMVC](https://todomvc.com/)：通过同类示例了解不同框架的写法。
+- [Awesome](https://github.com/sindresorhus/awesome)：按主题整理的开发资源列表。

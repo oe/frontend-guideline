@@ -3,31 +3,6 @@ body {
 }
 
 .sl-container {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    position: relative;
-
-    .icon-link {
-      position: absolute;
-      left: -1em;
-      opacity: 0;
-      width: 1em;
-      text-align: center;
-      transition: all 0.2 linear;
-      &::after {
-        content: '#';
-      }
-    }
-
-    &:hover .icon-link {
-      opacity: 1;
-    }
-  }
-
   figure {
     // using box shadowing to make image more obvious
     img {
@@ -44,7 +19,7 @@ body {
 
 .fg-link {
   text-decoration: none;
-  font-weight: thin;
+  font-weight: 300;
 
   &:visited {
     color: var(--sl-color-text-accent);
