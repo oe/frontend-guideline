@@ -5,11 +5,11 @@ sidebar:
   order: 2
 ---
 
-GitHub Actions 可以在提交、PR 或打标签时运行安装、检查、测试和构建。持续集成（CI）验证改动，持续部署（CD）发布验证通过的产物。
+**个人项目默认从 GitHub Actions 开始，不要先搭一套 Jenkins。** 第一个目标只有两个：PR 自动检查，main 成功后才发布。让失败的检查真正阻止发布，再逐步加缓存、并行与版本发布。
 
 ## 创建 CI 工作流
 
-在仓库的 `.github/workflows/ci.yml` 中添加配置。以下示例用于已有 `package-lock.json` 的 npm 项目：
+在仓库的 `.github/workflows/ci.yml` 中添加配置。以下示例要求 npm 项目已提交 `package-lock.json`，并提供 `test` 和 `build` 脚本：
 
 ```yaml
 name: CI
@@ -35,11 +35,11 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - run: npm test --if-present
+      - run: npm test
       - run: npm run build
 ```
 
-`npm ci` 根据锁文件安装依赖；`--if-present` 允许没有 test 脚本的项目跳过该命令。如果测试是项目的必需检查，应使用 `npm test` 并确保脚本存在。类型检查与代码检查也应按项目 scripts 加入工作流。
+`npm ci` 根据锁文件安装依赖。没有测试的项目，先建立一项真实检查再把它设为必需；不要让本来应该执行的测试被静默跳过。类型与代码检查按项目 scripts 一起加入，CI 中的命令应和本机一致。
 
 pnpm 项目应先使用 `pnpm/action-setup`，通过 `packageManager` 固定版本，再用 `actions/setup-node` 缓存 pnpm，执行 `pnpm install --frozen-lockfile`。缓存加速下载，不应替代每个任务中的依赖安装。
 
@@ -51,7 +51,7 @@ GitHub Pages 支持两种常见发布方式：将构建结果推送到专用分�
 
 本书沿用 `gh-pages` 分支部署。在仓库 `Settings → Pages` 中选择从 `gh-pages` 的根目录发布。其自动化流程是：
 
-1. PR 和 main 更新都执行锁文件安装、Astro 检查、静态构建和站内链接检查。
+1. PR 和 main 更新都执行锁文件安装、依赖漏洞审计、测试、Astro 检查、静态构建、站内链接与 SEO 检查。
 2. main 的构建成功后，上传 `dist/` 作为本次运行的产物。
 3. 单独的部署任务下载这份产物，通过 `peaceiris/actions-gh-pages@v4` 发布到 `gh-pages`。
 4. 仅部署任务声明 `contents: write`，PR 不执行该任务。
@@ -102,4 +102,11 @@ steps:
 - [GitHub Actions 安全使用参考](https://docs.github.com/en/actions/reference/security/secure-use)
 - [GitHub CLI release 命令](https://cli.github.com/manual/gh_release)
 
-服务的免费额度会变化，选型时查看当前定价；其他托管选择见[部署](/frontend-guideline/dev/deploy/)。
+## 失败时看哪里
+
+- **没有触发**：先看 `on` 的分支、路径与事件过滤，不是每次 push 都匹配同一个工作流。
+- **检查失败**：点开失败 job 的第一条相关报错，在同一 Node 与包管理器版本下复现。
+- **构建成功但没上线**：看 deploy 是否被 `if` 跳过、是否拿到正确 artifact，再看 Pages 来源配置与实际 Pages deployment。
+- **权限不足**：检查当前 job 的 `permissions` 和事件类型，别先把整个工作流改成全仓库写权限。
+
+失败后先修一个能验证的原因。旧部署仍可用时保留它，别为了「重来一次」清空发布分支。其他托管选择见[部署](/frontend-guideline/dev/deploy/)。

@@ -1,60 +1,62 @@
 ---
 title: "学习"
-description: "在这里, 开启学习的大门, 你可以按以下目录, 循序渐进学习, 一步步提高."
+description: "按页面、交互、接口和框架逐步完成一个可发布项目，给出每个阶段的练习与验收标准。"
 sidebar:
   order: 1
 ---
 
-在这里, 开启学习的大门, 你可以按以下目录, 循序渐进学习, 一步步提高.
+**从一个能上线的小项目开始，边做边查，别先收藏一百套教程。** 本书建议按下面的顺序练习：
 
-- [前端基础知识](/frontend-guideline/learning/basic/)
-- [编码规范](/frontend-guideline/learning/guideline/)
-- [前端进阶知识](/frontend-guideline/learning/pro/)
-- [常用框架/常用库](/frontend-guideline/learning/frameworks/)
-- [有用的资讯、资源及学习网站](/frontend-guideline/learning/resource/)
+| 阶段 | 做出来的东西 | 通过标准 |
+| --- | --- | --- |
+| HTML / CSS | 一个个人介绍页或产品页 | 有合理的标题、链接、图片和表单，手机与桌面都能读 |
+| JavaScript / DOM | 带筛选和编辑功能的清单 | 点按有反馈，空列表和非法输入有处理，刷新后按设计保留数据 |
+| HTTP / 异步 | 从接口读取和提交数据 | 有加载、空数据、失败与重试状态，能从 Network 找到请求 |
+| 框架 / TypeScript | 把前面的应用拆成组件 | 组件职责清楚，数据流能解释，改一处不会复制到五处 |
+| 工程与发布 | 把应用部署到可访问的地址 | 构建通过，刷新内部页面正常，README 写清启动方法 |
+
+学完一节就做对应功能。卡住时带着具体问题查文档，比从头重看十小时视频有效。
+
+- [前端基础知识](/frontend-guideline/learning/basic/)：按 HTML、CSS、JavaScript 补齐基础。
+- [编码规范](/frontend-guideline/learning/guideline/)：把可读性与检查工具落实到项目。
+- [前端进阶知识](/frontend-guideline/learning/pro/)：用真实问题练异步、类型、性能与工程质量。
+- [框架与库](/frontend-guideline/learning/frameworks/)：默认方案与适用场景。
+- [学习资源](/frontend-guideline/learning/resource/)：选一条主线，需要时再查补充资料。
 
 ## 学习方法
-你可以直接使用代码编辑器+在本地开启服务器方式来学习前端知识, 但这对于前端初学者来说, 略显麻烦. 推荐使用下述方式来学习:
+
+**大段代码写进文件，短实验放进 Console。** 代码要能保存、提交和重新运行，别在开发者工具里改了半天，刷新之后全部消失。
 
 ### 使用 Chrome 开发者工具学习
-直接在浏览器中学习, 可以边看教程边学习. 请先确保你已经[下载并安装了 Chrome](https://www.google.cn/chrome/), 建议将其设置为默认浏览器.
-下载地址: <https://www.google.cn/chrome/>
 
-#### 如何打开 Chrome开发者工具
-打开 Chrome 开发者工具的方法很简单:
-1. 启动Chrome
-2. 打开自己的练习页面；简短 JavaScript 练习也可使用空白页。
-3. 右键点击网页并选择菜单 **Inspect**, 弹出的面板即为 「开发者工具」.
-4. 也可以使用快捷键快速开启「开发者工具」. 建议记住快捷键, 因为在以后的开发工作中你会频繁的使用这个开发者工具
-   1. Mac 下使用 <kbd>cmd</kbd> + <kbd>alt</kbd> + <kbd>i</kbd>
-   2. Windows 下使用 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>i</kbd>
+先安装 [Chrome](https://www.google.com/chrome/)，打开自己做的页面。Mac 用 `Command + Option + I`，Windows/Linux 用 `Ctrl + Shift + I` 打开 DevTools；也可以右键页面选择「检查」。
 
 #### 学习 Javascript
-在开发者工具中, 有两种方便的方式可以用于学习JS
-1. 使用 **Console** 面板
-   1. 在开发者工具中激活 Console 面板
-   2. 在该面板中直接输入JS代码按回车即执行代码, 若想换行可使用 shift + enter 快捷键
-   3. 该面板中执行的JS可以访问网页上的DOM元素, 也能访问该网页的全局JS对象
-   4. 该方式适合执行简短的JS语句, 大段的JS代码则推荐使用下边的方法
-2. 使用 **Sources** 面板. 详细说明可查看[官方文档](https://developer.chrome.com/docs/devtools/javascript/snippets/)
-   1. 在开发者工具中激活 Sources 面板
-   2. 在左侧侧边栏中激活 Snippets 的Tab, 若找不到, 点击「>>」应该就能找到
-   3. 在左侧侧边栏空白区域点击右键, 选择菜单 new , 新建代码片段
-   4. 在右侧区域编辑代码, 可按 cmd(ctrl) + s 保存代码
-   5. 右击左侧代码片段名字, 选择菜单 run 即可执行代码
 
-#### 学习 HTML 及 CSS(不建议初学者使用该方法!)
-学习 HTML 及 CSS 使用 **Elements** 面板即可. 详细说明可查看[官方文档](https://developer.chrome.com/docs/devtools/css/)
-1. 该面板的左侧显示浏览器解析并可能被脚本修改后的 DOM，它不一定等同于服务器返回的原始 HTML 源码； 右侧面板则是左侧DOM节点的属性信息: Styles(样式, 所有被使用样式)、Computed(计算后的样式, 即最终实际使用的样式属性)
-2. 左侧的DOM内容区, 可以通过双击节点或者右击节点选择菜单「Edit as HTML」来对节点的HTML进行修改, 
-3. 在左侧区域选中一个DOM节点, 右侧侧边栏即会发生对应变化, 在右侧的Styles的页签中可以直接编辑样式, 并可实时查看到对应DOM节点在网页中的最新样式效果
-4. 可点击 开发者工具 左上角的 鼠标指针 图标, 使其变为蓝色选中态, 再点击网页中你关注的元素, 即可快速再 Elements 面板中定位到该节点的DOM, 并可在右侧查看到其样式。这里的修改通常不会保存到源码，刷新后会消失
+- **Console**：适合练数组方法、检查表达式和查看当前页面对象。先试 `[1, 2, 3].map(n => n * 2)`，再把它放到自己的代码里；换行用 `Shift + Enter`。
+- **Sources → Snippets**：需要反复执行多行代码时，新建片段、保存并运行。具体入口见 [Chrome Snippets](https://developer.chrome.com/docs/devtools/javascript/snippets/)。
+- **文件与本地开发服务**：开始写 DOM 交互、多个模块或调用接口后，尽早使用[本地项目](/frontend-guideline/dev/init/)，别一直靠控制台凑功能。
 
+#### 学习 HTML 及 CSS
+
+在 **Elements** 选中元素，查看 Styles 和 Computed。先改 `display`、`gap`、`width` 等一个属性，观察效果，再把有效修改写回源码。这里看到的是浏览器当前的 DOM，可能已经被脚本修改，和服务器最初返回的 HTML 不完全相同。
+
+练习时建议做这三件事：
+
+1. 用盒模型面板解释一个元素为什么挤出容器。
+2. 用 Flex / Grid 面板看清父容器如何安排子项。
+3. 把浏览器宽度缩小，找到第一处溢出并修好。
+
+这里的修改通常不会保存到项目；调出效果后就回编辑器落地。完整方法见[调试](/frontend-guideline/dev/debug/)。
 
 ### 使用在线练习(playground)网站学习
-网上有很多在线网站, 可以在线编写 html、css(以及平台支持的 CSS 预处理器)、JavaScript(甚至包括预编译语言 Typescript、Coffeescript等), 并可以实时看到效果. 在浏览器中即可演练, 无需在电脑上安装其他软件, 还可以保存演练的代码并生成唯一的访问地址分享给其他人, 非常方便.
 
-以下是一些流行的在线练习网站:
-1. [JSbin](https://jsbin.com/?html,css,js,output), 可在线编辑并通过生成的链接分享代码，保存与协作能力以当前账户和平台功能为准。若无法访问，可使用 [JSFiddle](https://jsfiddle.net/) 练习 HTML、CSS 和 JavaScript。
-2. [Codepen](https://codepen.io/pen/), 一个很流行的代码练习网站, 注册登录后可将你的代码片段分享给其他人. 也可以在上面查看别人分享的[有趣的代码](https://codepen.io/)
-3. [CodeSandbox](https://codesandbox.io/), 一个功能更为强大的练习网站, 可以用于练习[React开发](https://codesandbox.io/)、[Vue的开发](https://codesandbox.io/)、[Angular的开发](https://codesandbox.io/), 还可以在其内在线安装第三方库并直接使用
+- **[CodePen](https://codepen.io/pen/)**：HTML/CSS 动画和小交互，打开就写，适合分享效果。
+- **[JSFiddle](https://jsfiddle.net/)**：快速复现一个 DOM、CSS 或 JS 问题。
+- **[StackBlitz](https://stackblitz.com/)**：需要 npm 依赖和项目文件时使用，适合分享框架问题的最小复现。
+
+给别人提问时，发一个能打开、能复现的链接，附上预期和实际结果。不要只贴一张代码截图让人猜。
+
+## 什么时候进入下一阶段
+
+不要求背完所有 API，但要能自己完成当前阶段的小功能：不看视频也能写出主要结构，能解释数据从哪里来，出错知道先看哪个面板。复制教程能跑，不算已经掌握；换一份数据、加一个限制还能改对，才值得继续往下学。

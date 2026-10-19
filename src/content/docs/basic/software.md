@@ -1,112 +1,143 @@
 ---
 title: "开发工具"
-description: "选择终端、编辑器、浏览器与常用开发辅助工具。"
+description: "以 VS Code、AI 编程工具、Chrome、Node LTS 与 pnpm 组成主力工具链，给出扩展、调试、设计协作和旧工具的明确取舍。"
 sidebar:
   order: 4
 ---
 
+**先装一套能完成开发、调试、提交和发布的工具，再考虑美化终端与收集插件。** 本书推荐从 VS Code、Chrome、Git、Node LTS 和 pnpm 开始；AI 编程工具选一个认真用，别先订阅一排套餐。
 
-## SHELL
+<small>更新于 2026-10-19。个人工具偏好；收费、额度与平台支持看官网，已有项目沿用仓库配置。</small>
 
-- [Bash 官方手册](https://www.gnu.org/software/bash/manual/)与 [PowerShell 文档](https://learn.microsoft.com/zh-cn/powershell/)：先区分当前使用的 Shell，再查对应语法。
+## 开工清单
+
+| 任务 | 默认推荐 | 为什么选它 |
+| --- | --- | --- |
+| 写代码 | **VS Code** | JS/TS、Git、调试能力齐全，框架扩展和团队配置容易复用 |
+| AI 辅助 | VS Code 中的 Copilot / Codex，或直接用 Cursor | 留在编辑器里完成读代码、改文件和检查；先选一种工作方式 |
+| 浏览器调试 | **Chrome DevTools** | Elements、Network、Sources、Performance 能覆盖大部分日常问题 |
+| 运行项目 | **Node LTS + fnm** | 按仓库切版本，避免每换项目就重装运行环境 |
+| 管理依赖 | 新项目优先 **pnpm** | 多项目管理方便；已有项目按锁文件与 `packageManager` 使用 |
+| 版本控制 | 编辑器内置 Git + 命令行，图形客户端选 Sourcetree | 随时检查差异，熟悉提交、分支、合并，不只会按同步按钮 |
+| 设计协作 | **Figma** | 查看布局、组件、资源与设计标注，直接对照实现 |
+
+安装与版本切换的具体命令在[开发环境配置](/frontend-guideline/basic/fontend-env/)。读完这篇，只安装自己马上会用的项目。
 
 ## 编辑器
 
-- [Visual Studio Code](https://code.visualstudio.com/)：内置 JavaScript、TypeScript 和 Git 支持，扩展丰富。
+### 默认用 VS Code
 
-- [Sublime Text](https://www.sublimetext.com/) 跨平台开发神器, 有丰富的扩展支持。 付费软件，可试用，具体条款以官网为准。
-- [Phoenix Code](https://phcode.io/)：源自 Brackets 的编辑器项目。
-- [Atom](https://github.com/atom/atom)：已停止维护并归档，仅供了解旧项目环境，新项目请选择持续维护的编辑器。
-- [notepad++](https://notepad-plus-plus.org/) windows 平台, 免费开源, 支持多种语言, 多种文件编码, 支持扩展
+[VS Code](https://code.visualstudio.com/) 是本书给初学者和普通项目的首选。[Stack Overflow 2026 开发者调查](https://survey.stackoverflow.co/2026/technology/data/dev-ide)中，VS Code 仍是使用最多的编辑器，受访者选择率为 70.9%；这是多选、自选样本调查，用来了解生态，不是性能排名。
 
-编程字体个人推荐 [Fira Code](https://github.com/tonsky/FiraCode) 和 [Cascadia Code](https://github.com/microsoft/cascadia-code)，都值得装上试试。它们支持[连字](https://blog.evecalm.com/2020/05/about-font-and-character.html)，喜欢的话可以开启；觉得 `=>`、`!=` 合成一个字形反而影响辨认，就关掉连字，保留字体本身。
+先学会全局搜索、跳转定义、重命名、断点和差异比较。它们天天用得上，价值远高于装十套主题。
 
-### Sublime Text 相关网站 :thumbsup:
+扩展按项目装，先看发布者是否正确：
 
-- [官网](https://www.sublimetext.com/)
-- [Package Control](https://packagecontrol.io/) ST 扩展管理器官网
-- [Sublime Text 官方文档](https://www.sublimetext.com/docs/)
-- [Sublime Text 官方键绑定说明](https://www.sublimetext.com/docs/key_bindings.html)：查看快捷键配置方式与默认键绑定文件。
+- **ESLint**：`dbaeumer.vscode-eslint`，项目使用 ESLint 时安装。
+- **Prettier**：`esbenp.prettier-vscode`，项目使用 Prettier 时安装；已有 Biome 等方案就沿用它，不要叠加两个格式化器。
+- **Vue (Official)**：`Vue.volar`，Vue 3 项目安装，别再跟着旧教程装 Vetur。
+- **Astro**：`astro-build.astro-vscode`，编辑本站这类 Astro 项目时安装。
+- **Tailwind CSS IntelliSense**：`bradlc.vscode-tailwindcss`，使用 Tailwind 时才装。
+- **WSL**：`ms-vscode-remote.remote-wsl`，Windows + WSL 开发时安装。
 
-Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，从 菜单栏 ➡ Preferences ➡️ Key Bindings - Default 查看所有快捷键的默认配置文件。
+JS/TS、Git、HTML/CSS、Emmet 和浏览器调试已经有[内置支持](https://code.visualstudio.com/docs/getstarted/overview)，不用再搜一个「JavaScript 全家桶」扩展包。React 项目也不用为 JSX 另装一堆重叠的语法扩展。
 
-### 编辑器扩展
+格式化器先读项目配置，再开保存时格式化。扩展只是入口，真正的 ESLint、Prettier 等版本应在项目依赖中固定；别让自己的编辑器悄悄把全仓库改一遍。Vue 扩展选择可对照[官方工具指南](https://vuejs.org/guide/scaling-up/tooling.html)，格式化配置见 [Prettier 编辑器集成](https://prettier.io/docs/editors)。
 
-- [Emmet :thumbsup:](https://emmet.io/) 通过易记的缩写形式(支持模糊匹配)来快速生成 HTML 和 CSS, 并配有代码提示, 提高输入效率, 减少输错情况.
+### 其他编辑器怎么选
 
-## API 文档查看器 Docset App
+- **[Cursor](https://cursor.com/docs/agent/overview)**：想围绕 AI Agent 工作，可以直接选它。先练会让 Agent 阅读现有项目、做小范围改动、运行检查，再追更复杂的并行任务。
+- **[WebStorm](https://www.jetbrains.com/webstorm/)**：偏爱开箱即用的项目索引、导航与重构时值得考虑。非商用免费，商业开发需要相应授权，别把「个人项目」直接当成非商用的同义词，见[许可说明](https://www.jetbrains.com/help/webstorm/register.html)。
+- **[Sublime Text](https://www.sublimetext.com/)**：快速打开、编辑零散文件仍然顺手；已经熟练就继续用。新手从零搭现代框架项目，优先 VS Code。
 
-集合各种流行编程语言的 API 文档，方便进行检索查询。下列软件，可根据自身需要，择一即可。
+Atom 已归档，不再作为新装环境的推荐；也没必要为了学前端先配置一套 Neovim 插件体系。
 
-- [Devdocs :thumbsup:](https://devdocs.io/) 在线的 API 文档合集，并且可将数据缓存至浏览器本地
-- [Dash](https://kapeli.com/dash)：macOS 上的 API 文档查看器，试用和授权方式以官网当前说明为准。
-- [Zeal](https://zealdocs.org/)：支持 Windows 和 Linux 的开源离线文档查看器。
+### 字体
 
-## 浏览器特性检测
+个人推荐 [Fira Code](https://github.com/tonsky/FiraCode) 和 [Cascadia Code](https://github.com/microsoft/cascadia-code)。试用时重点看 `0/O`、`1/l/I` 是否容易分辨，字号先调舒服。支持连字的字体不等于必须开启连字，`=>`、`!=` 合并显示让你认不清就关掉。
 
-- [Can I Use :thumbsup:](https://caniuse.com/) 浏览器 js/css 特性兼容性查询
-- [Modernizr :thumbsup:](https://modernizr.com/) 检测浏览器特性的 js 库
+## AI 编程工具
 
-## Git 版本控制工具
+**推荐用，推荐认真检查它做了什么。** 让它接手一个能描述清楚、能验收的任务，比让它「优化整个项目」更有效。
 
-- [Git 安装与使用](/frontend-guideline/basic/git/)：本书的版本控制入门。
+- **保留 VS Code**：先用 [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview)，或者 [Codex](https://developers.openai.com/codex/) 的编辑器/命令行工作方式，不必为了 AI 立即换编辑器。
+- **愿意换 AI 编辑器**：选 Cursor，先把一个项目的规则和检查命令配置好。
+- **偏好终端与仓库任务**：可以选 [Claude Code](https://code.claude.com/docs/en/overview) 或 [Codex CLI](https://developers.openai.com/codex/cli/)，适合读仓库、批量修改和运行检查。
+
+一个实用流程：先提交当前进度 → 给出目标、相关文件和验收方式 → 让工具提出改动并执行 → 看 diff → 自己操作页面 → 运行项目检查。生成的代码、依赖和命令都要看，尤其是删除文件、改认证流程或跑迁移时。
+
+初学时多让它解释报错、给最小例子、指出代码哪里和预期不同。自己完全读不懂的整页代码，复制进项目只会把问题推迟。涉及公司代码时使用团队批准的账号与设置，密钥和生产数据不要塞进提示词。
+
+先用一种工具，看看它是否真的缩短任务时间，再决定付费。订阅费、模型用量和调用限额可能分开计算，别把「买了编辑器会员」理解成所有模型无限用；也不要为了云端 Agent 再去买一块独显。
+
+## SHELL
+
+**macOS：系统终端 + Zsh 就能开工。** 想换更舒服的终端，推荐 [Ghostty](https://ghostty.org/docs/install/binary)；已经用熟 [iTerm2](https://iterm2.com/) 也很好。Git、fnm 等命令行软件用 [Homebrew](https://brew.sh/) 管理。
+
+**Windows：Windows Terminal + WSL 2 + Ubuntu。** Node、Git 和依赖装在 WSL 里，编辑器通过 WSL 扩展连接，项目放 `~/projects/`。具体步骤见[Windows 环境配置](/frontend-guideline/basic/fontend-env/#windows)。
+
+先会 `pwd`、`cd`、`ls`、`mkdir`、搜索文件和查看进程。终端主题、提示符和插件管理器以后再折腾，运行报错时看清自己在 Zsh、Bash 还是 PowerShell，别混抄命令。
 
 ## 包管理器, 构建工具(命令行)
 
-- [Node.js](https://nodejs.org/)：JavaScript 运行时，不是包管理器本身。
-- [npm 官方文档](https://docs.npmjs.com/about-npm/) / [pnpm](https://pnpm.io/zh/)：管理项目依赖与运行 scripts。
-- [Vite](https://cn.vite.dev/)：提供开发服务器与生产构建。
-- [Grunt](https://gruntjs.com/) / [Gulp](https://gulpjs.com/)：任务自动化工具，维护已有项目时按配置使用，不是新项目的必装前置。
+[Node.js](https://nodejs.org/en/about/previous-releases) 新装选择 **LTS**。本次更新时推荐 Node 24；Node 26 仍是 Current，官方计划 2026-10-28 转 LTS，之后新项目可以按支持范围采用。已有项目先看 `.nvmrc`、`.node-version` 与 `engines`。
+
+包管理器的判断很简单：
+
+- **新项目本书优先 pnpm**，把确切版本写进 `packageManager` 并提交锁文件。
+- 仓库是 `package-lock.json` 就用 npm，是 `pnpm-lock.yaml` 就用 pnpm，是 `yarn.lock` 就用项目要求的 Yarn；别进门先给别人迁移工具链。
+- pnpm 的[当前版本线已是 12](https://pnpm.io/installation)，本书仓库仍固定 10.34.7，两者不要混为一谈。维护本站按仓库版本执行，别顺手升级锁文件。
+- **[Bun](https://bun.sh/docs)** 可以用于明确验证过兼容性的项目，入门教程和跨团队协作仍先用 Node LTS，不要在学习语法时额外叠加运行时差异。
+
+新建普通前端项目默认 [Vite](https://cn.vite.dev/guide/)，内容站选 [Astro](https://docs.astro.build/zh-cn/getting-started/)。不要为了开发热更新单独装一个 Live Server，再靠手工刷新处理模块依赖。具体脚手架步骤见[项目初始化](/frontend-guideline/dev/init/)。
+
+## 浏览器
+
+开发默认用 **[Chrome](https://www.google.com/chrome/)**。日常先用熟这几个 [DevTools 面板](https://developer.chrome.com/docs/devtools)：
+
+| 问题 | 先打开 | 先看什么 |
+| --- | --- | --- |
+| 布局或样式不对 | Elements | Computed 里最终生效的值、盒模型、Flex/Grid |
+| 页面白屏 | Console | 第一条相关错误与调用栈 |
+| 接口、图片或脚本失败 | Network | URL、状态、响应体、请求耗时 |
+| 点按钮没反应 | Sources | 事件断点、作用域、调用栈 |
+| 页面卡顿 | Performance | 录制同一次操作，找主线程长任务与布局开销 |
+
+发版前再用 Safari、Firefox 检查主要流程，别把 Chrome 和 Edge 都测了一遍当成跨引擎验证。涉及 iPhone 用户的页面，真机 Safari 要测；[Playwright 的 WebKit](https://playwright.dev/docs/browsers)很有用，但不等于完整的 Safari 和 iOS 设备。实操见[调试方法](/frontend-guideline/dev/debug/)。
+
+### 浏览器特性检测
+
+查 [Can I Use](https://caniuse.com/) 和 MDN 的兼容性表。只有需要针对不支持的环境提供不同实现时，再做 `CSS.supports()` 等特性检测；不必每个项目先装 Modernizr。
+
+## Git 版本控制工具
+
+默认先用编辑器的 Git 面板看 diff、暂存、提交，用命令行理解分支和同步。想看完整提交图与合并历史，推荐 [Sourcetree](https://www.sourcetreeapp.com/)。具体流程见 [Git 安装与使用](/frontend-guideline/basic/git/)。
+
+## API 文档查看器 Docset App
+
+在线查 API，先打开 **MDN 或项目官网**，用站内搜索、`site:` 和编辑器悬浮提示定位，不要先找转载手册。
+
+需要聚合查询可以用 [DevDocs](https://devdocs.io/)。经常离线时，macOS 选 [Dash](https://kapeli.com/dash)，Windows/Linux 选 [Zeal](https://zealdocs.org/)。装完确认对应版本的文档已下载，否则「离线文档工具」也没东西可查。
+
+## 设计、接口与常用辅助工具
+
+- **设计交接用 [Figma](https://www.figma.com/dev-mode/)**：先看组件、布局约束和设计变量，再导出图片/SVG。复制一堆绝对定位 CSS 不等于实现了响应式页面。
+- **接口调试先用 Network**：直接看页面发出的请求，必要时复制为 cURL 复现。需要整理共享接口集合时再用 [Bruno](https://www.usebruno.com/) 或团队现有客户端。
+- **本地模拟接口用 [MSW](https://mswjs.io/docs/)**：把正常、空数据、失败和慢请求都保存为可重现的场景，不依赖一个可能随时下线的免费假 API。
+- **表单和 CSS 小实验用 [CodePen](https://codepen.io/pen/) 或 [JSFiddle](https://jsfiddle.net/)**；包含包依赖的最小项目可用 [StackBlitz](https://stackblitz.com/)。准备长期维护的项目放进本地 Git 仓库。
+
+### JS 函数性能在线测试
+
+小实验可以用 [JSBench](https://jsbench.me/)，业务卡顿先用 Performance。`Number("1.5")` 与 `parseInt("1.5", 10)` 的结果不同，语义都不同的写法不要按跑分替换。
+
+## 容器按需安装
+
+普通 Vite / Astro 练习项目先在本机跑 Node，不必第一天就装 Docker。需要数据库、Redis、接入团队容器环境时，再装 [Docker Desktop](https://docs.docker.com/desktop/)；Mac 上也推荐试 [OrbStack](https://orbstack.dev/)，注意个人和商业使用的授权区别。
+
+数据库等配套服务可以放容器，前端开发服务器留在宿主机，修改代码与文件监听更直接。已有团队 Compose 配置就按它启动，详见 [Docker 的使用](/frontend-guideline/cicd/docker/)。
 
 ## GUI 工具
 
-### Prepros（跨平台）
+新项目不推荐把 Prepros、CodeKit 或全局 Grunt/Gulp 作为默认入口。构建、检查与预览写进 `package.json` 的 scripts，团队和 CI 才能用相同命令执行；接手旧项目时按原配置维护即可。
 
-prepro 是一款前端工具,内置有 web 服务器,支持编译各种预编译语言代码(less, sass, coffee 等), 自动补全 css 样式属性的浏览器私有属性, 浏览器实时刷新(编写代码时, 保存代码即刷新), 代码合并及压缩等.
-
-官方网站: <https://prepros.io/>
-
-### CodeKit（macOS）
-
-codekit 和 prepos 一样, 除了 prepos 的功能, 还支持管理维护第三方库.
-
-官方网站: <https://codekitapp.com/>
-
-图形工具的支持平台、试用与授权政策会变化，使用前核对官网；命令行项目优先沿用已有构建配置。
-
-## 前端代码在线练习及代码片段分享网站
-
-你可以在下述网站在线编写前端代码、查看效果(仅需浏览器，电脑无须安装编辑器及服务器)，并分享给他人(一般均需在网站注册)，也可以在网站上搜索他人分享的有用的代码片段。
-
-支持写 html,css, js(包括引入第三方库):
-
-- <https://jsfiddle.net/>
-- <https://codepen.io/>
-- <https://jsbin.com/>
-- <http://liveweave.com/>
-- <https://plnkr.co/>
-
-偏向 HTML/CSS 的练习工具（能力以网站当前功能为准）：
-
-- <http://dabblet.com/>
-
-支持各种语言的playground:
-- <https://riju.codes/>
-
-## JS 函数性能在线测试
-
-先确认候选写法的语义相同，再比较性能。例如 `Number("1.5")` 返回 `1.5`，`parseInt("1.5", 10)` 返回 `1`，它们不能仅按速度互换；一元 `+` 与 `Number()` 对 BigInt 的行为也不同。
-
-可以使用 [JSBench](https://jsbench.me/) 做小规模实验。微基准会受引擎优化、预热、输入分布与浏览器版本影响，不能代替对真实页面的 Performance 分析；优先保持正确性与可读性。
-
-## 工具
-
-- [DB 关系图制作工具](https://dbdiagram.io/home)
-- [mockups 给图加设备的壳](https://deviceshots.com/)
-- [开发者工具箱](https://10015.io/) 包含了颜色转换、编码转换、css生成、图片裁剪、JSON格式化等几十个工具
-- [模拟 API 用于测试和原型设计](https://jsoning.com/api/)
-
-## 其他参考
-
-- [Linux Desktop Setup](https://hookrace.net/blog/linux-desktop-setup/)
-- [Mac生产力工具链推荐](https://github.com/Louiszhai/tool)
+**装好这套工具就开始写页面。** 能把页面跑起来、查到错误、提交改动，再逐项补齐工作中用到的能力，比收集「开发者必备软件清单」有效得多。

@@ -5,7 +5,7 @@ sidebar:
   order: 6
 ---
 
-Git 是分布式版本控制系统，可以离线记录本地提交，并与远程仓库交换提交。GitHub、GitLab 等是代码托管平台，不等同于 Git 本身。仓库大小取决于历史与对象，不能笼统认为 Git 一定比 SVN 仓库更小。
+**每个可说明的小改动做一次提交，推送前看 diff。** Git 在本地保存历史，GitHub、GitLab 等托管平台负责交换与协作；本地提交不会自动备份到远程。
 
 ## GIT 基本概念及常用命令
 
@@ -38,11 +38,11 @@ git log --oneline -5
 
 #### Mac
 
-运行 `git --version` 检查；也可按系统提示安装命令行工具，或使用自己维护的软件包管理器安装。
+默认用 Homebrew 运行 `brew install git`，再用 `git --version` 检查。已经通过系统命令行工具安装也可以继续用，重点确认终端实际执行的是哪一个版本。
 
 #### Windows & Linux
 
-Windows 可使用 [Git 官方下载](https://git-scm.com/downloads)中的 Git for Windows；Linux 通常通过发行版包管理器安装。安装后重新打开终端，运行 `git --version` 确认。
+按本书推荐的 WSL 开发方式，在 Ubuntu 里运行 `sudo apt-get install git`，代码和 Git 操作都留在 WSL。必须用原生 Windows 工作流时再装 [Git for Windows](https://git-scm.com/downloads)。安装后用 `git --version` 确认，别让两个环境交替改同一份依赖目录。
 
 ### GIT 命令行配置
 
@@ -77,7 +77,7 @@ GUI 与命令行都应遵循团队约定，不必统一强制创建合并提交�
 
 ### 分支问题
 
-默认分支可能是 main、master 或其他名称，以仓库为准。Git flow、GitHub flow 和主干开发等协作方式各有适用场景，`dev` 不是 Git 规定的默认开发分支。
+**小项目默认用 main + 短期功能分支 + PR。** 合并后继续从更新过的 main 开新分支，别为一个人维护的练习项目先搭五层长期分支。加入已有团队则遵守它的发布流程；默认分支叫什么，以仓库实际配置为准。
 
 小型项目可从最新默认分支创建功能分支，通过 PR 合并。以下示例假设本地已有 main、工作区没有未提交改动，且团队使用快进更新：
 
@@ -93,7 +93,7 @@ git commit -m "docs: correct README link"
 git push -u origin fix/readme-link
 ```
 
-分支名使用 `fix/readme-link`、`feature/user-profile` 等易读形式是一种团队约定。Git 对引用名称有自己的[限制](https://git-scm.com/docs/git-check-ref-format)，并非语言层面禁止所有中文分支名。
+分支名用 `fix/readme-link`、`feature/user-profile` 这种能看懂任务的形式，避免只叫 `test` 或 `new`。名称约束见 [Git 引用规则](https://git-scm.com/docs/git-check-ref-format)。
 
 一次提交尽量对应一个清晰改动，先检查暂存内容再提交。不要把密钥、个人配置或生成依赖目录混入提交；`.gitignore` 不会自动移除已经跟踪的文件。
 

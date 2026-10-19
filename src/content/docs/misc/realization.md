@@ -1,48 +1,71 @@
 ---
 title: "面试,外快及个人项目"
-description: "本章整理简历、面试、远程工作与个人项目的参考资料；收入案例不代表可保证的收益。"
+description: "用可演示的项目和清楚的技术解释准备求职，筛选团队与远程机会，并按交付范围和付款节点评估外包。"
 sidebar:
   order: 1
 ---
 
-本章整理简历、面试、远程工作与个人项目的参考资料；收入案例不代表可保证的收益。
+**想靠技术获得机会，先拿出别人能检查的作品。** 一份能运行、有说明、有取舍的项目，比简历上罗列十个「熟悉」更有说服力。以下按先证明能力、再谈机会的顺序来做。
+
+<small>本篇包含个人求职与项目选择建议。收入故事是作者个案，历史公司名单是线索，具体岗位、报酬与合作条件需要当次核实。</small>
 
 ## 简历
-- [如何写一份有效的技术简历？](http://www.ruanyifeng.com/blog/2020/01/technical-resume.html)
+
+每个项目写清三件事：做了什么、自己负责什么、为什么这样做。能提供演示地址、仓库、具体修复和验证结果就提供；写性能提升时说明测量条件，别凭感觉填一个百分比。
+
+项目不多时，认真做一到两个：README 能启动，手机能用，表单有失败状态，内部页面刷新正常。不要把教程原样换个配色就当成独立设计。
+
+参考[如何写一份有效的技术简历](http://www.ruanyifeng.com/blog/2020/01/technical-resume.html)。
 
 ## 公司信息
 
 ### 黑白名单
 
-下列为社区维护的历史资料，可能过时、存在个案偏差或未经独立核实，不应作为对公司当前情况的直接事实判断。求职时仍需核实具体团队、合同和工作安排。
+本书不建议用「吃苦锻炼」替代对工作条件的判断。面试时直接问清：正常上下班时间、加班和调休怎么执行、薪资构成、试用期、团队人数、谁评审代码、出了线上问题谁处理。模糊回答的地方追问具体例子，重要条件落到书面。
+
+下面的社区资料用于找线索，再核对当前团队和近期员工反馈：
 
 - [程序员找工作黑名单](https://github.com/shengxinjing/programmer-job-blacklist)
-- [996.icu](https://github.com/996icu/996.ICU/blob/master/README_CN.md) [执行 996 的公司名单](https://github.com/996icu/996.ICU)
-- [955.wlb 不加班公司名单](https://github.com/formulahendry/955.WLB)
+- [996.icu](https://github.com/996icu/996.ICU/blob/master/README_CN.md)
+- [955.WLB](https://github.com/formulahendry/955.WLB)
+
+名单里没有某家公司，也不代表它的工作条件自动过关。
 
 ## 面试
 
-- [前端面试手册](https://github.com/yangshun/front-end-interview-handbook) ![GitHub Repo stars](https://img.shields.io/github/stars/yangshun/front-end-interview-handbook?style=social)
-- [Awesome-Interview](https://github.com/Awesome-Interview/Awesome-Interview) ![GitHub Repo stars](https://img.shields.io/github/stars/Awesome-Interview/Awesome-Interview?style=social)
-- [每周十道前端大厂面试题，并收集大家在大厂面试中遇到的难题](https://github.com/airuikun/Weekly-FE-Interview) ![GitHub Repo stars](https://img.shields.io/github/stars/airuikun/Weekly-FE-Interview?style=social)
-- [react 面试常见问题(英文)](https://github.com/semlinker/reactjs-interview-questions) ![GitHub Repo stars](https://img.shields.io/github/stars/semlinker/reactjs-interview-questions?style=social)
-- [前端面试每日 3+1（每日三问）](https://github.com/haizlin/fe-interview) ![GitHub Repo stars](https://img.shields.io/github/stars/haizlin/fe-interview?style=social)
-- [前端校招面试题](https://github.com/CavsZhouyou/Front-End-Interview-Notebook) ![GitHub Repo stars](https://img.shields.io/github/stars/CavsZhouyou/Front-End-Interview-Notebook?style=social)
-- [JavaScript Interview Questions & Answers](https://github.com/sudheerj/javascript-interview-questions) ![GitHub Repo stars](https://img.shields.io/github/stars/sudheerj/javascript-interview-questions?style=social)
-- [Tech Interview Handbook](https://techinterviewhandbook.org/), [仓库](https://github.com/yangshun/tech-interview-handbook) ![GitHub Repo stars](https://img.shields.io/github/stars/yangshun/tech-interview-handbook?style=social)
+先把自己项目中的组件拆分、数据流、异步请求、错误处理、构建发布讲清楚，再刷题。问到不会的问题，说明已知部分和验证方法，比临时编造一个肯定答案强。
+
+建议这样准备：
+
+1. 用十分钟演示一个项目，说清最难的一个问题和自己的取舍。
+2. 从项目抽一段代码，解释闭包、状态变化、请求时序或布局行为。
+3. 给一个小需求现场实现，包含空输入、请求失败和重复操作。
+4. 按目标岗位补算法与框架知识，别不分岗位背完整套面试合集。
+
+主资料选 [Front End Interview Handbook](https://github.com/yangshun/front-end-interview-handbook)，需要更完整的面试组织方法再看 [Tech Interview Handbook](https://techinterviewhandbook.org/)。题库用于找薄弱点，答案要用自己的代码验证。
 
 ## 远程工作
 
-- [远程工作相关的资料](https://github.com/greatghoul/remote-working) ![GitHub Repo stars](https://img.shields.io/github/stars/greatghoul/remote-working?style=social)
-- [remote-friendly companies](https://remoteintech.company/) [source repo](https://github.com/remoteintech/remote-jobs) ![GitHub Repo stars](https://img.shields.io/github/stars/remoteintech/remote-jobs?style=social)
+远程岗位优先练三件事：英文读写、异步说明问题、独立交付。把任务背景、方案、进度和阻塞写进 issue/PR，别让同事必须开会才能知道你做到哪了。
+
+投递前确认公司能在哪些地区雇佣或签约、时区重叠要求、付款方式和合作类型。渠道可看[远程工作资料](https://github.com/greatghoul/remote-working)与 [Remote In Tech](https://remoteintech.company/)，按当前招聘信息逐一验证，不群发一份完全不相关的简历。
 
 ## 个人项目
-- [我如何通过 Github 的捐助每年获得10万美元](https://calebporzio.com/i-just-hit-dollar-100000yr-on-github-sponsors-heres-how-i-did-it), 英文文章, 介绍自己如何通过开发开源项目获得捐助
+
+选一个自己确实会用的小工具：记账、订阅追踪、读书笔记或特定工作流程。先让它解决一个完整问题，公开演示与说明，再观察有没有真实用户回来用。
+
+本书更推荐「小而完成」：有清楚的输入输出、能部署、能处理失败，比开十个准备成为下一个大平台的空仓库更有价值。
+
+[开源赞助年收入 10 万美元的案例](https://calebporzio.com/i-just-hit-dollar-100000yr-on-github-sponsors-heres-how-i-did-it)可以用来研究作者如何提供价值、维护项目和获得支持；不要把结果照抄成自己的收入计划。
 
 ## 外快
 
-接外包前应明确交付范围、验收、付款、维护和知识产权约定，评估是否与劳动合同或现有项目冲突。不要把公开收入故事当作普遍可复制的结果。
+初学者先别接超出自己交付能力的大单。能独立完成、范围小、验收明确的页面或功能更适合作为第一次合作。
+
+报价前写清：页面与功能范围、设计和素材由谁提供、接口由谁做、修改轮次、验收标准、交付时间、付款节点与后续维护。**默认按里程碑收款，新增需求重新确认范围与费用。** 拒绝说明验收标准、不断追加需求、要求先交完整成果再谈付款的项目，本书建议直接放弃。
+
+涉及现有雇主代码、客户数据和成果权属时，先把使用与交付权限说清楚，别把公司的仓库复制出去当外包起点。
 
 ## 其他
 
-- [如何不靠运气变得富有](https://github.com/taosue/how-to-get-rich-without-getting-lucky/), 这篇文章和技术无关, 但也值得一读
+[如何不靠运气变得富有](https://github.com/taosue/how-to-get-rich-without-getting-lucky/)适合思考长期积累。回到眼前的事：把项目做好、把说明写清楚、让交付结果可检查，比收集收入神话更能带来下一次机会。
