@@ -31,8 +31,8 @@ sidebar:
 
 - [MDN Web 开发学习](https://developer.mozilla.org/zh-CN/docs/Learn_web_development)：从语义化 HTML、表单到浏览器基础。
 
-- [Html 学习](http://zh.html.net/tutorials/html/)
-- [Html 参考手册](http://w3school.com.cn/html/index.asp)
+- [MDN：使用 HTML 构建 Web](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Structuring_content)：学习文本、链接、多媒体、表格与表单。
+- [Html 参考手册](https://www.w3school.com.cn/html/index.asp)
 - [Marksheet :thumbsup:](http://marksheet.io/) html & css 学习教程，in English
 - [Html reference :thumbsup:](http://htmlreference.io/) html 手册，可以根据标签类型快速筛选，in English
 
@@ -40,9 +40,10 @@ sidebar:
 
 - [MDN CSS 学习](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Styling_basics)：基础样式与布局。先掌握 Flexbox、Grid、媒体查询和 CSS 自定义属性，再按需要学习预处理器。
 
-- [CSS 学习](http://www.w3school.com.cn/css/)
+- [CSS 学习](https://www.w3school.com.cn/css/index.asp)
 - [谷歌推出的CSS学习指南](https://web.dev/learn/css/) 可在网站选择语言，翻译覆盖情况以当前页面为准
-- [CSS 参考手册 :thumbsup:](http://css.doyoe.com/) 可下载 chm 离线版
+- [MDN CSS 参考 :thumbsup:](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)：查询属性、选择器、规则与浏览器兼容性。
+- [CSS 参考手册历史源码](https://github.com/doyoe/css-handbook)：原手册作者的仓库，保留旧版内容与离线文件；现代 CSS 特性以当前文档为准。
 - [CSS Reference](http://cssreference.io/) 可视化的 CSS 使用指南
 - [CSS Pro Tips](https://github.com/AllThingsSmitty/css-protips)
 - [Flexbox defense](http://www.flexboxdefense.com/) 使用游戏方式学习 CSS 的 Flex 布局
@@ -73,11 +74,11 @@ sidebar:
 ## 其他
 
 - [devhints](https://devhints.io) (英文) 开发文档快捷查看表, 包含各种开发库(React, jQuery 等)及 各种工具(vim, bash, vscode 等) 的说明文档, 比原始文档更容易阅读使用.
-- [tldr](https://www.npmjs.com/package/tldr) 命令行帮助文档工具, 可用于替代 `man`, 使用 `npm install -g tldr` 即可安装, 帮助文档提供常见用法示例，适合快速查阅；完整参数和行为仍需查看工具的官方帮助.
+- [tldr 官方网站](https://tldr.sh/) 命令行帮助文档工具, 可用于替代 `man`, 使用 `npm install -g tldr` 即可安装, 帮助文档提供常见用法示例，适合快速查阅；完整参数和行为仍需查看工具的官方帮助.
 
 ## 相关阅读
 - [Front-End Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)：历史资料，工具版本需结合当前官方文档核对。
 - [谷歌推出的web.dev](https://web.dev/learn/) 提供多个 Web 平台主题的学习课程，可按页面支持情况切换语言
 - [Web Design Stack](http://webdesignstack.com/)
 - [免费编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/main/books/free-programming-books-zh.md)
-- [免费软件开发教程合集(英文, 视频托管在 YouTube)](https://www.tutorialist.io/)
+- [freeCodeCamp 免费编程课程（英文）](https://www.freecodecamp.org/learn/)：按课程练习 Web 开发及其他编程主题。

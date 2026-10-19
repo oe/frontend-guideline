@@ -55,6 +55,6 @@ sidebar:
 网上有很多在线网站, 可以在线编写 html、css(以及平台支持的 CSS 预处理器)、JavaScript(甚至包括预编译语言 Typescript、Coffeescript等), 并可以实时看到效果. 在浏览器中即可演练, 无需在电脑上安装其他软件, 还可以保存演练的代码并生成唯一的访问地址分享给其他人, 非常方便.
 
 以下是一些流行的在线练习网站:
-1. [JSbin](https://jsbin.com/?html,css,js,output), 可在线编辑并通过生成的链接分享代码，保存与协作能力以当前账户和平台功能为准
+1. [JSbin](https://jsbin.com/?html,css,js,output), 可在线编辑并通过生成的链接分享代码，保存与协作能力以当前账户和平台功能为准。若无法访问，可使用 [JSFiddle](https://jsfiddle.net/) 练习 HTML、CSS 和 JavaScript。
 2. [Codepen](https://codepen.io/pen/), 一个很流行的代码练习网站, 注册登录后可将你的代码片段分享给其他人. 也可以在上面查看别人分享的[有趣的代码](https://codepen.io/)
 3. [CodeSandbox](https://codesandbox.io/), 一个功能更为强大的练习网站, 可以用于练习[React开发](https://codesandbox.io/)、[Vue的开发](https://codesandbox.io/)、[Angular的开发](https://codesandbox.io/), 还可以在其内在线安装第三方库并直接使用

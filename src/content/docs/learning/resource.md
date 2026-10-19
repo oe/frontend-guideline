@@ -32,6 +32,7 @@ sidebar:
 ### 综合
 - [简短代码片段分享(30 seconds of code, 英文)](https://www.30secondsofcode.org/)
 - [前端大师挑战教学视频(YouTube, 英文)](https://www.youtube.com/playlist?list=PLgBH1CvjOA63Xvt0BaeQ7zL4KXX96Wbgp)
+- [前端入门视频课程（英文）](https://frontendmasters.com/bootcamp/)：另一套 HTML、CSS 与 JavaScript 项目课程，需要免费账号，可在无法观看 YouTube 时选用。
 
 ## 源码分析系列
 

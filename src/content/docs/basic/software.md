@@ -26,7 +26,7 @@ sidebar:
 - [官网](https://www.sublimetext.com/)
 - [Package Control](https://packagecontrol.io/) ST 扩展管理器官网
 - [Sublime Text 官方文档](https://www.sublimetext.com/docs/)
-- [Sublime Text 快捷键及插件推荐](http://www.daqianduan.com/4820.html)
+- [Sublime Text 官方键绑定说明](https://www.sublimetext.com/docs/key_bindings.html)：查看快捷键配置方式与默认键绑定文件。
 
 Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，从 菜单栏 ➡ Preferences ➡️ Key Bindings - Default 查看所有快捷键的默认配置文件。
 
@@ -54,7 +54,7 @@ Sublime Text 提供的快捷键相当丰富，若想查看全部的快捷键，�
 ## 包管理器, 构建工具(命令行)
 
 - [Node.js](https://nodejs.org/)：JavaScript 运行时，不是包管理器本身。
-- [npm](https://www.npmjs.com/) / [pnpm](https://pnpm.io/zh/)：管理项目依赖与运行 scripts。
+- [npm 官方文档](https://docs.npmjs.com/about-npm/) / [pnpm](https://pnpm.io/zh/)：管理项目依赖与运行 scripts。
 - [Vite](https://cn.vite.dev/)：提供开发服务器与生产构建。
 - [Grunt](https://gruntjs.com/) / [Gulp](https://gulpjs.com/)：任务自动化工具，维护已有项目时按配置使用，不是新项目的必装前置。
 

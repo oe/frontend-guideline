@@ -30,7 +30,7 @@ sidebar:
 
 ## 不同应用形态
 
-- **小程序**：先阅读[微信小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)，再评估跨端框架。
+- **小程序**：先阅读[微信小程序官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/)，再评估跨端框架；也可查看微信官方维护的 [小程序示例仓库](https://github.com/wechat-miniprogram/miniprogram-demo)学习组件和 API 用法。
 - **桌面客户端**：[Electron](https://www.electronjs.org/docs/latest/) / [Tauri](https://v2.tauri.app/)；注意更新机制、权限与安装包体积。
 - **移动客户端**：[React Native](https://reactnative.dev/docs/getting-started) / [Flutter](https://docs.flutter.dev/)；与移动网页的运行环境和发布流程不同。
 - **服务端 JavaScript**：[Node.js 学习文档](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs)与 [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)；也可了解 [Deno](https://docs.deno.com/runtime/)。
