@@ -5,6 +5,8 @@ sidebar:
   order: 3
 ---
 
+**发布的是检查过的生产产物。** 先在本地预览它，再让 CI 用锁文件重复构建；不要把开发服务器直接当线上服务。
+
 ## 开发服务与生产构建
 
 开发服务器提供热更新和调试能力。生产构建则会处理模块依赖、转换代码、压缩资源并生成部署产物。Vite、Astro 等工具通常输出到 `dist/`，其他框架可能使用不同目录，应以项目配置为准。
@@ -35,6 +37,18 @@ pnpm 项目对应运行 `pnpm install --frozen-lockfile`、`pnpm build`、`pnpm 
 4. 验证手机布局、键盘导航、表单及关键交互；不要只查看首页。
 5. 记录发布对应的 Git 提交与构建结果，便于故障时回退到上一份可用产物。
 
+## 失败时先查什么
+
+| 现象 | 先查 |
+| --- | --- |
+| 本地能跑，CI 找不到模块 | 导入路径大小写、是否漏提交文件、Node 和包管理器版本 |
+| 上线后脚本或样式 404 | 构建的 `base` 与真实部署路径，打开 HTML 看实际资源 URL |
+| 刷新详情页 404 | SPA 的入口回退；多页站则查有没有生成该路径 |
+| 改了环境变量没有效果 | 变量是在构建时还是运行时读取，是否需要重新构建发布 |
+| 发布后仍看到旧页面 | 部署记录是否对应本次提交、HTML/CDN/Service Worker 是否缓存旧版本 |
+
+记录具体失败命令和第一条相关错误，再修复；反复删依赖和重试构建不能代替定位。
+
 ## 本书文档站的构建
 
 ```sh
@@ -43,6 +57,6 @@ pnpm build
 pnpm preview
 ```
 
-`pnpm build` 依次进行 Astro 检查、静态构建与站内链接检查，检查结果覆盖页面、锚点和本地资源。预览地址为 `http://localhost:4321/frontend-guideline/`，站点部署时保留 `/frontend-guideline/` 前缀。
+`pnpm build` 依次进行 Astro 检查、静态构建、站内链接与 SEO 检查，覆盖页面、锚点、本地资源、canonical、分享元数据与 sitemap。预览地址为 `http://localhost:4321/frontend-guideline/`，站点部署时保留 `/frontend-guideline/` 前缀。
 
 GitHub Actions 在 PR 中执行同样的构建，main 更新后才发布到 `gh-pages`。继续阅读[部署](/frontend-guideline/dev/deploy/)选择托管方式。

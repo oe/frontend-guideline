@@ -1,25 +1,32 @@
 ---
 title: 前端开发学习指引
-description: 面向前端初学者的中文学习指引，涵盖 HTML、CSS、JavaScript、开发工具、工程化、部署与 Web 安全，按学习阶段整理官方文档与实践建议。
+description: 面向前端初学者的中文实践指引，从 MacBook 与开发工具选型，到 HTML、CSS、JavaScript、框架、调试、测试和部署，给出明确建议与练习路径。
 ---
 
-这是一本教你从一个前端菜鸟到一个前端高手的指引书，汇集了本人在前端之路上的进阶过程，也总结了各种实践经验。由于本人能力有限，所写内容难免有纰漏或不足，欢迎[指正](https://github.com/oe/frontend-guideline/issues)及[补充](https://github.com/oe/frontend-guideline/pulls)。
+这本书整理我的前端学习与开发经验，目标是帮你**独立做出页面、定位问题，并把项目发布出去**。每章尽量给一个默认选择、说明理由，再告诉你接下来做什么。
 
-书的内容大多是引用外部学习资料，外加一些必要的说明。本书目录大体是按照从编程入门到精通前端的一个循序渐进的顺序编排, 但是由于知识是网状的, 顺序或有不足, 你也可以查看左侧目录, 根据你的实际需要查看相关章节. 如果你是一个前端新人,建议你从头至尾认真阅读。
+本书有明确偏好：开发笔记本首推 MacBook，预算有限再看 Windows；技术检索首推 Google 与官方文档；学习从一个能完成的小项目开始。工具不必全装，框架不必全学，能解决当前问题就先推进。
 
-P.S. 如果你还不会使用电脑，可点击 [从"如何开关机"到"如何爬数据"](https://www.zhihu.com/question/352321370/answer/989335660) 查看学习电脑的基本使用知识。
+<small>推荐与批评包含个人观点；版本、规格与兼容性附核对资料。发现错误欢迎提 issue 或 PR。</small>
 
-本书 Github 仓库地址: https://github.com/oe/frontend-guideline, 还在持续完善中, 如有任何问题建议, 请提交[issue](https://github.com/oe/frontend-guideline/issues)反馈.
+## 怎么读这本书
+
+- **刚开始学**：从[基本素养](/frontend-guideline/basic/literacy/)和[开发环境](/frontend-guideline/basic/fontend-env/)开始，然后按[学习路线](/frontend-guideline/learning/readme/)完成第一个页面。
+- **已经会写页面**：挑一个真实小项目，补齐[框架与库](/frontend-guideline/learning/frameworks/)、[调试](/frontend-guideline/dev/debug/)、[构建发布](/frontend-guideline/dev/pack/)，别只停留在本地能运行。
+- **已经在工作**：从当前最常遇到的问题切入，检查[编码规范](/frontend-guideline/learning/guideline/)、[CI/CD](/frontend-guideline/cicd/github/)与[安全优化](/frontend-guideline/misc/security/)，把重复劳动交给工具。
+
+读资料时同步写代码。遇到不会的概念就查，做完把运行方法与取舍写进 README；下次不看教程也能重新完成，才算真正留下了东西。
+
+仓库：[oe/frontend-guideline](https://github.com/oe/frontend-guideline)。欢迎[报告具体问题](https://github.com/oe/frontend-guideline/issues)或[补充内容](https://github.com/oe/frontend-guideline/pulls)。
 
 ## 前端知识图谱
 
-下图为较早版本的路线图截取，适合了解知识分类，不应作为当前工具或版本清单；请点击图片查看持续更新的路线。图片截取自[developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)(web 开发者学习路线图)中的 web 前端开发部分.
+这张旧路线图用于认识知识分类，别把它当成开工前必须背完的清单。点击图片查看持续更新的路线，再选自己下一步需要补的能力。
 
 [![前端知识图谱](./frontend.png)](https://roadmap.sh/frontend)
 
-
 ## 类似手册
-- [Front-End Developer Handbook 2019(英文)](https://frontendmasters.com/books/front-end-handbook/2019/)：2019 年资料，工具与版本选择需结合当前官方文档。
-- [Web前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)
-- [深入浅出现代 Web 编程(芬兰提供)](https://fullstackopen.com/zh/)
 
+- [Full Stack Open](https://fullstackopen.com/zh/)：已经有基础，想系统做现代 Web 项目时推荐。
+- [Web 前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)：按主题查阅与补充练习。
+- [Front-End Developer Handbook 2019](https://frontendmasters.com/books/front-end-handbook/2019/)：保留作历史参考，新工具与版本按当前官方文档选。
