@@ -42,19 +42,40 @@ sidebar:
 ```bash
 pnpm check       # Astro、内容 schema 和 TypeScript 检查
 pnpm test        # 链接检查器的回归测试
-pnpm build       # 类型检查、静态构建、站内链接与锚点检查
+pnpm audit --audit-level moderate  # 检查已知的中危及以上依赖漏洞
+pnpm build       # 类型检查、静态构建、站内链接、锚点与 SEO 检查
 pnpm preview     # 预览 dist/ 中的构建结果
 ```
 
-构建完成后也可单独运行 `pnpm check:links`。检查覆盖生成页面中的站内链接、锚点和本地脚本、样式、图片，不检查外部网站是否可用。
+构建完成后也可单独运行 `pnpm check:links` 和 `pnpm check:seo`。链接检查覆盖生成页面中的站内链接、锚点和本地脚本、样式、图片，不检查外部网站是否可用。SEO 检查覆盖生产地址、标题与描述、分享元数据及图片、结构化数据、sitemap 与 404 的禁止收录标记。
 
 提交前请运行 `pnpm test`、`pnpm build`，并预览改动页面。依赖更新时同时提交 `package.json` 和 `pnpm-lock.yaml`；Astro 与 Starlight 应一起检查兼容性。原生依赖的安装脚本仅允许 `package.json` 中列出的 `@parcel/watcher`、`esbuild` 和 `sharp`。
 
+目前对 `postcss-nested@6` 的解析器依赖定向覆盖为 `postcss-selector-parser >=7.1.6`，修复 [GHSA-rj75-hqrm-r3gf](https://github.com/advisories/GHSA-rj75-hqrm-r3gf)。已使用 postcss-nested 6.2.0 的上游 69 个用例和本站构建验证兼容性，生成的 CSS 与覆盖前一致。上游 Expressive Code 升级到已修复的依赖链后，应移除这项临时覆盖并重新运行审计与构建。
+
+## 搜索与分享
+
+Starlight 生成每页 canonical、描述与 sitemap；`src/route-data.ts` 补充站点/文章 JSON-LD、中文 Open Graph locale 和分享图，修正首页重复标题。404 页面使用 `noindex, follow`，并且不进入 sitemap。
+
+分享图为 `public/social-card.png`（1200 × 630），源文件是 `src/assets/social-card.svg`。修改 SVG 后，在安装了 Noto Sans CJK SC 字体的环境中重新生成并提交 PNG：
+
+```bash
+node --input-type=module -e "import sharp from 'sharp'; await sharp('src/assets/social-card.svg').png().toFile('public/social-card.png');"
+```
+
+项目部署在子路径，`/frontend-guideline/robots.txt` 不会被搜索引擎作为站点规则读取。需要由根站点在 **https://app.evecalm.com/robots.txt** 中保留现有规则并追加：
+
+```text
+Sitemap: https://app.evecalm.com/frontend-guideline/sitemap-index.xml
+```
+
+也可以在 Google Search Console 或 Bing Webmaster Tools 中提交该 sitemap；需要相应站点的管理权限。部署后应确认未知路径返回 HTTP 404，正文页与分享图返回 200，且未被域名根目录的 robots 规则或 CDN 的 `X-Robots-Tag` 阻止收录。
+
 ## 自动化与部署
 
-GitHub Actions 对 main 的推送和 PR 执行锁文件安装与完整构建。只有 main 分支的非 PR 运行会将验证通过的 `dist/` 发布到 `gh-pages`，延续现有的分支部署方式。仓库 Pages 设置应使用 `gh-pages` 分支的根目录。
+GitHub Actions 对 main 的推送和 PR 执行锁文件安装、依赖漏洞审计与完整构建。只有 main 分支的非 PR 运行会将验证通过的 `dist/` 发布到 `gh-pages`，延续现有的分支部署方式。仓库 Pages 设置应使用 `gh-pages` 分支的根目录。
 
-网站配置使用 `site: https://app.evecalm.com` 与 `base: /frontend-guideline/`。修改部署地址时，需要同步检查内容链接及 `post-a11y.js` 的引用路径。
+网站配置使用 `site: https://app.evecalm.com` 与 `base: /frontend-guideline/`。修改部署地址时，需要同步检查内容链接、`post-a11y.js` 的引用路径、SEO 检查器的预期生产地址与根站点的 sitemap 声明。
 
 Dependabot 每月检查 npm 依赖与 GitHub Actions 的更新，Astro 相关包分组提交以便一起验证。
 
@@ -65,6 +86,7 @@ Dependabot 每月检查 npm 依赖与 GitHub Actions 的更新，Astro 相关包
 ├── .github/workflows/ci.yml  # 验证与部署
 ├── public/                  # 原样复制的静态资源
 ├── script/check-links.mjs   # 构建产物站内链接检查
+├── script/check-seo.mjs     # 元数据、分享图与 sitemap 检查
 ├── src/
 │   ├── assets/              # 自定义样式
 │   ├── components/          # Starlight 组件覆盖
@@ -72,6 +94,7 @@ Dependabot 每月检查 npm 依赖与 GitHub Actions 的更新，Astro 相关包
 │   ├── content/i18n/        # 界面文案
 │   ├── content.config.ts    # 内容加载器与 schema
 │   ├── pages/404.astro      # 自定义未找到页面
+│   ├── route-data.ts        # 页面 SEO 元数据
 │   └── env.d.ts
 ├── astro.config.ts
 ├── package.json

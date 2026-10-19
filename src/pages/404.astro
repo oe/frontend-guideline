@@ -2,7 +2,13 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 ---
 
-<StarlightPage frontmatter={{ title: '404：未找到页面', tableOfContents: false, editUrl: false }}>
+<StarlightPage frontmatter={{
+  title: '404：未找到页面',
+  description: '未找到当前页面，请通过目录继续浏览前端开发学习指引。',
+  tableOfContents: false,
+  editUrl: false,
+  head: [{ tag: 'meta', attrs: { name: 'robots', content: 'noindex, follow' } }],
+}}>
   <p>未找到当前页面，请检查链接是否正确。你可以通过目录导航到你想要的页面。</p>
   <p>
     若有纰漏或不足，欢迎<a href="https://github.com/oe/frontend-guideline/issues">指正</a>及

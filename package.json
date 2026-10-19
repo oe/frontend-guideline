@@ -12,10 +12,11 @@
     "start": "astro dev",
     "check": "astro check",
     "test": "node --test script/*.test.mjs",
-    "build": "pnpm check && astro build && pnpm check:links",
+    "build": "pnpm check && astro build && pnpm check:links && pnpm check:seo",
     "check:links": "node script/check-links.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check:seo": "node script/check-seo.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
@@ -29,6 +30,9 @@
     "typescript": "^6.0.3"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild", "sharp"]
+    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild", "sharp"],
+    "overrides": {
+      "postcss-nested@6>postcss-selector-parser": "^7.1.6"
+    }
   }
 }

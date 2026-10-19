@@ -21,6 +21,8 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '前端开发学习指引',
+			description: '面向前端初学者的中文学习指引，涵盖 HTML、CSS、JavaScript、开发工具、工程化、部署与 Web 安全。',
+			routeMiddleware: './src/route-data.ts',
 			disable404Route: true,
 			defaultLocale: 'root',
 			locales: { root: { lang: 'zh-CN', label: '简体中文' } },

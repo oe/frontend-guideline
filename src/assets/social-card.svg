@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101827"/>
+  <rect x="72" y="80" width="8" height="470" rx="4" fill="#38bdf8"/>
+  <g font-family="Noto Sans CJK SC, sans-serif">
+    <text x="120" y="160" font-size="27" letter-spacing="4" fill="#7dd3fc">FRONTEND GUIDELINE</text>
+    <text x="116" y="300" font-size="76" font-weight="700" fill="#f8fafc">前端开发学习指引</text>
+    <text x="120" y="389" font-size="34" fill="#cbd5e1">基础 · 实践 · 工程化</text>
+    <text x="120" y="520" font-size="25" fill="#94a3b8">HTML / CSS / JavaScript / Web 安全</text>
+  </g>
+</svg>
