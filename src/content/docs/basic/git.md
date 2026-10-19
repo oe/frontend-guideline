@@ -67,7 +67,11 @@ git status
 
 ### GUI 程序安装
 
-VS Code 内置源代码管理界面，也可以选择 [Sourcetree](https://www.sourcetreeapp.com/)、[Fork](https://git-fork.com/) 或 Windows 上的 [TortoiseGit](https://tortoisegit.org/)。功能、收费和认证方式以当前官方说明为准；GUI 与命令行都应遵循团队约定，不必统一强制创建合并提交。
+图形客户端本书推荐 [Sourcetree](https://www.sourcetreeapp.com/)。把提交历史、分支和文件差异放在图形界面里看，对理解 Git 很有帮助，也方便在提交前认真检查自己改了什么。
+
+已经习惯 VS Code 内置的源代码管理界面，也可以继续用；其他选择有 [Fork](https://git-fork.com/) 和 Windows 上的 [TortoiseGit](https://tortoisegit.org/)。先把提交、分支和合并的含义弄清楚，别把折腾客户端当成学习 Git。
+
+GUI 与命令行都应遵循团队约定，不必统一强制创建合并提交。
 
 ## GIT 的使用
 
@@ -134,6 +138,8 @@ BREAKING CHANGE: replace user_name with display_name in API responses
 
 ## 基于 Git 提供源码托管的服务
 
-[GitHub](https://github.com/)、[GitLab](https://gitlab.com/)、[Bitbucket](https://bitbucket.org/) 等提供代码托管、评审与自动化能力，套餐和平台支持会变化。按团队协作、访问条件、部署需求和数据管理要求选择，不能假定所有免费套餐都包含相同功能。
+个人项目和开源项目，本书优先推荐 [GitHub](https://github.com/)。把代码、README、issue 和 PR 放在一起维护，便于别人了解、使用和参与你的项目；认真维护一个可运行、有说明、有提交记录的项目，也比只列一串「熟悉某某技术」更能展示你的能力。
+
+团队已经使用 [GitLab](https://gitlab.com/)、[Bitbucket](https://bitbucket.org/) 等平台，就先按团队流程协作。需要自建托管或特定部署能力时再比较方案，选择套餐前核对当前功能与额度。
 
 继续阅读 [GitHub CI/CD](/frontend-guideline/cicd/github/)与 [GitLab CI/CD](/frontend-guideline/cicd/gitlab/)。
