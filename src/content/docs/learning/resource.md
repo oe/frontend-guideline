@@ -37,7 +37,7 @@ sidebar:
 
 ### Vue 源码解析
 
-- [逐行剖析 Vue.js 源码](https://nlrx-wjc.github.io/Learn-Vue-Source-Code/start/)
+- [逐行剖析 Vue.js 源码](https://nlrx-wjc.github.io/Learn-Vue-Source-Code/start/)：针对 Vue 2，理解历史实现时参考；Vue 3 请结合 [vuejs/core](https://github.com/vuejs/core) 与当前官方文档。
 
 ## Build your own \* 系列
 

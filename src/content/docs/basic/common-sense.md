@@ -1,113 +1,118 @@
 ---
 title: "开发人员通用知识"
-description: "作为开发人员需要具备的通识, 即使你不从事前端开发, 你也应具备这些知识."
+description: "了解版本控制、Markdown、命令行、网络、编码和开源许可等开发基础。"
 sidebar:
   order: 2
 ---
 
-作为开发人员需要具备的通识, 即使你不从事前端开发, 做后台、客户端等开发, 你也应具备这些知识. 
+这些知识不必一次学完，遇到实际问题时可回到对应章节查阅。
 
-**下边这些知识你不一定会立即用上, 可在需要时再回顾查阅**
+## git
 
-## git 
-Git 是流行的源码版本管理工具, 绝大多数公司均用Git来管理源码. 相比svn:
-1. 可脱离远程服务器建立本地代码仓库
-2. 代码存储分布式
-3. 分支及tag不会额外增加仓库大小, 分支及tag管理非常方便
+[Git](https://git-scm.com/) 是分布式版本控制系统，可以在本地记录提交、比较差异，并通过远程仓库协作。分支与轻量标签主要是指向提交的引用，创建它们的额外开销很小；新的提交、文件对象与附注标签仍会占用空间，不能据此认为仓库大小不会增长。
 
-更详细说明请阅读 [GIT 的安装及使用](/frontend-guideline/basic/git)
-
+继续阅读 [Git 的安装及使用](/frontend-guideline/basic/git/)。
 
 ## markdown
-markdown是一种轻量的基于纯文本的「标记语言」(一般使用该语言编写的文件后缀为 .md), 源自 [LaTex](https://www.latex-project.org/)(另一种专为学术论文而设计的基于纯文本的「标记语言」), 它使用简单易记的标记能实现快速排版, 可用于便携开发文档、帮助手册等并能轻松的生成网站. 相比Word, 它的优势在于:
-1. 轻量, 无需安装重型软件, 用记事本即可书写, 任何文本编辑器(代码编辑器均可), 当然它还拥有众多更专业的软件可供选择
-2. 可方便的贴代码片段, 且支持代码高亮, 不用再为 word恼人的缩进、自动大写问题而闹心了
-3. 借助工具, 可方便的转换为其他格式的文档: word, ppt, pdf 等
-4. 可快速生成网站, 甚至可以不经过编译打包步骤, 直接将md文件上传服务器即可被相关工具直接渲染. 而且可基于 Web 技术, 对网站效果进行自定义
-5. 高度可扩展, 可在 md 中编写 流程图、ER图、数学公示等等, 还可以使用其轻松做出样式精美的PPT
 
-由于以上好处, markdown 在程序员中被广泛使用, 用于编写项目的 *readme* *接口文档* *开发手册* *用户手册*, 也会用作个人笔记记录之用, 而各类软件开发相关工具也都对其提供了良好的支持. 除了程序员, 在科研工作者、记者、作者、博客作者中使用也比较广泛.
+[Markdown](https://daringfireball.net/projects/markdown/) 由 John Gruber 创建，并有 Aaron Swartz 等人的贡献；它不是从 LaTeX 派生的语言。Markdown 使用简单的纯文本标记描述标题、列表、链接等结构，常用于 README、开发文档与笔记。
+
+代码高亮、表格、数学公式和流程图等能力取决于使用的平台、语法扩展和渲染工具。把 `.md` 文件上传服务器后，是否能显示为网页，也取决于服务器或网页是否配置了 Markdown 渲染。
 
 ### 学习 markdown
-可参考下边的网站练习
-* [markdown基本语法](https://wizardforcel.gitbooks.io/markdown-simple-world/2.html) 以及 [markdown高级语法](https://wizardforcel.gitbooks.io/markdown-simple-world/3.html)
-* [Markdown 教程](https://www.zybuluo.com/mdeditor), 左侧为编辑器, 右侧为编辑后的效果展示
 
-markdown还有不少扩展语法, 需在对应平台(软件), 或者相应插件支持方可使用, 比如:
-* [Github 扩展语法](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown)
-* [Gitlab 扩展语法](https://gitlab.com/help/user/markdown#gitlab-flavored-markdown-gfm)
-* [Mermaid 图形库](https://mermaid-js.github.io/mermaid/#/flowchart), 支持在markdown中用文本绘制流程图、类图、时序图等, 可在[在线编辑器](https://mermaid-js.github.io/mermaid-live-editor/) 中在线体验题效果
+- [CommonMark 帮助与交互教程](https://commonmark.org/help/)
+- [GitHub 的基本撰写与格式语法](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [GitLab Flavored Markdown](https://docs.gitlab.com/user/markdown/)
+- [Mermaid 文档](https://mermaid.js.org/intro/)与[在线编辑器](https://mermaid.live/)：用文本描述图形，需要所在平台提供相应支持。
 
 ### 支持 markdown 的软件及工具
-支持markdown的软件(包括笔记软件)众多, 这里只列举一些优秀的:
-* [Vscode](https://code.visualstudio.com/), 微软开发的代码编辑器, 免费开源跨平台, 原生支持markdown, 安装插件[markdown all in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 后可获得更好的编辑体验
-* [Typora](https://typora.io/) 免费跨平台的所见即所得的markdown编辑器
-* [Notion](https://www.notion.so/) 免费➕增值的web笔记软件, 交互友好, 操作简单, 页面精美, 不仅可以用于记笔记, 还可以用来记日程、待办事项、数据统计表, 其表格还支持强大的公式功能; 还有不同的模版可快速上手使用. 其免费功能即可满足个人使用, 普通用户无需付费, 但由于其为境外服务, 随时有被中断访问的风险
-* [Bear](https://bear.app/)免费➕增值的笔记软件, 支持Mac和iOS, 支持使用标签快速管理笔记. 付费后可获得笔记在 Mac 和 iOS间同步的功能
-* [Mweb](https://zh.mweb.im/) 付费笔记软件, 支持Mac和iOS, 由国人开发, 功能比 bear 更强大, 支持图片上传图床, 可将文字直接发布到服务器及其他第三方服务
-* [Ulysses](https://ulysses.app/) 订阅制软件, 支持Mac和iOS , 价格略贵, 被很多作者、新闻工作者使用
-* [Craft](https://craft.do/) 免费+增值的跨平台笔记软件, 默认支持markdown, 是一个类似于 Notion 的产品 block 笔记app, 但其界面更加简洁, 适合个人使用, 笔记可存储在本地, 也可存储在云端, 客户端使用原生的UI, 体验、性能更好
-* [Evernote(印象笔记)](https://evernote.com/) 免费+增值的跨平台笔记软件, 已经支持markdown、思维导图等功能了
-* [有道云笔记](https://note.youdao.com/) 免费+增值的跨平台笔记软件, 网易出品, 也已经支持markdown了
+
+- [Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown)：支持 Markdown 编辑和预览。
+- [Typora](https://typora.io/)：提供试用的付费 Markdown 编辑器，并非永久免费软件。
+- [Obsidian](https://obsidian.md/)：以本地 Markdown 文件为基础的笔记工具，附加服务及使用条款以官网为准。
+- [Notion](https://www.notion.com/) / [Craft](https://www.craft.do/)：支持部分 Markdown 输入或导入导出，原生文档模型与普通 Markdown 文件不同，迁移时需检查格式和附件。
+
+工具的价格、平台支持和同步功能会变化，选择前查看当前说明，并确认文件是否便于导出与备份。
 
 ### 其他
-markdown 本质是基于纯文本扩展的语言, 下边还有其他的基于纯文本的工具服务可供参考  
-[在线文字绘图工具(英文)](https://smusamashah.github.io/text-to-diagram)
+
+纯文本还可以用于定义图形、配置和演示文稿，但不同工具的格式和能力并不相同。
 
 ## shell, terminal & ssh
+
+终端（Terminal）提供文本交互界面；Shell（如 Bash、Zsh、PowerShell）解释并执行命令。两者不是同一概念，命令语法也不一定跨 Shell 通用。
+
+SSH 用于通过加密连接访问远程主机，也可供 Git 认证。连接时核对主机信息，私钥保存在自己的设备上；需要共享给服务器的是公钥。
+
 - [Linux Command](https://github.com/jaywcjlove/linux-command)
+- [PowerShell 文档](https://learn.microsoft.com/zh-cn/powershell/)
+- [通过 SSH 连接 GitHub](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh)
 
 ## 算法及数据结构
 
+了解数组、映射、集合、栈、队列与树，以及时间和空间复杂度。大 O 描述随输入规模增长的趋势，不代表一次操作的实际耗时；选择方案时还要考虑数据量与可读性。
+
 - [数据结构和算法动态可视化](https://visualgo.net/zh)
 - [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
-- [O与算法复杂度(英文)](https://algodaily.com/lessons/understanding-big-o-and-algorithmic-complexity)
 
 ## 版本号及开源协议
+
 ### 版本号
-软件产品的版本号是软件开发中的一个重要概念, 用于标识软件的版本, 以便于用户了解软件的更新情况, 以及开发人员了解软件的功能变更情况. 版本号一般由三部分组成, 如今流行两种形式的版本号: 语义化版本和日期版本.
+
+项目采用什么版本策略，需要查看它的发布规则，不能仅凭数字形式推断。
 
 #### 语义化版本
-大多软件及库均使用[语义化版本](https://semver.org/lang/zh-CN/)(如 v1.0.2) 来标记自己的产品的版本, 我们需要知道版本号的含义, 并且在我们发布产品时使用正确的版本号. 完整的语义化版本说明可参考官方文档 <https://semver.org/lang/zh-CN/>, 简言之:
-> 版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
-> 
-> 主版本号：当你做了不兼容的 API 修改，  
-> 次版本号：当你做了向下兼容的功能性新增，  
-> 修订号：当你做了向下兼容的问题修正。  
-> 先行版本号及版本编译元数据可以加到“主版本号.次版本号.修订号”的后面，作为延伸。
+
+遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/) 的项目，在定义公开 API 后按 `主版本.次版本.修订版本` 发布：不兼容 API 变更增加主版本，向后兼容的功能增加次版本，向后兼容的问题修复增加修订版本。
+
+`0.y.z` 用于初始开发，API 可能随时改变；先行版本如 `1.0.0-beta.1` 也不应视作稳定承诺。依赖能否安全升级仍需看更新说明、版本范围与测试结果。
 
 #### 日期版本
-日期版本(如 2020.12.01) 是一种简单的版本号, 用于标记软件的发布日期, 日期版本的好处是简单易懂, 对普通友好. 一般用于saas产品, 和一些产品持续增量发布的情况.
+
+[日期版本（CalVer）](https://calver.org/) 使用年、月等时间信息，例如 `2026.10`。具体格式由项目约定，它并不自动说明 API 兼容性。
 
 ### 开源协议
-软件开发中必然会使用第三方开源软件(库), 开源软件一般会声明自己用户协议(Licence, 即开源协议, 使用该开源软件的人需要遵守该协议), 该协议是具有一定法律效力的. 开源软件一般会直接引用流行的开源协议作为自己软件的用户协议: 有的协议要求使用本软件的软件也必须开源, 有的不要求一定要开源.
 
-选择开源软件(库)的时候, 应当留意其用户协议, 避免留下法律隐患. 一般来说选择 MIT 及 Apache License 2.0 可放心使用, 允许商业软件使用, 且商业软件无需开源.
+公开源码不等于允许任意使用。使用第三方代码、字体、图片或数据前，应检查许可证及署名、版权声明、再分发等条件；没有许可证时，不能默认按开源许可使用。
 
-详细可参考: 
-* [如何选择开源协议](https://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
-* [开源协议对比](http://choosealicense.online/licenses/)
+MIT 和 Apache-2.0 通常允许商用，但仍有保留声明、许可文本等义务，Apache-2.0 还有专利及 NOTICE 等条款。Copyleft 许可证的具体义务取决于许可证与使用、分发方式，不能简单概括为“用到就必须全部开源”。
 
+参考 [Choose a License](https://choosealicense.com/licenses/)，具体项目应阅读许可证原文。
 
 ## http 协议及 API
 
+HTTP 定义客户端与服务器交换请求、响应的方式。先理解 URL、请求方法、状态码、请求头、响应体、缓存与 HTTPS，再学习具体的接口调用方式。
+
+- `GET` 通常用于读取资源，`POST` 常用于提交数据；接口具体行为仍需遵循服务端契约。
+- HTTPS 通过 TLS 保护传输，不会自动解决应用自身的输入校验或权限问题。
+- `fetch()` 遇到 HTTP 404/500 时通常仍会返回响应对象，需要检查 `response.ok`；网络错误等情况才会让 Promise 拒绝。
+- CORS 是浏览器的跨源访问控制机制，不是用户认证或服务端权限校验。
+
+参考 [MDN HTTP 概述](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)与 [Fetch 使用指南](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)。
+
 ## 设计模式、设计原则、DRY, KISS, YAGNI & SOLID
 
-* [软件设计模式](https://refactoringguru.cn/design-patterns)
-  * [设计模式目录](https://refactoringguru.cn/design-patterns/catalog)
+这些原则提供设计时的思考角度，不是需要同时套用的模板。DRY 关注避免知识的重复表达，KISS 强调保持简单，YAGNI 提醒不要提前实现尚无需求的能力。优先把当前需求与边界说明白，再决定是否需要额外抽象。
 
-* [计算机系统的设计原则(英文)](https://embeddedartistry.com/blog/2018/04/26/embedded-rules-of-thumb/), 这个网页收集了100多条计算机系统的设计原则，分成12个大类. 以下摘录几条:
-  * 尽可能将错误从运行时转移到编译时
-  * 没有文档的软件, 没有价值
-  * 如果你没法用大白话描述行为, 那你也无法用代码实现它
+参考[设计模式目录](https://refactoringguru.cn/design-patterns/catalog)。
 
 ## 字符编码
 
+字符集、编码与字体分别处理“有哪些字符”“如何存储”“如何显示”等问题。Web 项目通常统一使用 UTF-8，并在 HTML 中声明 `<meta charset="utf-8">`。
+
+JavaScript 字符串以 UTF-16 码元表示，`.length` 不一定等于用户看到的字符数，表情和组合字符尤其如此。处理文本时需根据需求选择码点遍历或字素分割，不能仅凭字节数和字符串长度推断显示宽度。
+
+参考 [MDN 字符编码](https://developer.mozilla.org/en-US/docs/Glossary/Character_encoding)与 [JavaScript 字符串](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)。
+
 ## 正则表达式
-[轻松学习正则表达式](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
+
+正则表达式用于匹配文本模式。需要区分正则字面量和字符串构造时的转义；复杂 HTML、JSON 等结构应使用相应解析器。处理不受信输入时也要留意某些表达式的回溯开销。
+
+- [MDN 正则表达式指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_expressions)
+- [轻松学习正则表达式](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
 
 ## 相关推荐链接
 
-- [计算机专业的学生应该知道什么(英语)](http://matt.might.net/articles/what-cs-majors-should-know/)
-- [Hacker laws 对开发人员有用的定律、理论、原则和模式](https://github.com/nusr/hacker-laws-zh)
+- [计算机专业的学生应该知道什么（英文）](https://matt.might.net/articles/what-cs-majors-should-know/)
 - [Every Programmer Should Know](https://github.com/mtdvio/every-programmer-should-know)

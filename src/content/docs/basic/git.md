@@ -1,166 +1,139 @@
 ---
-title: "GIT 的安装及使用"
-description: "GIT 是用于代码协作的工具, 与 SVN 类似, 但比 SVN 更优, 比如分布式存储, 可离线提交代码, 仓库大小会小很多."
+title: "Git 的安装及使用"
+description: "理解 Git 的本地与远程操作、分支协作、文件大小写和约定式提交。"
 sidebar:
   order: 6
 ---
 
-GIT 是用于代码协作的工具, 与 SVN 类似, 但比 SVN 更优, 比如分布式存储, 可离线提交代码, 仓库大小会小很多. 
-
-全球大部份开发者均使用 GIT 来进行代码管理, 且Git使用有不少细节需要注意, 故此处单独成章介绍说明.
+Git 是分布式版本控制系统，可以离线记录本地提交，并与远程仓库交换提交。GitHub、GitLab 等是代码托管平台，不等同于 Git 本身。仓库大小取决于历史与对象，不能笼统认为 Git 一定比 SVN 仓库更小。
 
 ## GIT 基本概念及常用命令
 
-在使用之前, 你应当对 GIT 的基本概念有一定了解, 避免进入使用的误区.
-
 ### 基本概念
 
-网络上已有较完整全面的概述, 在此直接引用, 请仔细阅读链接原文.
+- **工作区**：当前正在编辑的文件。
+- **暂存区**：准备包含在下次提交中的内容。
+- **提交**：记录文件快照及其历史关系。
+- **分支**：可随新提交移动的引用；标签常用于标记版本。
+- **远程仓库**：用于交换提交的其他仓库，本地提交不会自动上传。
 
-- [Git 基础(源自 GIT 项目官方)](https://book.git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E5%9F%BA%E7%A1%80)
-- [GIT 入门(阮一峰博客)](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
+参考 [Pro Git 简体中文译本](https://github.com/progit/progit2-zh)。
 
 ### 常用命令
 
-日常工作中, 应尽量使用 GUI 软件来完成 GIT 相关操作. 若你不清楚你要执行的 git 命令会有什么效果, 请不要使用该命令! 错误的命令可能会导致花费数小时、数天来恢复代码, 甚至代码不可恢复!
+可选择命令行或 GUI，重点是看懂即将暂存、提交和推送的内容。以下命令用于查看状态，不会修改工作区：
 
-- [常用命令清单(阮一峰博客)](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
-- [常用 Git 命令使用教程](https://segmentfault.com/a/1190000011673663)
+```sh
+git status
+git diff
+git diff --staged
+git log --oneline -5
+```
+
+`git diff` 查看未暂存改动，`git diff --staged` 查看已经暂存的改动，两者不能互相替代。
 
 ## 安装
 
-GIT 工具分两部分, 原生的 git 命令行工具(提供 SHELL 命令) 以及 提供可视化界面的 GUI 软件. GIT 命令繁多, 功能强大, 为避免使用命令出现不必要的问题, 开发者应尽量使用 GUI 工具来操作代码仓库, 简单方便, 也无需记忆繁琐的命令.
-
-一些 GUI 软件会内置 GIT SHELL 程序, 但是若系统未安装 GIT SHELL, 会导致无法在系统命令行中方便的使用 git 命令进行一些操作.
-
 ### GIT SHELL 程序安装
-
-Mac 和 Windows 安装略有差异, 请根据自己电脑的操作系统, 按说明操作.
 
 #### Mac
 
-在命令行中输入 `git --version`, 若弹出对话框，则按提示安装命令行工具即可， 若直接输出 git 版本，则表示已安装，可跳过该步骤。
+运行 `git --version` 检查；也可按系统提示安装命令行工具，或使用自己维护的软件包管理器安装。
 
 #### Windows & Linux
 
-下载[原生 Git 客户端, 命令行工具](https://git-scm.com/downloads)
+Windows 可使用 [Git 官方下载](https://git-scm.com/downloads)中的 Git for Windows；Linux 通常通过发行版包管理器安装。安装后重新打开终端，运行 `git --version` 确认。
 
 ### GIT 命令行配置
 
-GIT 默认对文件名称大小写不敏感(即修改文件名的大小写不会产生修改记录), 这往往导致一些问题. 安装完后执行下述命令来让 git 对文件大小写敏感:
+设置提交身份。示例中的姓名和邮箱应替换为自己的信息，公开仓库可使用托管平台提供的隐私邮箱：
 
 ```sh
-git config --global core.ignorecase false
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
 ```
+
+公司与个人项目需要不同身份时，可在仓库内去掉 `--global`，设置该仓库的配置。
+
+`core.ignoreCase` 由 Git 在初始化或克隆时根据文件系统探测，并不是所有系统都默认忽略大小写。不要为“让文件名大小写生效”而全局设为 `false`；在不区分大小写的文件系统上，这可能产生非预期行为。仅修改文件名大小写时，可在仓库中通过一个尚不存在的临时名字分两步操作：
+
+```sh
+git mv example.js temporary-name.js
+git mv temporary-name.js Example.js
+git status
+```
+
+团队仍应统一命名，并留意 Linux CI 与本地文件系统的差异。参考 [Git 配置说明](https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreignoreCase)。
 
 ### GUI 程序安装
 
-GIT 的 GUI 软件众多, 如 [sourcetree](https://www.sourcetreeapp.com/), [Fork](https://git-fork.com/), 以及和 TortoiseSVN 操作类似的 [TortoiseGit](https://tortoisegit.org/) (支持 Windows).
-
-这里只推荐使用功能完善稳定的 [sourcetree](https://www.sourcetreeapp.com/), 点链接选择自己的操作系统平台下载即可.
-
-注意点:
-
-1. SourceTree 是免费软件， 但是需注册才能使用，注册时需要通过 Google 验证码验证， 即`需要翻墙才能注册`
-2. SourceTree 设置界面中 Git 页签里，进行优化设置：
-   1. 勾选 `Do not fast-forward when merging, always create commit`
-   2. `Git Version` 中选择使用系统 Git `Use System Git`，windows 选择 `GIT SHELL 程序安装` 中安装的 git 路径， Mac 选择系统内置的 git 即可. 此操作保证命令行中的 Git 配置与GUI 中的git 行为一致.(其他内置git的GUI工具也应当类似设置)
+VS Code 内置源代码管理界面，也可以选择 [Sourcetree](https://www.sourcetreeapp.com/)、[Fork](https://git-fork.com/) 或 Windows 上的 [TortoiseGit](https://tortoisegit.org/)。功能、收费和认证方式以当前官方说明为准；GUI 与命令行都应遵循团队约定，不必统一强制创建合并提交。
 
 ## GIT 的使用
 
 ### 分支问题
 
-1. 项目分支名称只能使用半角的 英文字符、数字、/ 、- 来命名, 禁止使用全角字符, 禁止使用中文
-2. 一般项目默认分支为 dev 分支, 可用于提交代码合并代码; prerelease(预发布分支) / master(主干分支) 等分支则只能用于合并而不能用于提交代码
-3. 日常开发应当在 dev 分支上进行, 若修改的问题, 或者新增的功能过于复杂(比如需要修改较多的代码文件, 或者需要耗费较长时间才能完成), 则应当开启单独分支去开发(一般从 dev 上开分支), 开发完后再合并会原来分支. 分支名称应当简短且能描述清该分支的含义, 格式应当注意:
-   1. 修正问题, 则应当使用 `bugfix` 作为分支名称的前缀, 如 `bugfix-scolling-issues`
-   2. 新功能开发, 则应使用 `feature` 作为分支名称的前缀, 如 `feature-page-template`
-4. 只要改完一个问题, 就应当提交一次代码, 不论改动的代码量多少. 增加较复杂的情况, 则可分多次提交, 应避免一次提交大量的变更(相同的变更除外, 如批量修正几十个文件中对某个资源的引用路径).
+默认分支可能是 main、master 或其他名称，以仓库为准。Git flow、GitHub flow 和主干开发等协作方式各有适用场景，`dev` 不是 Git 规定的默认开发分支。
+
+小型项目可从最新默认分支创建功能分支，通过 PR 合并。以下示例假设本地已有 main、工作区没有未提交改动，且团队使用快进更新：
+
+```sh
+git switch main
+git pull --ff-only
+git switch -c fix/readme-link
+# 编辑文件，然后检查并暂存具体文件
+git diff
+git add README.md
+git diff --staged
+git commit -m "docs: correct README link"
+git push -u origin fix/readme-link
+```
+
+分支名使用 `fix/readme-link`、`feature/user-profile` 等易读形式是一种团队约定。Git 对引用名称有自己的[限制](https://git-scm.com/docs/git-check-ref-format)，并非语言层面禁止所有中文分支名。
+
+一次提交尽量对应一个清晰改动，先检查暂存内容再提交。不要把密钥、个人配置或生成依赖目录混入提交；`.gitignore` 不会自动移除已经跟踪的文件。
+
+### 撤销与同步
+
+- 只取消暂存可用 `git restore --staged 文件名`，它保留工作区改动。
+- `git restore 文件名` 会丢弃对应的未暂存改动，执行前应确认差异。
+- 已共享的提交需要撤销时，通常优先使用 `git revert 提交号` 生成反向提交。
+- `reset --hard`、清理未跟踪文件和强制推送都可能导致内容丢失，理解影响并遵循团队流程后再使用。
+
+远程认证按平台说明选择 HTTPS 凭据或 SSH；GitHub 的 HTTPS Git 操作不使用账户密码。参考 [GitHub 认证说明](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github)。
 
 ### 代码提交日志
 
-代码提交日志需遵循 [约定式提交](https://www.conventionalcommits.org/zh-hans/) 的规范, 以增加日志的可读性, 方便代码及项目维护. 约定式提交 有多种配置形式, 在项目中我们采用的是比较通用的 [config-conventional](https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-conventional/README.md)
-
-下面进行一个简要的介绍.
+[约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0/)是一种可选的协作规范，不是 Git 的语法要求。团队采用时应统一配置与含义。
 
 #### 结构
 
-提交的日志结构应当如下:
-
-```
-<类型>[可选的作用域]: <描述>
+```text
+<类型>[可选的作用域][可选的 !]: <描述>
 
 [可选的正文]
 
 [可选的脚注]
 ```
 
-注意:
-
-1. 类型必须是英文字符, 默认有 `feat`(表示新功能) `fix`(表示问题修正)
-2. 上述格式中冒号是必须的, 且必须是英文半角的冒号, 冒号后应当跟随一个空格.
-3. 正文和注脚都是可选的, 他们之间应当用空行隔开, 正文和第一行之间也应当有空行.
-
-日志示例:
-
-```
-feat(lang): add polish language
-```
-
-```
-fix: correct minor typos in code
-
-see the issue for details on the typos fixed
-
-closes issue #12
-
-```
+例如 `feat(search): support keyboard navigation`。冒号后跟一个空格，正文和脚注按规范分隔。
 
 #### 类型说明
 
-可用的类型的有:
-
-- `feat`: 完成了新功能
-- `fix`: 修正了问题
-- `build`: 调整了项目打包相关的脚本或配置
-- `ci`: 调整了自动构建相关脚本或配置
-- `chore`: 代码清理操作, 比如移除不必要的代码, 文件等
-- `docs`: 文档相关的更新
-- `perf`: 性能优化相关的更新
-- `refactor`: 代码重构, 使用更优的方法来实现已有的功能
-- `revert`: 代码回滚, 此时应写清回滚原因
-- `style`: 样式相关问题修复
-- `test`: 测试相关问题修复
+规范定义 `feat` 表示功能、`fix` 表示修复，并允许团队使用其他类型，例如 `docs`、`test`、`build`、`ci`、`perf`、`refactor` 和 `chore`。常用配置中的 `style` 通常指格式调整；修复页面样式缺陷仍可使用 `fix`，不应仅因修改 CSS 就归为 `style`。
 
 #### 破坏性变更
 
-如果提交包含了破坏性变更, 即导致产品出现前后不兼容的情况(比如 API 变更, 访问地址变更, 代码库的调用方式变更等), 必须在提交中声明:
+在类型或作用域后添加 `!`，或者在脚注中使用 `BREAKING CHANGE: 描述`，都可以标记破坏性变更；两者可同时使用，但规范没有要求必须同时写。`BREAKING CHANGE` 不限于正文的第一行。
 
-1. 破坏性变更必须在提交的正文起始行开头写上全大写的文本 `BREAKING CHANGE`，后面紧跟冒号和空格
-2. 在日志的首行 类型 之后应当增加 `!` 以提醒本次提交包含破坏性变更
+```text
+feat(api)!: rename response field
 
-日志示例:
-
-```
-chore!: drop Node 6 from testing matrix
-
-BREAKING CHANGE: dropping Node 6 which hits end of life in April
+BREAKING CHANGE: replace user_name with display_name in API responses
 ```
 
 ## 基于 Git 提供源码托管的服务
-目前有众多基于 Git 的源码托管服务, 大多数平台对免费用户都支持 `私有仓库`、`搭建静态网站`、`自动构建及持续集成(CD/CD)`等, 比较知名的有:
 
-* [Github](https://github.com/), 全球最大的软件开发平台
-* [Gitlab](https://gitlab.com/), 开源软件, 国内的Git源码平台几乎都是基于它定制开发而成
-* [Bitbucket](https://bitbucket.org/), [Atlassian](https://www.atlassian.com/)旗下产品(SourceTree也是其产品)
-* [Coding](https://coding.net/), 腾讯旗下产品
-* [Gitee 码云](https://gitee.com/), [开源中国](https://www.oschina.net/)旗下产品
+[GitHub](https://github.com/)、[GitLab](https://gitlab.com/)、[Bitbucket](https://bitbucket.org/) 等提供代码托管、评审与自动化能力，套餐和平台支持会变化。按团队协作、访问条件、部署需求和数据管理要求选择，不能假定所有免费套餐都包含相同功能。
 
-推荐使用 [Github](https://github.com/) 来托管自己的私人项目, Github在全球开发社区影响巨大, 有众多大牛, 大多数开源项目均选择使用 Github 托管代码, 还提供了众多的第三方服务的集成支持, 同时若你的开源项目有很高的影响(star 数和 fork数较高)也利于你找工作.
-
-
-CI/CD介绍:
-
-* [使用GitHub实现简单的CI/CD](https://www.linuxidc.com/Linux/2018-10/154824.htm)
-* [GitLab CI/CD 介绍和使用](https://blinkfox.github.io/2018/11/22/ruan-jian-gong-ju/devops/gitlab-ci-jie-shao-he-shi-yong/)
-
+继续阅读 [GitHub CI/CD](/frontend-guideline/cicd/github/)与 [GitLab CI/CD](/frontend-guideline/cicd/gitlab/)。
