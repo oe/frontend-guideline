@@ -19,7 +19,7 @@ sidebar:
 - [Atom](https://github.com/atom/atom)：已停止维护并归档，仅供了解旧项目环境，新项目请选择持续维护的编辑器。
 - [notepad++](https://notepad-plus-plus.org/) windows 平台, 免费开源, 支持多种语言, 多种文件编码, 支持扩展
 
-可以比较 [Fira Code](https://github.com/tonsky/FiraCode) 和 [Cascadia Code](https://github.com/microsoft/cascadia-code) 等编程字体；是否使用连字取决于个人阅读习惯与编辑器支持。参见[关于字体及字符](https://blog.evecalm.com/2020/05/about-font-and-character.html)。
+编程字体个人推荐 [Fira Code](https://github.com/tonsky/FiraCode) 和 [Cascadia Code](https://github.com/microsoft/cascadia-code)，都值得装上试试。它们支持[连字](https://blog.evecalm.com/2020/05/about-font-and-character.html)，喜欢的话可以开启；觉得 `=>`、`!=` 合成一个字形反而影响辨认，就关掉连字，保留字体本身。
 
 ### Sublime Text 相关网站 :thumbsup:
 
