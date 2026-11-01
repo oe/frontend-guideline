@@ -25,7 +25,7 @@
     "astro": "^7.4.0",
     "parse5": "^8.0.1",
     "rehype-external-links": "^3.0.0",
-    "sass-embedded": "^1.105.2",
+    "sass-embedded": "^1.107.0",
     "sharp": "^0.35.5",
     "typescript": "^6.0.3"
   },
