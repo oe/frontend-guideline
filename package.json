@@ -22,7 +22,7 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.3.3",
     "@astrojs/starlight": "^0.42.6",
-    "astro": "^7.4.0",
+    "astro": "^7.4.7",
     "parse5": "^8.0.1",
     "rehype-external-links": "^3.0.0",
     "sass-embedded": "^1.105.2",
